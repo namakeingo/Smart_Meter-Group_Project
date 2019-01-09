@@ -1,11 +1,226 @@
 <?php require('template/header.phtml') ?>
 
-<h3>Welcome to the web-site </h3>
+<article id="page-carousel" class="page-section">
+<div class="row justify-content-center">
 
-<h3>A template for web-site development using the <i>Model-View-Controller</i> design pattern and <a href="http://www.getbootstrap.com/css"><i>Bootstrap</i></a>.</h3>
-<p>The <i>Views/template</i> directory contains a <i>header.phtl</i> and a <i>footer.phtml</i> which should be included on every new page generated.
-    To add additional pages just edit the file <i>header.phtml</i> to add the extra link and then add a new <i>Controller (pageN.php)</i> and a new <i>View (pageN.phtml)</i>, for each page required.<p/>
-<p>The <i>Model</i> code files are placed in the <i>Models</i> directory.</p>
-<p>Do not change any of the css files in the <i>css</> directory!<p>
+  <h1>The Sky is Waiting for You</h1>
 
+  <section id="layout-carousel" class="layout-carousel carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner">
+
+  <section class="carousel-item active">
+    <img class="layout-image img-fluid d-block" src="images/insta-4.jpg" alt="">
+
+    <div class="carousel-caption">
+            <a class="btn btn-info btn-lg" href="2.php">Book a Flight Now</a>
+    </div>
+  </section>
+
+  <section class="carousel-item">
+    <img class="layout-image img-fluid d-block" src="images/insta-3.jpg" alt="">
+
+    <div class="carousel-caption">
+            <a class="btn btn-info btn-lg" href="2.php">Book a Flight Now</a>
+    </div>
+  </section>
+
+  <section class="carousel-item">
+    <img class="layout-image img-fluid d-block" src="images/image_8.jpg" alt="">
+
+    <div class="carousel-caption">
+            <a class="btn btn-info btn-lg" href="2.php">Book a Flight Now</a>
+    </div>
+  </section>
+
+    <a class="carousel-control-prev" href="#layout-carousel" role="button" data-slide="prev">
+      <span class="carousel-control-next-icon:">
+        <span class="sr-only">Previous</span>
+      </span>
+    </a>
+
+    <a class="carousel-control-next" href="#layout-carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon:">
+        <span class="sr-only">Next</span>
+      </span>
+    </a>
+
+    </div>
+
+</section>
+</div>
+
+</article>
+
+
+<!-- -->
+<article id="page-iconcolumn" class="page-section">
+
+<section class="layout-iconcolumns container py-4">
+
+  <div class="row text-center">
+
+    <section class="col-md-4 my-3">
+    <span class="fa-stack fa-2x">
+      <i class="fas fa-search fa-2x"></i>
+    </span>
+    <h4>The World's Travel Search Engine</h4>
+    <p>You can use our search engine to find any flight you want and select a desired destination and price.</p>
+    </section>
+
+    <section class="col-md-4 my-3">
+    <span class="fa-stack fa-2x">
+      <i class="fas fa-phone fa-2x"></i>
+    </span>
+    <h4>Our Support Lines are Open 24/7</h4>
+    <p>Our 24/7 support operators are always ready to help you select a proper flight according to your needs.</p>
+    </section>
+
+
+    <section class="col-md-4 my-3">
+    <span class="fa-stack fa-2x">
+          <i class="fas fa-plane-departure fa-2x"></i>
+    </span>
+    <h4>Cheap and Beneficial Air Tickets</h4>
+    <p>We provide affordable tickets to the flights of almost all existing airlines so you don’t need to look for them.</p>
+    </section>
+
+
+  </div>
+
+</section>
+
+</article>
+
+
+<!-- -->
+
+<section class="layout-cards container"> <!-- Container -->
+  <div class="row justify-content-center"> <!-- Row -->
+    <h1>Cheap Airline Tickets</h1>
+
+<div class="col-8 col-sm-12"> <!-- Column takes 8 of the 12 columns. 12 columns at the small breakpoint. At the large breakpoint, it will take 10 columns -->
+
+<div class="card-deck"> <!--creates the card layout -->
+
+  <section class="card my-3">
+    <img class="layout-image card-img-top img-fluid" src="images/venice.jpg" alt="">
+    <div class="card-body">
+    <h4>Venice</h4>
+    <h5 class="layout-text card-text">Italy</h5>
+
+    <h5 class="layout-text card-text">Departure City:</h5>
+<ul class="fa-ul">
+  <li><i class="fas fa-arrow-right"></i> Seattle From  $98.00</li>
+  <li><i class="fas fa-arrow-right"></i> Vienna From $134.00</li>
+  <li><i class="fas fa-arrow-right"></i> Madrid From $119.00</li>
+  <li><i class="fas fa-arrow-right"></i> Cologne From $99.00</li>
+  <li><i class="fas fa-arrow-right"></i> Dallas From $358.00</li>
+</ul>
+</div>
+  </section>
+
+  <section class="card my-3">
+    <img class="layout-image card-img-top img-fluid" src="images/budva.jpg" alt="">
+    <div class="card-body">
+    <h4>Budva</h4>
+    <h5 class="layout-text card-text">Montenegro</h5>
+
+    <h5 class="layout-text card-text">Departure City:</h5>
+<ul class="fa-ul">
+  <li><i class="fas fa-arrow-right"></i> Atlanta From $98.00</li>
+  <li><i class="fas fa-arrow-right"></i> Stockholm From $134.00</li>
+  <li><i class="fas fa-arrow-right"></i> Edinburgh From $119.00</li>
+  <li><i class="fas fa-arrow-right"></i> Miami From $99.00</li>
+  <li><i class="fas fa-arrow-right"></i> Ottawa From $358.00</li>
+</ul>
+</div>
+  </section>
+
+  <section class="card my-3">
+    <img class="layout-image card-img-top img-fluid" src="images/ben.jpg" alt="">
+    <div class="card-body">
+    <h4>London</h4>
+    <h5 class="layout-text card-text">England</h5>
+
+    <h5 class="layout-text card-text">Departure City:</h5>
+    <ul class="fa-ul">
+      <li><i class="fas fa-arrow-right"></i> Paris From $98.00</li>
+      <li><i class="fas fa-arrow-right"></i> Rome From $134.00</li>
+      <li><i class="fas fa-arrow-right"></i> Barcelona From $119.00</li>
+      <li><i class="fas fa-arrow-right"></i> Berlin From $99.00</li>
+      <li><i class="fas fa-arrow-right"></i> New York From $358.00</li>
+    </ul>
+</div>
+  </section>
+</div>
+</div>
+</div>
+</section>
+
+<!-- -->
+<article id="page-floater" class="page-section">
+
+<section class="layout-floater container py-5">
+  <div class="row align-items-center justify-content-center">
+
+        <section class="layout-containter col-8 col-md-4">
+          <img class="layout-image"width="50%" src="images/customer.jpg" alt="">
+        </section>
+
+        <section class="col-10 col-md-6 text-center text-md-left pl-md-5">
+          <h5 class="layout-title">24/7 Support</h5>
+          <h2 class="layout-title">Tel. 1-800-1234-567</h2>
+          <p class="layout-text">Our Support Service is available 24 hours a day, 7 days a week to help you buy your tickets.</p>
+          <button type="button" class="btn btn-primary btn-lg" name="button"><span>Get in Touch</span></button>
+        </section>
+  </div>
+
+</section>
+
+<!-- -->
+
+<section class="layout-cards container"> <!-- Container -->
+  <div class="row justify-content-center"> <!-- Row -->
+    <h1>Latest Blog Posts</h1>
+
+<div class="col-8 col-sm-12"> <!-- Column takes 8 of the 12 columns. 12 columns at the small breakpoint. At the large breakpoint, it will take 10 columns -->
+
+<div class="card-deck"> <!--creates the card layout -->
+
+  <section class="card my-3">
+    <img class="layout-image card-img-top img-fluid" src="images/image_2.jpg" alt="">
+    <div class="card-body">
+    <h4>9 Ways to Become a Successful Travel Blogger</h4>
+
+<p class="layout-text">Travel blogging is a crowded field — and it gets more crowded day by day. And a lot of the advice that people give are actually counterintuitive to...</p>
+  </section>
+
+  <section class="card my-3">
+    <img class="layout-image card-img-top img-fluid" src="images/image_7.jpg" alt="">
+    <div class="card-body">
+    <h4>Visiting Paris on a Budget</h4>
+
+
+<p class="layout-text">Paris is one of top-rated European cities – people usually try to spend there as much time as possible, and you also my be lucky enough to spend an...</p>
+</div>
+  </section>
+
+  <section class="card my-3">
+    <img class="layout-image card-img-top img-fluid" src="images/image_3.jpg" alt="">
+    <div class="card-body">
+    <h4>How to Make Travel Videos</h4>
+
+
+<p class="layout-text">Introducing our new Travel Video Course, taught by experts Sharon Carpenter and Beverly Bennett! They have over 31,000,000 YouTube views, have...</p>
+</div>
+  </section>
+</div>
+</div>
+<button type="button" class="btn-inverted btn-outline-primary btn-lg" name="button"><span>View More Blog Posts</span></button>
+</div>
+</section>
+
+
+</article>
 <?php require('template/footer.phtml') ?>

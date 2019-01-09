@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MVCtemplate.iml" filepath="$PROJECT_DIR$/.idea/MVCtemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ux.iml" filepath="$PROJECT_DIR$/.idea/ux.iml" />
     </modules>
   </component>
 </project>
-
