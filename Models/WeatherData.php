@@ -14,8 +14,9 @@ class WeatherData {
     private $tempMin;
     private $tempMax;
     private $country;
+    private $time;
 
-    public function __construct($forecast, $description, $temp, $tempMax, $tempMin, $country)
+    public function __construct($forecast, $description, $temp, $tempMax, $tempMin, $country, $time)
     {
         // basic fields of the class are set to their values
         $this->forecast = $forecast;
@@ -24,6 +25,7 @@ class WeatherData {
         $this->tempMax = $tempMax - 273.15;
         $this->tempMin = $tempMin - 273.15;
         $this->country = $country;
+        $this->setNightOrDay($time);
     }
 
     /**
@@ -64,5 +66,15 @@ class WeatherData {
     public function getTempMin()
     {
         return $this->tempMin;
+    }
+
+    // Assumes midnight to 7 am is night and onwards to the rest of the day is the day
+    public function setNightOrDay($time) {
+        if ($time < 7) {
+           $this->time = 'Night';
+        }
+        else {
+           $this->time = 'Day';
+        }
     }
 }
