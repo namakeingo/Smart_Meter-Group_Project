@@ -16,3 +16,5 @@ if (isset($_POST['submit'])) {
         echo $value->toString();
     }
 }
+
+require_once('Views/index.phtml');
