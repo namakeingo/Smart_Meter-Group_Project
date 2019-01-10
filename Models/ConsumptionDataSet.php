@@ -20,11 +20,9 @@ class ConsumptionDataSet
         // first loop is to get to the arrays containing the consumption data
         foreach ($tempArray as $headArray) {
             // second loop is to get to the actual data
-            foreach ($headArray as $value) {
-                // data at value 0 = timestamp
-                // data at value 1 = consumption
-                $this->consumptionArray[] = new ConsumptionData($headArray[0],$headArray[1]);
-            }
+            // time stamp is at position 0
+            // consumption is at position 1
+                $this->consumptionArray[] = new ConsumptionData($headArray[0], $headArray[1]);
         }
     }
 

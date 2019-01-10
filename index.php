@@ -11,7 +11,6 @@ if (isset($_POST['submit'])) {
     $data = array('type' => 'ELEC',
         'period' => 'PT1M');
     $url = new Connection($data);
-    var_dump($url);
     $dataSet = $url->getData();
     foreach($dataSet->getConsumptionArray() as $value) {
         echo $value->toString();
