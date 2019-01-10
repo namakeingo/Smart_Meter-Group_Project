@@ -1,0 +1,24 @@
+<?php
+require_once('Connection.php');
+require_once ('WeatherDataSet.php');
+class ConnectionWeather extends Connection {
+
+    // id of the city the smart meter is
+    private $cityID;
+
+    public function __construct()
+    {
+        // sets the city id
+        $this->cityID = 2172797;
+        // sets the url base to the url needed
+        parent::__construct('https://api.openweathermap.org/data/2.5/weather?id='. $this->cityID .'&appid=50fcfcdd4d1147cbec838e629fe6b3bf');
+        // sets the operations for the curl client
+        parent::setOptCurl(array());
+    }
+
+    public function getData() {
+        // gets the output of the curl request as a weather data set
+        return new WeatherDataSet(parent::executeCurl());
+    }
+
+}
