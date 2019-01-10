@@ -19,14 +19,14 @@ class ConnectionConsumption extends Connection
     private $dateTo;
 
     // data array is variable for setting the different fields
-    public function __construct(array $dataArray)
+    public function __construct($type,$period)
     {
         // assigns the time of the dateTo and dateFrom to dateTime objects with london time zones
         $this->dateFrom = new DateTime('first day of this month 00:00:00', new DateTimeZone('Europe/London'));
         $this->dateTo = new DateTime('now', new DateTimeZone('Europe/London'));
         // sets the date to 1 hour before the current date
-        $this->setType($dataArray['type']);
-        $this->setPeriod($dataArray['period']);
+        $this->setType($type);
+        $this->setPeriod($period);
         // sets the values of the URL base with the appropriate parameters
         parent::__construct('https://adhocapi.energyhive.com/hive/ac89ccdce8e878e227a93f050413c7d8/type/'. $this->type .
             '/?units=kWh&from='.
