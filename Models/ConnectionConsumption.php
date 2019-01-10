@@ -22,13 +22,10 @@ class ConnectionConsumption extends Connection
     public function __construct(array $dataArray)
     {
         // assigns the time of the dateTo and dateFrom to dateTime objects with london time zones
-        $this->dateFrom = new DateTime('now', new DateTimeZone('Europe/London'));
+        $this->dateFrom = new DateTime('first day of this month 00:00:00', new DateTimeZone('Europe/London'));
         $this->dateTo = new DateTime('now', new DateTimeZone('Europe/London'));
         // sets the date to 1 hour before the current date
-        $this->dateFrom->modify("-1 hour");
         $this->setType($dataArray['type']);
-        //$this->setDateFrom($dataArray['dateFrom']);
-        //$this->setDateTo($dataArray['dateTo']);
         $this->setPeriod($dataArray['period']);
         // sets the values of the URL base with the appropriate parameters
         parent::__construct('https://adhocapi.energyhive.com/hive/ac89ccdce8e878e227a93f050413c7d8/type/'. $this->type .
@@ -37,6 +34,7 @@ class ConnectionConsumption extends Connection
             '&to=' . $this->dateTo->format('Y-m-d') .
             'T' . $this->dateTo->format('H:i:s').'&offset=-0&period='.
             $this->period .'&function=sum');
+
         // sets the operations of the curl client
         // RETURN TRANSFER is used to store the output instead of directly displaying it
         // URL is for setting the url of the curl client to the base url
