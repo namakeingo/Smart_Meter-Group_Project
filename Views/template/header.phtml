@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Sarabun:600" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -24,50 +25,53 @@
 
 
     <link rel="stylesheet" href="css/flaticon.css">
+        <link rel="stylesheet" href="css/dave.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom.css">
   </head>
 
     <body class="container">
-      <div class="bg">
-      <nav class="navbar navbar-expand-md bg-light navbar-light">
-    <div class="container-fluid">
 
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index2.php">Cheap Flights</a>
-      </div>
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav"
-      aria-controls="myTogglerNav" aria-label="Toggle Navigation"
-      ><span class="navbar-toggler-icon"></span></button>
+      <div class="bg wrapper">
+        <nav id="sidebar">
 
-      <section class="collapse navbar-collapse" id="myTogglerNav">
+        <div class="sidebar-header">
+            <h3>Bootstrap Sidebar</h3>
+        </div>
 
+        <ul class="list-unstyled components">
+            <p>Dummy Heading</p>
+            <li>
+                <a href="#homeSubmenu" aria-expanded="false">Home</a>
 
-      <ul class="navbar-nav ml-auto">
-        <li><a href="index2.php">Home</a></li>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" aria-expanded="false">Pages</a>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
 
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">About
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
-          </ul>
-        </li>
+    </nav>
 
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Blog
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="nav-item"><a class="nav-link" href="#">Classic Blog</a></li>
-          </ul>
-        </li>
+    <div id="content">
 
-        <li><a href="#">Contacts</a></li>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
 
-      </ul>
-    </div>
-  </section>
-  </nav>
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        </div>

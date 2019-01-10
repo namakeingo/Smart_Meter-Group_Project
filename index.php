@@ -1,5 +1,6 @@
 <?php
-require_once ('Models/Connection.php');
+require_once('Models/ConnectionConsumption.php');
+require_once ('Models/ConnectionWeather');
 $view = new stdClass();
 $view->pageTitle = 'Homepage';
 //require_once('Views/index.phtml');
@@ -16,6 +17,10 @@ if (isset($_POST)) {
         $data['type'] = 'GAS';
     }
     $url = new Connection($data);
+if (isset($_POST['submit'])) {
+    $data = array('type' => 'ELEC',
+        'period' => 'PT1M');
+    $url = new ConnectionConsumption($data);
     $dataSet = $url->getData();
 
     if (isset($_POST['ELEC'])){
@@ -25,5 +30,10 @@ if (isset($_POST)) {
         echo 'Total Gas Usage:' . $dataSet->getGasCost(). '£';    echo "<br/>";
         echo 'Total Gas Consumption this month: '.$dataSet->getTotalConsumption().' kWh';    echo "<br/>";
     }
-    echo "<br/>";
+    // changes the url for the weather api
+    $url = new ConnectionWeather();
+    $dataSet = $url->getData();
+    echo '<p> Forecast '.$dataSet->getWeatherArray()[0]->getForecast().'</p>';
+
+
 }
