@@ -1,77 +1,86 @@
 <?php require('template/header.phtml') ?>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center tabs-align">
     <ul class="nav nav-tabs">
         <li class="active">
             <a  href="#1" data-toggle="tab">Current Month</a>
         </li>
-        <li><a href="#2" data-toggle="tab">Predicted Cost</a>
+        <li>
+            <a href="#2" data-toggle="tab">Predicted Cost</a>
         </li>
     </ul>
 </div>
-    <div class="tab-content ">
-        <div class="tab-pane active" id="1">
-            <article id="page-iconcolumn" class="page-section">
+<div class="tab-content ">
+    <div class="tab-pane active" id="1">
+        <article id="page-iconcolumn" class="page-section">
 
-                <section class="layout-iconcolumns container py-4">
+            <section class="container">
+                <p class="text-right">The current weather is:</p>
+            </section>
 
-                    <div class="row text-center">
+            <section class="layout-iconcolumns container py-4">
 
-                        <section class="col-md-4 my-3">
-    <span class="fa-stack fa-2x">
-      <i class="fas fa-circle-notch fa-9x"></i>
-    </span>
-                            <h4 class="overlay-to-circle"><i class="fas fa-bolt fa-7x"></i></h4>
-                            <h3 class="under-circle">£<?php echo $view->totalElec; ?></h3>
-                        </section>
+                <div class="row text-center">
 
-                        <section class="col-md-4 my-3">
-    <span class="fa-stack fa-2x">
-      <i class="fas fa-circle-notch fa-9x"></i>
-    </span>
-                            <h4 class="overlay-to-circle"><i class="fas fa-fire fa-7x"></i></h4>
-                            <h3 class="under-circle">£<?php echo $view->totalGas; ?></h3>
-                        </section>
+                    <section class="col-md-6 my-3">
+                              <span class="fa-stack fa-2x color-red">
+                                <i class="fas fa-circle-notch fa-9x circle-size"></i>
+                              </span>
+                        <h4 class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
+                        <h3 class="in-circle color-red">Energy</h3>
+                        <h3 class="under-circle">£<?php echo $view->totalElec; ?></h3>
+                    </section>
 
+                    <section class="col-md-6 my-3">
+                            <span class="fa-stack fa-2x color-green">
+                              <i class="fas fa-circle-notch fa-9x circle-size"></i>
+                            </span>
+                        <h4 class="overlay-to-circle color-green"><i class="fas fa-fire fa-7x"></i></h4>
+                        <h3 class="in-circle color-green">Gas</h3>
+                        <h3 class="under-circle">£<?php echo $view->totalGas; ?></h3>
+                    </section>
 
+                </div>
 
-                    </div>
+            </section>
 
-                </section>
-
-            </article>
-        </div>
-        <div class="tab-pane " id="2">
-            <article id="page-iconcolumn" class="page-section">
-
-                <section class="layout-iconcolumns container py-4">
-
-                    <div class="row text-center">
-
-                        <section class="col-md-4 my-3">
-    <span class="fa-stack fa-2x">
-      <i class="fas fa-circle-notch fa-9x"></i>
-    </span>
-                            <h4 class="overlay-to-circle"><i class="fas fa-bolt fa-7x"></i></h4>
-                            <h3 class="under-circle">£43,54</h3>
-                        </section>
-
-                        <section class="col-md-4 my-3">
-    <span class="fa-stack fa-2x">
-      <i class="fas fa-circle-notch fa-9x"></i>
-    </span>
-                            <h4 class="overlay-to-circle"><i class="fas fa-fire fa-7x"></i></h4>
-                            <h3 class="under-circle">£31,87</h3>
-                        </section>
-
-
-
-                    </div>
-
-                </section>
-
-            </article>
-        </div>
+        </article>
     </div>
+    <div class="tab-pane " id="2">
+        <article id="page-iconcolumn" class="page-section">
+
+            <section class="container">
+                <p class="text-right">The current weather is: <span class=""></span></p>
+            </section>
+
+            <section class="layout-iconcolumns container py-4">
+
+                <div class="row text-center">
+
+                    <section class="col-md-6 my-3">
+                              <span class="fa-stack fa-2x color-red">
+                                <i class="fas fa-circle-notch fa-9x circle-size"></i>
+                              </span>
+                        <h4 class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
+                        <h3 class="in-circle color-red">Energy</h3>
+                        <h3 class="under-circle">£<?php echo $view->totalElec*2; ?></h3>
+                    </section>
+
+                    <section class="col-md-6 my-3">
+                            <span class="fa-stack fa-2x color-green">
+                              <i class="fas fa-circle-notch fa-9x circle-size"></i>
+                            </span>
+                        <h4 class="overlay-to-circle color-green"><i class="fas fa-fire fa-7x"></i></h4>
+                        <h3 class="in-circle color-green">Gas</h3>
+                        <h3 class="under-circle">£<?php echo $view->totalGas*2; ?></h3>
+                    </section>
+
+                </div>
+
+            </section>
+
+        </article>
+    </div>
+</div>
 
 <?php require('template/footer.phtml') ?>
