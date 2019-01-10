@@ -14,11 +14,11 @@ $view->totalElec = $elecDataSet->getElecCost();
 $view->totalGas = $gasDataSet->getGasCost();
 
 //changes the url for the weather api
-$url = new ConnectionWeather('forecast');
+$url = new ConnectionWeather('forecast', 'London');
 // weather for 5 days in the future
 $view->weatherPredictionSet = $url->getData('forecast');
-$url = new ConnectionWeather('weather');
+$url = new ConnectionWeather('weather','London');
 // weather for the current time of access to the app
-$view->weatherNow = $url->getData('weather');
+$view->weatherNow = ($url->getData('weather'))->getWeatherArray()[0];
 
 require_once ('Views/index.phtml');

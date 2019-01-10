@@ -3,17 +3,17 @@ require_once('Connection.php');
 require_once ('WeatherDataSet.php');
 class ConnectionWeather extends Connection {
 
-    // id of the city the smart meter is
-    private $cityID;
+    // the country the smart meter is
+    private $country;
 
-    public function __construct($type)
+    public function __construct($type, $country)
     {
         // sets the city id
-        $this->cityID = 2172797;
+        $this->country = $country;
         // sets the url base to the url needed
         // type can hold two values either weather(now) or forecast(5 days ahead)
         parent::__construct('https://api.openweathermap.org/data/2.5/'. $type
-            . '?id='. $this->cityID .'&appid=50fcfcdd4d1147cbec838e629fe6b3bf');
+            . '?q='. $this->country .'&appid=50fcfcdd4d1147cbec838e629fe6b3bf');
         // sets the operations for the curl client
         parent::setOptCurl(array());
     }
