@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="css/custom.css">
   </head>
 
-    <body class="container <?php echo $view->weatherNow->getForecast(); ?>">
+    <body class="container <?php if(isset($view->weatherNow)) { echo $view->weatherNow->getForecast(); } ?>">
 
       <div class="bg wrapper">
         <nav id="sidebar">
