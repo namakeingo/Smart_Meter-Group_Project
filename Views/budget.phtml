@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h1>SET YOUR BUDGET</h1>
+<?php if(isset($_SESSION['error']))echo $_SESSION["error"];?>
+<form method="POST" action="">
+    E-mail : <input name="email" type="text">
+    Budget : <input name="price" type="text">
+    billing date : <input name="startDate" type="text">
+    <select name="option">
+        <option name="gas">Gas</option>
+        <option name="electricity">Electricity</option>
+        <option name="both">Both</option>
+    </select>
+    <button name="submit" type="submit">SUBMIT</button>
+</form>
+<a href="index.php">Home</a>
+</body>
+</html>
