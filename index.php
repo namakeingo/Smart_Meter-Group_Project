@@ -17,10 +17,10 @@ $view->totalGas = $gasDataSet->getGasCost();
 $url = new ConnectionLocation();
 $location = $url->getData();
 //changes the url for the weather api
-$url = new php('forecast', $location->getCountry());
+$url = new ConnectionWeather('forecast', $location->getCountry());
 // weather for 5 days in the future
 $view->weatherPredictionSet = $url->getData('forecast');
-$url = new php('weather',$location->getCountry());
+$url = new ConnectionWeather('weather',$location->getCountry());
 // weather for the current time of access to the app
 $view->weatherNow = ($url->getData('weather'))->getWeatherArray()[0];
 
