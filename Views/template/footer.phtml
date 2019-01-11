@@ -1,27 +1,6 @@
 </div>
-<footer class="site-footer bg-light d-flex justify-content-center">
-
-<!--<section class="layout-social">-->
-<!---->
-<!--  <a class="text-light px-4" href="twitter.com">-->
-<!--    <i class="layout-icon fab fa-twitter fa-4x" style="color:black;"></i>-->
-<!--  </a>-->
-<!---->
-<!--  <a class="text-light px-4" href="facebook.com">-->
-<!--    <i class="layout-icon fab fa-facebook fa-4x" style="color:black;"></i>-->
-<!--  </a>-->
-<!---->
-<!--  <a class="text-light px-4" href="Instagram.com">-->
-<!--    <i class="layout-icon fab fa-instagram fa-4x" style="color:black;"></i>-->
-<!--  </a>-->
-<!---->
-<!--  <a class="text-light px-4" href="youtube.com">-->
-<!--    <i class="layout-icon fab fa-youtube fa-4x" style="color:black;"></i>-->
-<!--  </a>-->
-<!--</section>-->
-
-</footer>
-
+</div>
+<!-- /#page-content-wrapper -->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -39,6 +18,16 @@
 <script src="js/scrollax.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/multiple.js"></script>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
 
 <script>
     google.charts.load('current', {packages: ['corechart', 'bar']});
@@ -62,7 +51,7 @@
 
         var options = {
             title: 'Consumption based on Houres',
-            chartArea: {width: '50%'},
+            chartArea: {width: '50%'},=
             isStacked: true,
             height: 600,
             hAxis: {

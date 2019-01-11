@@ -9109,49 +9109,36 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
 
+.tabs-align {
+  padding-left: 40%;
+
+}
 .overlay-to-circle {
-  padding-left: 57%;
-  padding-top: 0;
   font-size: 10px;
+  margin-left: -225px;
 }
-
-.tabs-align{
-  padding-left: 20%;
-}
-
 .under-circle{
   padding-top: 20%;
-  padding-left: 53%;
   font-size: 6rem;
   font-family: 'Sarabun', sans-serif;
   color: grey;
+  margin-left: -225px;
 }
+
+.small-size{
+  font-size: 30px;
+}
+
 .in-circle{
   padding-top: 0;
-  padding-left: 57%;
   font-size: 7rem;
   font-family: 'Sarabun', sans-serif;
-}
-
-.wrapper {
-  display: flex;
-  width: 100%;
-}
-
-#sidebar {
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  z-index: 999;
-  background: #7386D5;
-  color: #fff;
-  transition: all 0.3s;
+  margin-left: 65px;
 }
 
 .circle-size{
   font-size: 350px;
+  margin-left: -104px;
 }
 
 .color-red{
@@ -9164,9 +9151,6 @@ textarea.form-control {
   color: yellow;
 }
 
-.container{
-  padding-left:40px;
-}
 
 /* Default <£3 index.phtml js */
 .energySymC1 {
