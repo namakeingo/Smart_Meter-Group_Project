@@ -19,10 +19,10 @@ class ConnectionConsumption extends Connection
     private $dateTo;
 
     // data array is variable for setting the different fields
-    public function __construct($type,$period)
+    public function __construct($type,$period,$from)
     {
         // assigns the time of the dateTo and dateFrom to dateTime objects with london time zones
-        $this->dateFrom = new DateTime('first day of this month 00:00:00', new DateTimeZone('Europe/London'));
+        $this->dateFrom = new DateTime($from, new DateTimeZone('Europe/London'));
         $this->dateTo = new DateTime('now', new DateTimeZone('Europe/London'));
         // sets the date to 1 hour before the current date
         $this->setType($type);
