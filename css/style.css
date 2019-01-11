@@ -9110,7 +9110,7 @@ textarea.form-control {
     stroke-dashoffset: -136px; } }
 
 .overlay-to-circle {
-  padding-left: 53%;
+  padding-left: 57%;
   padding-top: 0;
   font-size: 10px;
 }
@@ -9128,7 +9128,7 @@ textarea.form-control {
 }
 .in-circle{
   padding-top: 0;
-  padding-left: 53%;
+  padding-left: 57%;
   font-size: 7rem;
   font-family: 'Sarabun', sans-serif;
 }
@@ -9162,4 +9162,8 @@ textarea.form-control {
 }
 .color-yellow{
   color: yellow;
+}
+
+.container{
+  padding-left:40px;
 }
