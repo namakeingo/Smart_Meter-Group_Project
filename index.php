@@ -1,6 +1,6 @@
 <?php
 require_once('Models/ConnectionConsumption.php');
-require_once ('Models/ConnectionWeather');
+require_once('Models/ConnectionWeather.php');
 require_once ('Models/ConnectionLocation.php');
 $view = new stdClass();
 $view->pageTitle = 'Homepage';
@@ -17,10 +17,10 @@ $view->totalGas = $gasDataSet->getGasCost();
 $url = new ConnectionLocation();
 $location = $url->getData();
 //changes the url for the weather api
-$url = new ConnectionWeather('forecast', $location->getCountry());
+$url = new php('forecast', $location->getCountry());
 // weather for 5 days in the future
 $view->weatherPredictionSet = $url->getData('forecast');
-$url = new ConnectionWeather('weather',$location->getCountry());
+$url = new php('weather',$location->getCountry());
 // weather for the current time of access to the app
 $view->weatherNow = ($url->getData('weather'))->getWeatherArray()[0];
 

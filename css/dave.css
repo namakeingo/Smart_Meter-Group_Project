@@ -11,3 +11,31 @@
     font-family: 'Sarabun', sans-serif;
     color: grey;
 }
+
+.Clouds, .clouds {
+    background-image: url("/images/clouds.jpg");
+    background-color: #cccccc;
+}
+.Drizzle, .drizzle, .Rain, .rain {
+    background-image: url("/images/rain.jpg");
+    background-color: #cccccc;
+}
+.Clear, .clear {
+    background-color: #aecbf9;
+}
+.Thunderstorm, .thunderstorm {
+    background-color: #aecbf9;
+}
+.Snow, .snow {
+    background-color: #aecbf9;
+}
+.Atmosphere, .atmosphere {
+    background-color: #aecbf9;
+}
+
+.tab-content {
+    background-color: white;
+    width: 120%;
+    margin-right: 24%;
+    padding-right: 20%;
+}
