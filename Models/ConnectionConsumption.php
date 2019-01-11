@@ -23,8 +23,8 @@ class ConnectionConsumption extends Connection
     {
         // assigns the time of the dateTo and dateFrom to dateTime objects with london time zones
         $this->dateFrom = new DateTime($from, new DateTimeZone('Europe/London'));
+        // sets the date to current time
         $this->dateTo = new DateTime('now', new DateTimeZone('Europe/London'));
-        // sets the date to 1 hour before the current date
         $this->setType($type);
         $this->setPeriod($period);
         // sets the values of the URL base with the appropriate parameters

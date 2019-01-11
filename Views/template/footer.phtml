@@ -29,45 +29,6 @@
     });
 </script>
 
-<script>
-    google.charts.load('current', {packages: ['corechart', 'bar']});
-    google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-            ['Hours', 'Consumption'],
-
-        <?php $string = ''; ?>
-        <?php foreach ($view->kwhElec as $value) {
-            echo '[\''.$value->getDate()->format('H:i').'\','.$value->getConsumption().'],
-                ';
-    }
-    ?>
-
-
-
-        ]);
-
-        var options = {
-            title: 'Consumption based on Houres',
-            chartArea: {width: '50%'},
-            isStacked: true,
-            height: 600,
-            hAxis: {
-                title: 'kWh',
-                minValue: 0
-            },
-            vAxis: {
-                title: 'Hour'
-            },
-
-        };
-
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-    }
-</script>
 </body>
 </html>
