@@ -47,29 +47,27 @@
     function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-            ['Houres', 'Consumption',],
-            ['00:00-01:00', 0.2],
-            ['01:00-02:00', 0.1],
-            ['02:00-03:00', 0.1],
-            ['03:00-04:00', 0.2],
-            ['04:00-05:00', 0.1],
-            ['05:00-06:00', 0.3],
-            ['06:00-07:00', 0.4],
-            ['07:00-08:00', 0.5],
-            ['08:00-09:00', 0.6],
-            ['09:00-10:00', 0.8],
-            ['10:00-11:00', 0.7],
-            ['11:00-12:00', 1.0],
+            ['Hours', 'Consumption'],
+
+        <?php $string = ''; ?>
+        <?php foreach ($view->kwhElec as $value) {
+            echo '[\''.$value->getDate()->format('H:i').'\','.$value->getConsumption().'],
+                ';
+    }
+    ?>
+
+
 
         ]);
 
         var options = {
             title: 'Consumption based on Houres',
             chartArea: {width: '50%'},
+            isStacked: true,
+            height: 600,
             hAxis: {
                 title: 'kWh',
-                minValue: 0,
-                maxValue: 2
+                minValue: 0
             },
             vAxis: {
                 title: 'Hour'
