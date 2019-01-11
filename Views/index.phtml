@@ -23,6 +23,61 @@
                 <div class="row text-center">
 
                     <section class="col-md-6 my-3">
+                              <span id="energySym" class="fa-stack fa-2x color-red">
+                                <i class="fas fa-circle-notch fa-9x circle-size"></i>
+                              </span>
+                        <h4 id="energyH4" class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
+                        <h3 id="energyH3" class="in-circle color-red">Energy</h3>
+                        <h3 class="under-circle">£<?php echo $view->totalElec; ?></h3>
+                        <script type="text/javascript">
+                        totalElectric = '<?php echo $view->totalElec;?>';
+                        if (totalElectric < 20) {
+                          document.getElementById("energySym").className = "fa-stack fa-2x energySymC1";
+                          document.getElementById("energyH4").className = "overlay-to-circle energyH4C1";
+                          document.getElementById("energyH3").className = "in-circle energyH3C1";
+                        }
+                        if (totalElectric < 5) {
+                          document.getElementById("energySym").className = "fa-stack fa-2x energySymC2";
+                          document.getElementById("energyH4").className = "overlay-to-circle energyH4C2";
+                          document.getElementById("energyH3").className = "in-circle energyH3C2";
+                        }
+
+                        if (totalElectric < 20) {
+                          document.getElementById("energySym").className = "fa-stack fa-2x energySymC3";
+                          document.getElementById("energyH4").className = "overlay-to-circle energyH4C3";
+                          document.getElementById("energyH3").className = "in-circle energyH3C3";
+                        }
+
+                        </script>
+                    </section>
+
+                    <section class="col-md-6 my-3">
+                            <span id="gasSym" class="fa-stack fa-2x color-green">
+                              <i class="fas fa-circle-notch fa-9x circle-size"></i>
+                            </span>
+                        <h4 id="gasH4" class="overlay-to-circle color-green"><i class="fas fa-fire fa-7x"></i></h4>
+                        <h3 id="gasH3" class="in-circle color-green">Gas</h3>
+                        <h3 class="under-circle">£<?php echo $view->totalGas; ?></h3>
+                        <script type="text/javascript">
+                        totalGas = '<?php echo $view->totalGas;?>';
+                        if (totalGas < 3) {
+                          document.getElementById("gasSym").className = "fa-stack fa-2x gasSymC1";
+                          document.getElementById("gasH4").className = "overlay-to-circle gasH4C1";
+                          document.getElementById("gasH3").className = "in-circle gasH3C1";
+                        }
+
+                        if (totalGas < 5) {
+                          document.getElementById("gasSym").className = "fa-stack fa-2x gasSymC2";
+                          document.getElementById("gasH4").className = "overlay-to-circle gasH4C2";
+                          document.getElementById("gasH3").className = "in-circle gasH3C2";
+                        }
+
+                        if (totalGas < 20) {
+                          document.getElementById("gasSym").className = "fa-stack fa-2x gasSymC3";
+                          document.getElementById("gasH4").className = "overlay-to-circle gasH4C3";
+                          document.getElementById("gasH3").className = "in-circle gasH3C3";
+                        }
+                        </script>
                               <span class="fa-stack fa-2x color-red">
                                 <i class="fas fa-circle-notch fa-9x circle-size"></i>
                               </span>
