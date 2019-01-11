@@ -17,9 +17,7 @@ class ConsumptionDataSet
         $tempArray  = json_decode($string, true);
         // the useful data is stored as an array called data in an array called data
         $tempArray = $tempArray['data']['data'];
-        // first loop is to get to the arrays containing the consumption data
         foreach ($tempArray as $headArray) {
-            // second loop is to get to the actual data
             // time stamp is at position 0
             // consumption is at position 1
                 $this->consumptionArray[] = new ConsumptionData($headArray[0], $headArray[1]);
@@ -34,7 +32,7 @@ class ConsumptionDataSet
         foreach ($this->consumptionArray as $value){
             //Create a new variable called H which will store the specified value 'hour'
             $H=intval($value->getDate()->format('H'));
-            //Check if the Hour is a nigh one(00:00 till 07:00) or a day one(08:00 till 23:00)
+            //Check if the Hour is a nigh one(00:00 till 07:00) or a day one(07:01 till 23:59)
             if($H < 7){
                 // Add all the night consumption to the varaible inizialised at the beginning
                 $nightConsumption += $value->getConsumption();
@@ -43,9 +41,9 @@ class ConsumptionDataSet
                 $dayConsumption += $value->getConsumption();
             }
         }
-        // Get total day consumption's cost
+        // Get total day consumption's cost in pences
         $dayCost= $dayConsumption*17.3;
-        // Get total night consumption's cost
+        // Get total night consumption's cost in pences
         $nightCost=$nightConsumption*11.51;
         // Get total Electricity consumption price in pences
         $costInPences = $dayCost+$nightCost;
@@ -69,7 +67,7 @@ class ConsumptionDataSet
 
     }
 
-    // This function gets the total consumption for either Gas or Electricity
+    // This function gets the total consumption for either Gas or Electricity in kilowatt
     public function getTotalConsumption(){
         // sets a new variable
         $totalConsumption=0;
