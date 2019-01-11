@@ -9165,7 +9165,7 @@ textarea.form-control {
 }
 
 
-/* Default <£3 */
+/* Default <£3 index.phtml js */
 .energySymC1 {
   color: green;
 }
@@ -9189,7 +9189,7 @@ textarea.form-control {
 .gasH3C1 {
   color: green;
 }
-/*  <£5 */
+/*  <£5 index.phtml js */
 .energySymC2 {
   color: green;
 }
@@ -9214,7 +9214,7 @@ textarea.form-control {
   color: green;
 }
 
-/*  <£20 */
+/*  <£20 index.phtml js */
 .energySymC3 {
   color: red;
 }
