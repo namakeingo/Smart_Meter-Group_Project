@@ -78,6 +78,21 @@
                           document.getElementById("gasH3").className = "in-circle gasH3C3";
                         }
                         </script>
+                              <span class="fa-stack fa-2x color-red">
+                                <i class="fas fa-circle-notch fa-9x circle-size"></i>
+                              </span>
+                        <h4 class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
+                        <h3 class="in-circle color-red">Energy</h3>
+                        <h3 class="under-circle">£<?php echo $view->totalElec; ?></h3>
+                    </section>
+
+                    <section class="col-md-6 my-3">
+                            <span class="fa-stack fa-2x color-green">
+                              <i class="fas fa-circle-notch fa-9x circle-size"></i>
+                            </span>
+                        <h4 class="overlay-to-circle color-green"><i class="fas fa-fire fa-7x"></i></h4>
+                        <h3 class="in-circle color-green">Gas</h3>
+                        <h3 class="under-circle">£<?php echo $view->totalGas; ?></h3>
                     </section>
 
                 </div>
