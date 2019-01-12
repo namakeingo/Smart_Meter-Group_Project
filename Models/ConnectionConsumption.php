@@ -27,7 +27,7 @@ class ConnectionConsumption extends Connection
         $this->dateTo = new DateTime('now', new DateTimeZone('Europe/London'));
         $this->setType($type);
         $this->setPeriod($period);
-        $this->setDateFrom($time);
+        $this->setDateFrom($from);
         // sets the values of the URL base with the appropriate parameters
         parent::__construct('https://adhocapi.energyhive.com/hive/ac89ccdce8e878e227a93f050413c7d8/type/'. $this->type .
             '/?units=kWh&from='.
