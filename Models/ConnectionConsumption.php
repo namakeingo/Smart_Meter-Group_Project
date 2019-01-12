@@ -19,12 +19,12 @@ class ConnectionConsumption extends Connection
     private $dateTo;
 
     // assigns the time of the dateTo and dateFrom to dateTime objects with london time zones
-    public function __construct($type,$period,$from)
+    public function __construct($type,$period,$from, $to)
     {
         // assigns the time of the dateTo and dateFrom to dateTime objects with london time zones
-        $this->dateFrom = new DateTime($from, new DateTimeZone('Europe/London'));
+        $this->setDateFrom($from);
         // sets the date to current time
-        $this->dateTo = new DateTime('now', new DateTimeZone('Europe/London'));
+        $this->setDateTo($to);
         $this->setType($type);
         $this->setPeriod($period);
         $this->setDateFrom($from);
@@ -88,7 +88,7 @@ class ConnectionConsumption extends Connection
      */
     public function setDateFrom($dateFrom)
     {
-        $this->dateFrom = new DateTime($dateFrom);
+        $this->dateFrom = new DateTime($dateFrom, new DateTimeZone('Europe/London'));
     }
 
     /**
@@ -96,7 +96,7 @@ class ConnectionConsumption extends Connection
      */
     public function setDateTo($dateTo)
     {
-        $this->dateTo = new DateTime($dateTo);
+        $this->dateTo = new DateTime($dateTo, new DateTimeZone('Europe/London'));
     }
 
     /**

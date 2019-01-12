@@ -21,9 +21,9 @@ class WeatherData {
         // basic fields of the class are set to their values
         $this->forecast = $forecast;
         $this->description = $description;
-        $this->temp = $temp - 273.15;
-        $this->tempMax = $tempMax - 273.15;
-        $this->tempMin = $tempMin - 273.15;
+        $this->temp = (($temp - 273.15) * 9/5)+32;
+        $this->tempMax = (($tempMax - 273.15) * 9/5) + 32;
+        $this->tempMin = (($tempMin - 273.15) * 9/5) + 32;
         $this->country = $country;
         $this->setNightOrDay($time);
     }
