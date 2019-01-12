@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e7f2f0d-4618-42be-84a5-abb56eb00d00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Views/comparison.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comparison.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ConnectionConsumption.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ConnectionConsumption.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/comparison.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/comparison.phtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,24 +29,30 @@
     <session id="-386878842">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="6" />
-          <entry key="phtml" value="3" />
+          <entry key="css" value="1" />
+          <entry key="php" value="7" />
+          <entry key="phtml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="9" />
+          <entry key="CSS" value="1" />
+          <entry key="PHP" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="css" value="94" />
           <entry key="php" value="1195" />
-          <entry key="phtml" value="93" />
+          <entry key="phtml" value="218" />
+          <entry key="txt" value="147" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="1288" />
+          <entry key="CSS" value="94" />
+          <entry key="PHP" value="1413" />
+          <entry key="PLAIN_TEXT" value="147" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -68,7 +70,29 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/ConnectionConsumption.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/comparison.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#li#0;n#ul#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -76,6 +100,7 @@
       <find>period</find>
       <find>var</find>
       <find>ConnectionConsumption</find>
+      <find>this</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -91,9 +116,11 @@
       <list>
         <option value="$PROJECT_DIR$/Models/ConsumptionDataSet.php" />
         <option value="$PROJECT_DIR$/Models/ConnectionConsumption.php" />
-        <option value="$PROJECT_DIR$/Views/comparison.phtml" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/comparison.php" />
+        <option value="$PROJECT_DIR$/Views/template/header.phtml" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/Views/comparison.phtml" />
       </list>
     </option>
   </component>
@@ -189,14 +216,14 @@
       <workItem from="1547153255384" duration="7320000" />
       <workItem from="1547161037613" duration="1307000" />
       <workItem from="1547198894489" duration="1724000" />
-      <workItem from="1547282498087" duration="5368000" />
+      <workItem from="1547282498087" duration="6439000" />
     </task>
-    <task id="LOCAL-00001" summary="- issue with merge fixed">
-      <created>1547141149530</created>
+    <task id="LOCAL-00001" summary="Changes &#10;- Created the comparion php and a basic phtml output.&#10;- Changed the constructor of connectionConsumption (but someone already did it too i think)">
+      <created>1547288058307</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1547141149530</updated>
+      <updated>1547288058307</updated>
     </task>
     <task id="LOCAL-00002" summary="- Data displayed on the page">
       <created>1547142315183</created>
@@ -219,30 +246,32 @@
       <option name="project" value="LOCAL" />
       <updated>1547160497793</updated>
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13222000" />
+    <option name="totallyTimeSpent" value="14293000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2730711" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.32569557" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.32569557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.32786885" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3289689" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -261,16 +290,10 @@
     <MESSAGE value="- Data displayed on the page" />
     <MESSAGE value="Changes &#10;- implemented a way to get 5 days worth of data for the weather from the api&#10;- implemented a way to store the time as night or day for the weather &#10;- implemented a way to get access to the data from the controller to the view for the weather" />
     <MESSAGE value="Changes &#10;- implemented way to search weather data simply by country" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes &#10;- implemented way to search weather data simply by country" />
+    <MESSAGE value="Changes &#10;- Created the comparion php and a basic phtml output.&#10;- Changed the constructor of connectionConsumption (but someone already did it too i think)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes &#10;- Created the comparion php and a basic phtml output.&#10;- Changed the constructor of connectionConsumption (but someone already did it too i think)" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Views/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/ConnectionWeather.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -286,13 +309,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chart.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/comparison.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -324,8 +340,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/ConnectionConsumption.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="21" column="52" lean-forward="true" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+        <state relative-caret-position="249">
+          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="9232" column="11" lean-forward="true" selection-start-line="9232" selection-start-column="11" selection-end-line="9232" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/template/header.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/comparison.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
