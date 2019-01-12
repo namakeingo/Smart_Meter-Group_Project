@@ -2,7 +2,9 @@
 <project version="4">
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="C:\Users\sohai\Desktop\ux" />
+      <path value="$PROJECT_DIR$/../../../../../../../../../sohai/Desktop/ux" />
+      <path value="$PROJECT_DIR$/../../../../../sohai/Desktop/ux" />
+      <path value="" />
     </include_path>
   </component>
 </project>

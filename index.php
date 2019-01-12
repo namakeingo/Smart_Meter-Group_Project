@@ -5,10 +5,10 @@ require_once ('Models/ConnectionLocation.php');
 $view = new stdClass();
 $view->pageTitle = 'Homepage';
 
-$elecConsum = new ConnectionConsumption('ELEC','PT1H');
+$elecConsum = new ConnectionConsumption('ELEC','PT1H','first day of this month 00:00:00');
 $elecDataSet = $elecConsum->getData();
 
-$gasConsum = new ConnectionConsumption('GAS','PT1H');
+$gasConsum = new ConnectionConsumption('GAS','PT1H','first day of this month 00:00:00');
 $gasDataSet = $gasConsum->getData();
 
 $view->totalElec = $elecDataSet->getElecCost();
