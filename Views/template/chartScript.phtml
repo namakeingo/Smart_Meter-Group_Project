@@ -15,7 +15,7 @@
 //            $view->dateFrom = new DateTime($view->from, new DateTimeZone('Europe/London'));
 //            echo $view->dateFrom->format('Y-m-d H:i:s');
             $view->periodName='Hours';
-            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now' );
+            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now');
             $consumDataSet = $Consum->getData();
             $view->kwhConsum = $consumDataSet->getConsumptionArray();
             foreach ($view->kwhConsum as $value) {
@@ -41,7 +41,7 @@
             $view->period='P1D';
             $view->from='last monday 00:00:00';
             $view->periodName='Days';
-            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now' );
+            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now');
             $consumDataSet = $Consum->getData();
             $view->kwhConsum = $consumDataSet->getConsumptionArray();
             foreach ($view->kwhConsum as $value) {
@@ -68,7 +68,7 @@
             $view->period='P1W';
             $view->from='first monday of this month 00:00:00 -7 days';
             $view->periodName='Weeks';
-            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now' );
+            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now');
             $consumDataSet = $Consum->getData();
             $view->kwhConsum = $consumDataSet->getConsumptionArray();
             foreach ($view->kwhConsum as $value) {
@@ -96,7 +96,7 @@
             $view->period='P1M';
             $view->from='first day of January 00:00:00';
             $view->periodName='Months';
-            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now' );
+            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now');
             $consumDataSet = $Consum->getData();
             $view->kwhConsum = $consumDataSet->getConsumptionArray();
             foreach ($view->kwhConsum as $value) {
