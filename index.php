@@ -4,14 +4,6 @@ require_once('Models/ConnectionWeather.php');
 require_once ('Models/ConnectionLocation.php');
 $view = new stdClass();
 $view->pageTitle = 'Homepage';
-$servername = "group2.edu.csesalford.com";
-$username = "group2";
-$password = "SWLWmTppbPUQpzX";
-$db = "group2";
-
-$conn = new PDO("mysql:host=$servername;dbname=$db",$username,$password);
-$data = $conn->prepare("SELECT * FROM budget");
-$data->execute();
 
 
 $elecConsum = new ConnectionConsumption('ELEC','PT1H');
