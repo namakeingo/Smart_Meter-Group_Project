@@ -2,9 +2,11 @@
 <project version="4">
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$PROJECT_DIR$/../../../../../../../../../sohai/Desktop/ux" />
+      <path value="C:/../../../sohai/Desktop/ux" />
       <path value="$PROJECT_DIR$/../../../../../sohai/Desktop/ux" />
       <path value="" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/php-ai/php-ml" />
     </include_path>
   </component>
 </project>

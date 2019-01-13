@@ -15,16 +15,19 @@ class WeatherData {
     private $tempMax;
     private $country;
     private $time;
+    // day night variable stores the day night status of a weather data object
+    private $dayNight;
 
     public function __construct($forecast, $description, $temp, $tempMax, $tempMin, $country, $time)
     {
         // basic fields of the class are set to their values
         $this->forecast = $forecast;
         $this->description = $description;
-        $this->temp = $temp - 273.15;
-        $this->tempMax = $tempMax - 273.15;
-        $this->tempMin = $tempMin - 273.15;
+        $this->temp = (($temp - 273.15) * 9/5)+32;
+        $this->tempMax = (($tempMax - 273.15) * 9/5) + 32;
+        $this->tempMin = (($tempMin - 273.15) * 9/5) + 32;
         $this->country = $country;
+        $this->time = $time;
         $this->setNightOrDay($time);
     }
 
@@ -70,11 +73,19 @@ class WeatherData {
 
     // Assumes midnight to 7 am is night and onwards to the rest of the day is the day
     public function setNightOrDay($time) {
-        if ($time < 7) {
-           $this->time = 'Night';
+        if ($time->format('H') < 7) {
+           $this->dayNight = 'Night';
         }
         else {
-           $this->time = 'Day';
+           $this->dayNight = 'Day';
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTime()
+    {
+        return $this->time;
     }
 }

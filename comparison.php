@@ -6,7 +6,7 @@ $view->pageTitle = 'Consumption Comparison';
 
 function getConsumption($type,$time){
     //This gets the total consumption of a type (GAS or ELEC) of one day
-    $connectionConsumption = new ConnectionConsumption($type,'P1D', $time);
+    $connectionConsumption = new ConnectionConsumption($type,'P1D', $time,'now');
     $consumptionDataSet = $connectionConsumption->getData();             //This hold a ConsumptionDataSet object
     $totalConsumption = $consumptionDataSet->getTotalConsumption();      //This is the total consumption of electricity in an hour
     return $totalConsumption;
