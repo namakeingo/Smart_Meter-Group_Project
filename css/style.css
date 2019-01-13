@@ -9110,8 +9110,15 @@ textarea.form-control {
     stroke-dashoffset: -136px; } }
 
 .tabs-align {
-  padding-left: 40%;
-
+  width: auto;
+  margin: auto;
+  text-align: center;
+}
+.nav-tabs{
+  display: inline-table;
+}
+.nav-tabs li{
+  display: inline;
 }
 
 .small-size{
@@ -9122,7 +9129,6 @@ textarea.form-control {
   padding-top: 0;
   font-size: 7rem;
   font-family: 'Sarabun', sans-serif;
-  margin-left: 65px;
   margin: 0 auto;
 }
 
