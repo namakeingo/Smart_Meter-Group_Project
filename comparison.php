@@ -12,13 +12,22 @@ function getConsumption($type,$time){
     return $totalConsumption;
 }
 
-$gasYesterday = getConsumption('GAS', 'yesterday');
-$elecYesterday = getConsumption('ELEC', 'yesterday');
-$view->yesterdayConsumption = $gasYesterday+$elecYesterday;
+$view->gasYesterday = getConsumption('GAS', 'yesterday');
+$view->elecYesterday = getConsumption('ELEC', 'yesterday');
+$view->yesterdayConsumption = $view->gasYesterday+$view->elecYesterday;
 
-$gasToday = getConsumption('GAS', 'today');
-$elecToday = getConsumption('ELEC', 'today');
-$view->todayConsumption = $gasToday+$elecToday;
+$view->gasToday = getConsumption('GAS', 'today');
+$view->elecToday = getConsumption('ELEC', 'today');
+$view->todayConsumption = $view->gasToday+$view->elecToday;
 
+$view->gasDifference = $view->gasYesterday - $view->gasToday;
+$view->electricDifference = $view->elecYesterday - $view->elecToday;
+$view->consumptionDifference = $view->yesterdayConsumption - $view->todayConsumption;
+
+if ($view->consumptionDifference > 0) {
+    $view->todayIsBetter = true;
+} else {
+    $view->todayIsBetter = false;
+}
 require_once ('Views/comparison.phtml');
 ?>
