@@ -1,0 +1,178 @@
+
+<script>
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawChartDay);
+    google.charts.setOnLoadCallback(drawChartWeek);
+    google.charts.setOnLoadCallback(drawChartMonth);
+    google.charts.setOnLoadCallback(drawChartYear);
+
+    function drawChartDay() {
+        var data = google.visualization.arrayToDataTable([
+            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
+            <?php
+            $view->period='PT1H';
+            $view->from='today 00:00:00';
+//            $view->dateFrom = new DateTime($view->from, new DateTimeZone('Europe/London'));
+//            echo $view->dateFrom->format('Y-m-d H:i:s');
+            $view->periodName='Hours';
+            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from);
+            $consumDataSet = $Consum->getData();
+            $view->kwhConsum = $consumDataSet->getConsumptionArray();
+            foreach ($view->kwhConsum as $value) {
+                echo '[\''.$value->getDate()->modify('-1 hour')->format('H:i').' - '
+                    .$value->getDate()->modify('+1 hour')->format('H:i')
+                    .'\','.$value->getConsumption().'],
+            ';
+            }
+            ?>
+        ]);
+        var periodName = '<?php echo $view->periodName ?>';
+        // set common style for chart
+        var options = styleChart(data.getNumberOfRows(), periodName);
+        var chart = new google.visualization.BarChart(document.getElementById('chart_divDay'));
+        chart.draw(data, options);
+    }
+
+    function drawChartWeek() {
+        var data = google.visualization.arrayToDataTable([
+            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
+
+            <?php
+            $view->period='P1D';
+            $view->from='last monday 00:00:00';
+            $view->periodName='Days';
+            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from);
+            $consumDataSet = $Consum->getData();
+            $view->kwhConsum = $consumDataSet->getConsumptionArray();
+            foreach ($view->kwhConsum as $value) {
+                echo '[\''.$value->getDate()->format('D')
+                    .'\','.$value->getConsumption().'],
+            ';
+            }
+            ?>
+        ]);
+        var periodName = '<?php echo $view->periodName ?>';
+        // set common style for chart
+        var options = styleChart(data.getNumberOfRows(), periodName);
+        var chart = new google.visualization.BarChart(document.getElementById('chart_divWeek'));
+        chart.draw(data, options);
+    }
+
+
+
+    function drawChartMonth() {
+        var data = google.visualization.arrayToDataTable([
+            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
+
+            <?php
+            $view->period='P1W';
+            $view->from='first monday of this month 00:00:00 -7 days';
+            $view->periodName='Weeks';
+            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from);
+            $consumDataSet = $Consum->getData();
+            $view->kwhConsum = $consumDataSet->getConsumptionArray();
+            foreach ($view->kwhConsum as $value) {
+                echo '[\''.$value->getDate()->format('d-m').' - '
+                    .$value->getDate()->modify('+6 days')->format('d-m')
+                    .'\','.$value->getConsumption().'],
+            ';
+            }
+            ?>
+        ]);
+        var periodName = '<?php echo $view->periodName ?>';
+        // set common style for chart
+        var options = styleChart(data.getNumberOfRows(), periodName);
+        var chart = new google.visualization.BarChart(document.getElementById('chart_divMonth'));
+        chart.draw(data, options);
+    }
+
+
+
+    function drawChartYear() {
+        var data = google.visualization.arrayToDataTable([
+            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
+
+            <?php
+            $view->period='P1M';
+            $view->from='first day of January 00:00:00';
+            $view->periodName='Months';
+            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from);
+            $consumDataSet = $Consum->getData();
+            $view->kwhConsum = $consumDataSet->getConsumptionArray();
+            foreach ($view->kwhConsum as $value) {
+                echo '[\''.$value->getDate()->format('M')
+                    .'\','.$value->getConsumption().'],
+            ';
+            }
+            ?>
+        ]);
+        var periodName = '<?php echo $view->periodName ?>';
+        // set common style for chart
+        var options = styleChart(data.getNumberOfRows(), periodName);
+        var chart = new google.visualization.BarChart(document.getElementById('chart_divYear'));
+        chart.draw(data, options);
+    }
+
+    function styleChart(NumberOfRows, periodName){
+        var chartAreaHeight;
+        if (NumberOfRows <= 5){
+            // set inner height to 70 pixels per row
+            chartAreaHeight = NumberOfRows * 70;
+        }
+        else if (NumberOfRows <= 12){
+            // set inner height to 50 pixels per row
+            chartAreaHeight = NumberOfRows * 50;
+        }
+        else if (NumberOfRows <= 18){
+            // set inner height to 50 pixels per row
+            chartAreaHeight = NumberOfRows * 30;
+        }
+        else{
+            // set inner height to 30 pixels per row
+            chartAreaHeight = NumberOfRows * 20;
+        }
+        // add padding to outer height to accomodate title, axis labels, etc
+        var chartHeight = chartAreaHeight + 150;
+        //set color based on ELEC or GAS $view->type
+        var colorSet;
+        if ('<?php echo $view->type ?>'==='ELEC'){
+            colorSet= '#efda00';
+        }
+        else if ('<?php echo $view->type ?>'==='GAS'){
+            colorSet= '#8e48b0';
+        }
+        return options = {
+            title: '<?php echo $view->pageTitle ?> Consumption Based On '+periodName,
+            titleTextStyle:{fontSize: 19},
+            chartArea: {
+                width: '60%',
+                height: chartAreaHeight
+            },
+            isStacked: true,
+            colors: [colorSet],
+            height: chartHeight,
+            hAxis: {
+                title: 'kWh',
+                minValue: 0,
+                maxValue: 0.1,
+                viewWindow: {
+                    min:0},
+                titleTextStyle:{fontSize: 17},
+                textStyle:{fontSize: 17}
+            },
+            vAxis: {
+                title: periodName,
+                titleTextStyle:{fontSize: 17},
+                textStyle:{fontSize: 17},
+                // textPosition: 'in'
+            },
+            legend: {textStyle:{fontSize: 17}},
+            tooltip: {textStyle:{fontSize: 17}},
+            animation: {
+                duration: 1000,
+                easing: 'out',
+                startup: true
+            }
+        };
+    }
+</script>
