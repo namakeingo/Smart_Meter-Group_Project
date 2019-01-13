@@ -105,7 +105,7 @@
                               </span>
                         <h4 class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
                         <h3 class="in-circle color-red">Elec</h3>
-                        <h3 class="under-circle">£<?php echo $view->totalElec*2; ?></h3>
+                        <h3 class="under-circle"><?php echo $view->predictedUsage[0]; ?>kWh</h3>
                     </section>
 
                     <section class="col-md-6 my-3">
@@ -123,6 +123,38 @@
 
         </article>
     </div>
+    <section class="container adjustPos">
+    <p class="text-right"><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
+    <script type="text/javascript">
+        function invertColor() {
+            // the css we are going to inject
+            let css = 'html {-webkit-filter: invert(100%);' +
+                '-moz-filter: invert(100%);' +
+                '-o-filter: invert(100%);' +
+                '-ms-filter: invert(100%); }';
+
+            let head = $('head')[0];
+            let invertStyle = $('#invert')[0];
+
+            if (invertStyle) {
+                head.removeChild(invertStyle);
+            } else {
+                let style = document.createElement('style');
+
+                style.type = 'text/css';
+                style.id = 'invert';
+                if (style.styleSheet){
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+
+                //injecting the css to the head
+                head.appendChild(style);
+            }}
+
+    </script>
+    </section>
 </div>
 
 <?php require('template/footer.phtml') ?>
