@@ -14,7 +14,7 @@ class ConnectionLocation extends Connection
     public function __construct()
     {
         $this->ipAddress = $_SERVER['REMOTE_ADDR'];
-        $this->ipAddress = '134.201.250.155';
+        $this->ipAddress = '88.98.241.235';
         parent::__construct('http://api.ipstack.com/'. $this->ipAddress
             . '?access_key=d4161d78d676a0dfff2d0f071efaba3c');
         parent::setOptCurl(array(CURLOPT_RETURNTRANSFER => 1));
