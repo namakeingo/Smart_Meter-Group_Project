@@ -1,13 +1,21 @@
+.col-md-6 {
+    padding: 0 0 0 0 !important;
+}
+.col-md-6 .fa-stack{
+    width:auto;
+    margin: 0 auto;
+}
+
 .overlay-to-circle {
-    padding-left: 57%;
-    padding-top: 5%;
+    margin: 0 auto;
+    font-size: 10px;
     color: grey;
 }
 
 .under-circle{
-    padding-top: 25%;
-    padding-left: 55%;
-    font-size: 4rem;
+    margin: 0 auto;
+    padding-top: 20%;
+    font-size: 6rem;
     font-family: 'Sarabun', sans-serif;
     color: grey;
 }

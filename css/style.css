@@ -9110,19 +9110,15 @@ textarea.form-control {
     stroke-dashoffset: -136px; } }
 
 .tabs-align {
-  padding-left: 40%;
-
+  width: auto;
+  margin: auto;
+  text-align: center;
 }
-.overlay-to-circle {
-  font-size: 10px;
-  margin-left: -225px;
+.nav-tabs{
+  display: inline-table;
 }
-.under-circle{
-  padding-top: 20%;
-  font-size: 6rem;
-  font-family: 'Sarabun', sans-serif;
-  color: grey;
-  margin-left: -225px;
+.nav-tabs li{
+  display: inline;
 }
 
 .small-size{
@@ -9133,95 +9129,27 @@ textarea.form-control {
   padding-top: 0;
   font-size: 7rem;
   font-family: 'Sarabun', sans-serif;
-  margin-left: 65px;
+  margin: 0 auto;
 }
 
 .circle-size{
   font-size: 350px;
-  margin-left: -104px;
+  margin: 0 auto;
 }
 
-.color-red{
-  color: red;
-}
+/* Default <£5 index.phtml js */
 .color-green{
   color: green;
 }
+/*  <£15 index.phtml js */
 .color-yellow{
-  color: yellow;
+  color: #f0f700;
 }
-
-
-/* Default <£3 index.phtml js */
-.energySymC1 {
-  color: green;
-}
-
-.energyH4C1 {
-  color: green;
-}
-
-.energyH3C1 {
-  color: green;
-}
-
-.gasSymC1 {
-  color: green;
-}
-
-.gasH4C1 {
-  color: green;
-}
-
-.gasH3C1 {
-  color: green;
-}
-/*  <£5 index.phtml js */
-.energySymC2 {
-  color: green;
-}
-
-.energyH4C2 {
-  color: green;
-}
-
-.energyH3C2 {
-  color: green;
-}
-
-.gasSymC2 {
-  color: green;
-}
-
-.gasH4C2 {
-  color: green;
-}
-
-.gasH3C2 {
-  color: green;
-}
-
 /*  <£20 index.phtml js */
-.energySymC3 {
-  color: red;
+.color-orange{
+  color: orange;
 }
-
-.energyH4C3 {
-  color: red;
-}
-
-.energyH3C3 {
-  color: red;
-}
-
-.gasSymC3 {
-  color: red;
-}
-
-.gasH4C3 {
-  color: red;
-}
-
-.gasH3C3 {
+/*  >£20 index.phtml js */
+.color-red{
   color: red;
 }
