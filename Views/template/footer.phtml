@@ -1,86 +1,35 @@
 </div>
-<footer class="site-footer bg-light d-flex justify-content-center">
-
-<!--<section class="layout-social">-->
-<!---->
-<!--  <a class="text-light px-4" href="twitter.com">-->
-<!--    <i class="layout-icon fab fa-twitter fa-4x" style="color:black;"></i>-->
-<!--  </a>-->
-<!---->
-<!--  <a class="text-light px-4" href="facebook.com">-->
-<!--    <i class="layout-icon fab fa-facebook fa-4x" style="color:black;"></i>-->
-<!--  </a>-->
-<!---->
-<!--  <a class="text-light px-4" href="Instagram.com">-->
-<!--    <i class="layout-icon fab fa-instagram fa-4x" style="color:black;"></i>-->
-<!--  </a>-->
-<!---->
-<!--  <a class="text-light px-4" href="youtube.com">-->
-<!--    <i class="layout-icon fab fa-youtube fa-4x" style="color:black;"></i>-->
-<!--  </a>-->
-<!--</section>-->
-
-</footer>
-
+</div>
+</div>
+<!-- /#page-content-wrapper -->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
-<script src="js/popper.min.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
 <script src="js/jquery.stellar.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/aos.js"></script>
-<script src="js/jquery.animateNumber.min.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
 <script src="js/scrollax.min.js"></script>
 <script src="js/main.js"></script>
-<script src="js/multiple.js"></script>
 
 <script>
-    google.charts.load('current', {packages: ['corechart', 'bar']});
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-            ['Houres', 'Consumption',],
-            ['00:00-01:00', 0.2],
-            ['01:00-02:00', 0.1],
-            ['02:00-03:00', 0.1],
-            ['03:00-04:00', 0.2],
-            ['04:00-05:00', 0.1],
-            ['05:00-06:00', 0.3],
-            ['06:00-07:00', 0.4],
-            ['07:00-08:00', 0.5],
-            ['08:00-09:00', 0.6],
-            ['09:00-10:00', 0.8],
-            ['10:00-11:00', 0.7],
-            ['11:00-12:00', 1.0],
-
-        ]);
-
-        var options = {
-            title: 'Consumption based on Houres',
-            chartArea: {width: '50%'},
-            hAxis: {
-                title: 'kWh',
-                minValue: 0,
-                maxValue: 2
-            },
-            vAxis: {
-                title: 'Hour'
-            },
-
-        };
-
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-    }
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
 </script>
+
+<script>
+    //script that assure that all charts are loaded with the window width
+    function activeElement() {
+        document.getElementById("emptySpaceTab").className = "tab-pane";
+        document.getElementById("weekTab").className = "tab-pane";
+        document.getElementById("monthTab").className = "tab-pane";
+        document.getElementById("yearTab").className = "tab-pane";
+    }
+    setTimeout(activeElement, 1000);
+</script>
+
 </body>
 </html>
