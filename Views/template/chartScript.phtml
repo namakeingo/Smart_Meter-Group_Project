@@ -45,7 +45,7 @@
 
     function drawChartDay() {
         var data = google.visualization.arrayToDataTable([
-            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
+            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
             <?php
             $view->period='PT1H';
             $view->from='today 00:00:00';
@@ -72,7 +72,7 @@
 
     function drawChartWeek() {
         var data = google.visualization.arrayToDataTable([
-            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
+            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
 
             <?php
             $view->period='P1D';
@@ -99,7 +99,7 @@
 
     function drawChartMonth() {
         var data = google.visualization.arrayToDataTable([
-            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
+            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
 
             <?php
             $view->period='P1W';
@@ -127,7 +127,7 @@
 
     function drawChartYear() {
         var data = google.visualization.arrayToDataTable([
-            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
+            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
 
             <?php
             $view->period='P1M';

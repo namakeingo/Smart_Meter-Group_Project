@@ -31,5 +31,104 @@
 <!--    setTimeout(activeElement, 1000);-->
 <!--</script>-->
 
+<script>
+    $( document ).ready(function() {
+        $( "#doughnut" ).click(function() {
+            setTimeout(
+                function() {
+                    chartContainerElec('chartContainer','Electricity',<?php echo $view->totalElec ?>,40)
+                },
+                50);
+            setTimeout(
+                function() {
+                        chartContainerGas('chartContainer2','Gas',<?php echo $view->totalGas ?>,40)
+                },
+                50);
+        });
+    });
+
+    function chartContainerElec ( target,type,Cost,setBadget) {
+        var remainingBudget = setBadget-Cost;
+        CanvasJS.addColorSet("set",
+            [//colorSet Array
+                <?php echo "\"" . $colour[0] . "\""; ?>
+                ,"lightgrey"
+            ]);
+        var chart = new CanvasJS.Chart(target,
+            {
+                colorSet: "set",
+
+                exportEnabled: true,
+                animationEnabled: true,
+                title:{
+                    text: type+" Monthly Cost "
+                },
+                legend:{
+                    cursor: "pointer",
+                    itemclick: explodePie
+                },
+                data: [{
+                    type: "doughnut",
+                    showInLegend: true,
+                    toolTipContent: "{name}: <strong>£{y}</strong>",
+                    indexLabel: "{name} - £{y}",
+                    dataPoints: [
+                        { y: Cost, name: "Current " +type +" Cost", exploded: true },
+                        { y: remainingBudget, name: "Remaining  Budget" },
+
+                    ]
+                }]
+            });
+        chart.render();
+
+    };
+
+    function chartContainerGas ( target,type,Cost,setBadget) {
+        var remainingBudget = setBadget-Cost;
+        CanvasJS.addColorSet("set",
+            [//colorSet Array
+                <?php echo "\"" . $colour[1] . "\""; ?>
+                ,"lightgrey"
+            ]);
+        var chart = new CanvasJS.Chart(target,
+            {
+                colorSet: "set",
+
+                exportEnabled: true,
+                animationEnabled: true,
+                title:{
+                    text: type+" Monthly Cost "
+                },
+                legend:{
+                    cursor: "pointer",
+                    itemclick: explodePie
+                },
+                data: [{
+                    type: "doughnut",
+                    showInLegend: true,
+                    toolTipContent: "{name}: <strong>£{y}</strong>",
+                    indexLabel: "{name} - £{y}",
+                    dataPoints: [
+                        { y: Cost, name: "Current " +type +" Cost", exploded: true },
+                        { y: remainingBudget, name: "Remaining  Budget" },
+
+                    ]
+                }]
+            });
+        chart.render();
+
+    };
+
+    function explodePie (e) {
+        if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+        } else {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+        }
+        e.chart.render();
+
+    }
+</script>
+
 </body>
 </html>

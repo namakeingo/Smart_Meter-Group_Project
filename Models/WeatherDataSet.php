@@ -73,34 +73,37 @@ class WeatherDataSet {
             $forecast = $this->weatherArray[0]->getForecast();
             $description = $this->weatherArray[0]->getDescription();
             $count = 0;
+            $today = intval((new DateTime('now', new DateTimeZone('Europe/London')))->format('d'));
             $day = intval($this->weatherArray[0]->getTime()->format('d'));
             foreach ($this->weatherArray as $value) {
-                // day comparision is made to see if the day for the weather is the same
-                if($day == intval($value->getTime()->format('d'))) {
-                    $tempMin+= $value->getTempMin();
-                    $tempMax+= $value->getTempMax();
-                    $temp += $value->getTemp();
-                    $count++;
-                }
-                else{
-                    // if day changes average is calculated and the array is updated with a new weather object
-                    $temp = $temp/$count;
-                    $tempMin = $tempMin/$count;
-                    $tempMax = $tempMax/$count;
-                    $predictedWeatherArray[] = new WeatherData($forecast,$description,((($temp -32) *5/9) + 273.15),
-                        ((($tempMax -32) * 5/9) + 273.15),((($tempMin -32) * 5/9) + 273.15),'',$time);
-                    // all values are reset and updated for the next day
-                    $forecast = $value->getForecast();
-                    $description = $value->getDescription();
-                    $time = $value->getTime();
-                    $temp = $tempMin = $tempMax = $count = 0;
-                    $tempMin+= $value->getTempMin();
-                    $tempMax+= $value->getTempMax();
-                    $temp += $value->getTemp();
-                    $count++;
+                if (!($day == $today)) {
+                    // day comparision is made to see if the day for the weather is the same
+                    if ($day == intval($value->getTime()->format('d'))) {
+                        $tempMin += $value->getTempMin();
+                        $tempMax += $value->getTempMax();
+                        $temp += $value->getTemp();
+                        $count++;
+                    } else {
+                        // if day changes average is calculated and the array is updated with a new weather object
+                        $temp = $temp / $count;
+                        $tempMin = $tempMin / $count;
+                        $tempMax = $tempMax / $count;
+                        $predictedWeatherArray[] = new WeatherData($forecast, $description, ((($temp - 32) * 5 / 9) + 273.15),
+                            ((($tempMax - 32) * 5 / 9) + 273.15), ((($tempMin - 32) * 5 / 9) + 273.15), '', $time);
+                        // all values are reset and updated for the next day
+                        $forecast = $value->getForecast();
+                        $description = $value->getDescription();
+                        $time = $value->getTime();
+                        $temp = $tempMin = $tempMax = $count = 0;
+                        $tempMin += $value->getTempMin();
+                        $tempMax += $value->getTempMax();
+                        $temp += $value->getTemp();
+                        $count++;
+                    }
                 }
                 // day is updated for the next item in the array
                 $day = intval($value->getTime()->format('d'));
+                $time = $value->getTime();
             }
             return $predictedWeatherArray;
         }

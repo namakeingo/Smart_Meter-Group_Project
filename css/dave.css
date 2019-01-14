@@ -43,7 +43,8 @@
 
 .tab-content {
     background-color: white;
-    width: 120%;
-    margin-right: 24%;
-    padding-right: 20%;
+    min-width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    width:auto
 }
