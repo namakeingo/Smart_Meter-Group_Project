@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+
+<a href="index.php">Home</a>
+
+<form method="POST" action="test.php">
+<div class="container">
+      <div class="py-5 text-center">
+        <h2>Your budget has been updated</h2>
+        <?php if(isset($_SESSION["gasBudget"])) echo " Your new  gas budget is : " . $_SESSION["gasBudget"] . "$" ?>
+        <?php if(isset($_SESSION["electricityBudget"])) echo " <br> " . " Your new electricity budget is : " . $_SESSION["electricityBudget"] . "$"?>
+</div>
+</div>
+</body>
+</html>

@@ -14,16 +14,15 @@
 <div class="container">
       <div class="py-5 text-center">
         <h2>Set your budget</h2>
-
+        <?php if(isset($_SESSION["gasBudget"])) echo " Your current gas budget is : " . $_SESSION["gasBudget"] . "$" ?>
+        <?php if(isset($_SESSION["electricityBudget"])) echo " <br> " . " Your current electricity budget is : " . $_SESSION["electricityBudget"] . "$"?>
       </div>
 
 
             <div class="mb-3">
               <label for="email">Email</label>
-              <input type="email" class="form-control" name="email" placeholder="you@example.com">
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div>
+              <input type="text" class="form-control" name="email" placeholder="you@example.com">
+
             </div>
 
             <div class="mb-3">
@@ -40,7 +39,7 @@
             <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="country">Day</label>
-                <select class="custom-select d-block w-100" name="day"  required>
+                <select class="custom-select d-block w-100" name="day" required>
                   <option value="">Choose...</option>
                   <option>1</option>
                     <option>2</option>
@@ -99,7 +98,7 @@
 
 
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm</button>
+            <button class="btn btn-primary btn-lg btn-block" name="submit" type="submit">Confirm</button>
           </form>
         </div>
       </div>

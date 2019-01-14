@@ -6,5 +6,5 @@ $password = "SWLWmTppbPUQpzX";
 $db = "group2";
 
 $conn = new PDO("mysql:host=$servername;dbname=$db",$username,$password);
- 
+
 ?>
