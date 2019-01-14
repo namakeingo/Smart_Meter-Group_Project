@@ -88,4 +88,10 @@ class WeatherData {
     {
         return $this->time;
     }
+
+    public function convertToCelcius() {
+        $this->temp = (($this->temp - 32) * 5/9);
+        $this->tempMax = (($this->tempMax - 32) * 5/9);
+        $this->tempMin = (($this->tempMin - 32) * 5/9);
+    }
 }

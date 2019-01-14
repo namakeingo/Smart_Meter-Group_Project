@@ -29,7 +29,7 @@ $url = new ConnectionWeather('weather','London');
 $view->weatherNow = ($url->getData('weather'))->getWeatherArray()[0];
 
 // classifier initialised
-$prediction = new Prediction();
+$prediction = new Prediction(2);
 // classifier trained on the training data set
 $prediction->train('Elec');
 // predicted usage for the 5 days saved for the view

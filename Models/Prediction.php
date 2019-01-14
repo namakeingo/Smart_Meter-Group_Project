@@ -15,10 +15,10 @@ class Prediction
     private $samples;
     private $labels;
 
-    public function __construct()
+    public function __construct($k)
     {
         if(self::$classifier == null) {
-            self::setClassifier();
+            self::setClassifier($k);
         }
         // training data
         $this->samples = [];
@@ -34,9 +34,9 @@ class Prediction
         return self::$classifier;
     }
 
-    public static function setClassifier()
+    public static function setClassifier($k)
     {
-        self::$classifier = new KNearestNeighbors();
+        self::$classifier = new KNearestNeighbors($k);
     }
 
     /**

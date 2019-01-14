@@ -27,7 +27,9 @@
             ['Time', 'Electricity Cost Prediction', 'Gas Cost Prediction'],
             <?php
                 for ($i=0; $i<sizeof($view->predictedUsageElec); $i++){
-                    echo '[\''.$view->predictedUsageElec[$i]->getDate()->modify('+'.($i+1).'days')->format('D d').'\','
+                    $view->weatherPredictionSet[$i]->convertToCelcius();
+                    echo '[\''.$view->weatherPredictionSet[$i]->getTime()->format('D d'). ' ('
+                        .intval($view->weatherPredictionSet[$i]->getTemp()) . 'C)' .'\','
                         .$view->predictedUsageElec[$i]->getInstantCost('Elec').','
                         .$view->predictedUsageGas[$i]->getInstantCost('Gas').'],
             ';
@@ -46,7 +48,8 @@
             ['Time', 'Electricity Consumption Prediction', 'Gas Usage Prediction'],
             <?php
             for ($i=0; $i<sizeof($view->predictedUsageElec); $i++){
-                echo '[\''.$view->predictedUsageElec[$i]->getDate()->format('D d').'\','
+                echo '[\''.$view->weatherPredictionSet[$i]->getTime()->format('D d'). ' ('
+                    .intval($view->weatherPredictionSet[$i]->getTemp()) . 'C)' .'\','
                     .$view->predictedUsageElec[$i]->getConsumption().','
                     .$view->predictedUsageGas[$i]->getConsumption().'],
             ';
