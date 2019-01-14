@@ -36,5 +36,4 @@ $view->predictedUsage = [];
 foreach ($testWeatherArray as $value) {
     $view->predictedUsage[] = $prediction->predict(array($value[0], $value[1], $value[2]));
 }
-echo '';
 require_once ('Views/index.phtml');
