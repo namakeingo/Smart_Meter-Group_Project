@@ -1,216 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76cf2366-889b-4578-9cfc-db4aeeaea878" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MVCtemplate.iml" afterPath="$PROJECT_DIR$/.idea/MVCtemplate.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/ux.iml" afterPath="$PROJECT_DIR$/.idea/ux.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="76cf2366-889b-4578-9cfc-db4aeeaea878" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Budget.php" afterPath="$PROJECT_DIR$/Budget.php" />
-      <change beforePath="$PROJECT_DIR$/Models/Connection.php" afterPath="$PROJECT_DIR$/Models/Connection.php" />
-      <change beforePath="$PROJECT_DIR$/Models/ConnectionConsumption.php" afterPath="$PROJECT_DIR$/Models/ConnectionConsumption.php" />
-      <change beforePath="$PROJECT_DIR$/Models/ConnectionLocation.php" afterPath="$PROJECT_DIR$/Models/ConnectionLocation.php" />
-      <change beforePath="$PROJECT_DIR$/Models/ConnectionWeather.php" afterPath="$PROJECT_DIR$/Models/ConnectionWeather.php" />
-      <change beforePath="$PROJECT_DIR$/Models/ConsumptionData.php" afterPath="$PROJECT_DIR$/Models/ConsumptionData.php" />
-      <change beforePath="$PROJECT_DIR$/Models/ConsumptionDataSet.php" afterPath="$PROJECT_DIR$/Models/ConsumptionDataSet.php" />
-      <change beforePath="$PROJECT_DIR$/Models/Database.php" afterPath="$PROJECT_DIR$/Models/Database.php" />
-      <change beforePath="$PROJECT_DIR$/Models/LocationData.php" afterPath="$PROJECT_DIR$/Models/LocationData.php" />
-      <change beforePath="$PROJECT_DIR$/Models/Prediction.php" afterPath="$PROJECT_DIR$/Models/Prediction.php" />
-      <change beforePath="$PROJECT_DIR$/Models/Reader.php" afterPath="$PROJECT_DIR$/Models/Reader.php" />
-      <change beforePath="$PROJECT_DIR$/Models/WeatherData.php" afterPath="$PROJECT_DIR$/Models/WeatherData.php" />
-      <change beforePath="$PROJECT_DIR$/Models/WeatherDataSet.php" afterPath="$PROJECT_DIR$/Models/WeatherDataSet.php" />
       <change beforePath="$PROJECT_DIR$/Views/budget.phtml" afterPath="$PROJECT_DIR$/Views/budget.phtml" />
-      <change beforePath="$PROJECT_DIR$/Views/chart.phtml" afterPath="$PROJECT_DIR$/Views/chart.phtml" />
-      <change beforePath="$PROJECT_DIR$/Views/chartgas.phtml" afterPath="$PROJECT_DIR$/Views/chartgas.phtml" />
-      <change beforePath="$PROJECT_DIR$/Views/comparison.phtml" afterPath="$PROJECT_DIR$/Views/comparison.phtml" />
-      <change beforePath="$PROJECT_DIR$/Views/index.phtml" afterPath="$PROJECT_DIR$/Views/index.phtml" />
-      <change beforePath="$PROJECT_DIR$/Views/page1.phtml" afterPath="$PROJECT_DIR$/Views/page1.phtml" />
-      <change beforePath="$PROJECT_DIR$/Views/template/chartScript.phtml" afterPath="$PROJECT_DIR$/Views/template/chartScript.phtml" />
-      <change beforePath="$PROJECT_DIR$/Views/template/chartScriptTest.phtml" afterPath="$PROJECT_DIR$/Views/template/chartScriptTest.phtml" />
-      <change beforePath="$PROJECT_DIR$/Views/template/footer.phtml" afterPath="$PROJECT_DIR$/Views/template/footer.phtml" />
       <change beforePath="$PROJECT_DIR$/Views/template/header.phtml" afterPath="$PROJECT_DIR$/Views/template/header.phtml" />
-      <change beforePath="$PROJECT_DIR$/chart.php" afterPath="$PROJECT_DIR$/chart.php" />
-      <change beforePath="$PROJECT_DIR$/chartgas.php" afterPath="$PROJECT_DIR$/chartgas.php" />
-      <change beforePath="$PROJECT_DIR$/comparison.php" afterPath="$PROJECT_DIR$/comparison.php" />
-      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change beforePath="$PROJECT_DIR$/consumptionElec.txt" afterPath="$PROJECT_DIR$/consumptionElec.txt" />
-      <change beforePath="$PROJECT_DIR$/consumptionGas.txt" afterPath="$PROJECT_DIR$/consumptionGas.txt" />
-      <change beforePath="$PROJECT_DIR$/css/animate.css" afterPath="$PROJECT_DIR$/css/animate.css" />
-      <change beforePath="$PROJECT_DIR$/css/aos.css" afterPath="$PROJECT_DIR$/css/aos.css" />
-      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" />
-      <change beforePath="$PROJECT_DIR$/css/css/simple-sidebar.css" afterPath="$PROJECT_DIR$/css/css/simple-sidebar.css" />
-      <change beforePath="$PROJECT_DIR$/css/custom.css" afterPath="$PROJECT_DIR$/css/custom.css" />
-      <change beforePath="$PROJECT_DIR$/css/dave.css" afterPath="$PROJECT_DIR$/css/dave.css" />
-      <change beforePath="$PROJECT_DIR$/css/flaticon.css" afterPath="$PROJECT_DIR$/css/flaticon.css" />
-      <change beforePath="$PROJECT_DIR$/css/icomoon.css" afterPath="$PROJECT_DIR$/css/icomoon.css" />
-      <change beforePath="$PROJECT_DIR$/css/ionicons.min.css" afterPath="$PROJECT_DIR$/css/ionicons.min.css" />
-      <change beforePath="$PROJECT_DIR$/css/open-iconic-bootstrap.min.css" afterPath="$PROJECT_DIR$/css/open-iconic-bootstrap.min.css" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/js/aos.js" afterPath="$PROJECT_DIR$/js/aos.js" />
-      <change beforePath="$PROJECT_DIR$/js/google-map.js" afterPath="$PROJECT_DIR$/js/google-map.js" />
-      <change beforePath="$PROJECT_DIR$/js/jquery-migrate-3.0.1.min.js" afterPath="$PROJECT_DIR$/js/jquery-migrate-3.0.1.min.js" />
-      <change beforePath="$PROJECT_DIR$/js/jquery.easing.1.3.js" afterPath="$PROJECT_DIR$/js/jquery.easing.1.3.js" />
-      <change beforePath="$PROJECT_DIR$/js/jquery.stellar.min.js" afterPath="$PROJECT_DIR$/js/jquery.stellar.min.js" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change beforePath="$PROJECT_DIR$/js/scrollax.min.js" afterPath="$PROJECT_DIR$/js/scrollax.min.js" />
-      <change beforePath="$PROJECT_DIR$/page1.php" afterPath="$PROJECT_DIR$/page1.php" />
-      <change beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/LICENSE" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/README.md" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/README.md" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/bin/code-coverage.sh" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/bin/code-coverage.sh" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/bin/prepare_osx_env.sh" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/bin/prepare_osx_env.sh" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/composer.json" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/composer.json" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/composer.lock" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/composer.lock" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/data/glass.csv" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/data/glass.csv" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/data/iris.csv" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/data/iris.csv" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/data/wine.csv" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/data/wine.csv" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Association/Apriori.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Association/Apriori.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Association/Associator.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Association/Associator.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Classifier.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Classifier.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/DecisionTree.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/DecisionTree.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/DecisionTree/DecisionTreeLeaf.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/DecisionTree/DecisionTreeLeaf.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Ensemble/AdaBoost.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Ensemble/AdaBoost.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Ensemble/Bagging.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Ensemble/Bagging.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Ensemble/RandomForest.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Ensemble/RandomForest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Linear/Adaline.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Linear/Adaline.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Linear/DecisionStump.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Linear/DecisionStump.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Linear/LogisticRegression.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Linear/LogisticRegression.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Linear/Perceptron.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/Linear/Perceptron.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/MLPClassifier.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/MLPClassifier.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/NaiveBayes.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/NaiveBayes.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/SVC.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/SVC.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/WeightedClassifier.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Classification/WeightedClassifier.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/Clusterer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/Clusterer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/DBSCAN.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/DBSCAN.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/FuzzyCMeans.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/FuzzyCMeans.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/KMeans.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/KMeans.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/KMeans/Cluster.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/KMeans/Cluster.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/KMeans/Point.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/KMeans/Point.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/KMeans/Space.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Clustering/KMeans/Space.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/CrossValidation/RandomSplit.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/CrossValidation/RandomSplit.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/CrossValidation/Split.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/CrossValidation/Split.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/CrossValidation/StratifiedRandomSplit.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/CrossValidation/StratifiedRandomSplit.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/ArrayDataset.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/ArrayDataset.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/CsvDataset.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/CsvDataset.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/Dataset.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/Dataset.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/Demo/GlassDataset.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/Demo/GlassDataset.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/Demo/IrisDataset.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/Demo/IrisDataset.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/Demo/WineDataset.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/Demo/WineDataset.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/FilesDataset.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/FilesDataset.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/MnistDataset.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/MnistDataset.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/SvmDataset.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Dataset/SvmDataset.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/DimensionReduction/EigenTransformerBase.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/DimensionReduction/EigenTransformerBase.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/DimensionReduction/KernelPCA.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/DimensionReduction/KernelPCA.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/DimensionReduction/LDA.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/DimensionReduction/LDA.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/DimensionReduction/PCA.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/DimensionReduction/PCA.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Estimator.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Estimator.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/DatasetException.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/DatasetException.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/FileException.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/FileException.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/InvalidArgumentException.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/InvalidArgumentException.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/InvalidOperationException.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/InvalidOperationException.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/LibsvmCommandException.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/LibsvmCommandException.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/MatrixException.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/MatrixException.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/NormalizerException.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/NormalizerException.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/SerializeException.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Exception/SerializeException.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/English.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/English.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/French.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/French.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/Polish.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/Polish.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/TfIdfTransformer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/TfIdfTransformer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/TokenCountVectorizer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureExtraction/TokenCountVectorizer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction/ANOVAFValue.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction/ANOVAFValue.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction/UnivariateLinearRegression.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction/UnivariateLinearRegression.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureSelection/SelectKBest.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureSelection/SelectKBest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureSelection/VarianceThreshold.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/FeatureSelection/VarianceThreshold.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/OneVsRest.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/OneVsRest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Optimizer/ConjugateGradient.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Optimizer/ConjugateGradient.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Optimizer/GD.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Optimizer/GD.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Optimizer/Optimizer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Optimizer/Optimizer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Optimizer/StochasticGD.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Optimizer/StochasticGD.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Predictable.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Predictable.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Trainable.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Helper/Trainable.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/IncrementalEstimator.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/IncrementalEstimator.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Comparison.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Comparison.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Distance.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Distance.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Distance/Chebyshev.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Distance/Chebyshev.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Distance/Euclidean.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Distance/Euclidean.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Distance/Manhattan.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Distance/Manhattan.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Distance/Minkowski.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Distance/Minkowski.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Kernel.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Kernel.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Kernel/RBF.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Kernel/RBF.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/LinearAlgebra/EigenvalueDecomposition.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/LinearAlgebra/EigenvalueDecomposition.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/LinearAlgebra/LUDecomposition.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/LinearAlgebra/LUDecomposition.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Matrix.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Matrix.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Product.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Product.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Set.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Set.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/ANOVA.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/ANOVA.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/Correlation.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/Correlation.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/Covariance.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/Covariance.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/Gaussian.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/Gaussian.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/Mean.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/Mean.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/StandardDeviation.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/StandardDeviation.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/Variance.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Math/Statistic/Variance.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Metric/Accuracy.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Metric/Accuracy.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Metric/ClassificationReport.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Metric/ClassificationReport.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Metric/ConfusionMatrix.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Metric/ConfusionMatrix.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/ModelManager.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/ModelManager.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/BinaryStep.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/BinaryStep.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/Gaussian.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/Gaussian.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/HyperbolicTangent.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/HyperbolicTangent.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/PReLU.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/PReLU.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/Sigmoid.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/Sigmoid.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/ThresholdedReLU.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/ThresholdedReLU.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Layer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Layer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Network.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Network.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Network/LayeredNetwork.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Network/LayeredNetwork.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Network/MultilayerPerceptron.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Network/MultilayerPerceptron.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Node.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Node.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Bias.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Bias.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Input.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Input.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Neuron.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Neuron.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Neuron/Synapse.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Neuron/Synapse.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Training/Backpropagation.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Training/Backpropagation.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Training/Backpropagation/Sigma.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/NeuralNetwork/Training/Backpropagation/Sigma.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Pipeline.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Pipeline.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Imputer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Imputer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MeanStrategy.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MeanStrategy.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MedianStrategy.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MedianStrategy.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MostFrequentStrategy.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MostFrequentStrategy.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Normalizer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Normalizer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Preprocessor.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Preprocessing/Preprocessor.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Regression/LeastSquares.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Regression/LeastSquares.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Regression/Regression.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Regression/Regression.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Regression/SVR.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Regression/SVR.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/SupportVectorMachine/DataTransformer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/SupportVectorMachine/DataTransformer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/SupportVectorMachine/Kernel.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/SupportVectorMachine/Kernel.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/SupportVectorMachine/SupportVectorMachine.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/SupportVectorMachine/SupportVectorMachine.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/SupportVectorMachine/Type.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/SupportVectorMachine/Type.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Tokenization/Tokenizer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Tokenization/Tokenizer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Tokenization/WhitespaceTokenizer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Tokenization/WhitespaceTokenizer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Tokenization/WordTokenizer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Tokenization/WordTokenizer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Transformer.php" afterPath="$PROJECT_DIR$/vendor/php-ai/php-ml/src/Transformer.php" />
-      <change beforePath="$PROJECT_DIR$/weatherData.txt" afterPath="$PROJECT_DIR$/weatherData.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/php-ai/php-ml/" />
@@ -258,11 +52,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footer.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/template/footer.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
+            <state relative-caret-position="660">
               <caret line="44" column="16" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="budget.phtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/budget.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="72" lean-forward="true" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/template/header.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -291,8 +105,8 @@
       <file leaf-file-name="chart.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/chart.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="615">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -324,6 +138,8 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Views/index.phtml" />
         <option value="$PROJECT_DIR$/Views/template/footer.phtml" />
+        <option value="$PROJECT_DIR$/Views/template/header.phtml" />
+        <option value="$PROJECT_DIR$/Views/budget.phtml" />
       </list>
     </option>
   </component>
@@ -390,6 +206,12 @@
             </path>
             <path>
               <item name="MVCtemplate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MASTER" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="MVCtemplate" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
             </path>
           </expand>
@@ -438,7 +260,7 @@
       <workItem from="1547328750958" duration="5772000" />
       <workItem from="1547461822749" duration="1377000" />
       <workItem from="1547465108727" duration="6893000" />
-      <workItem from="1547494347072" duration="1874000" />
+      <workItem from="1547494347072" duration="2275000" />
     </task>
     <task id="LOCAL-00001" summary="Changes &#10;- added predicted usage for tomorrow to view &#10;- added color blind changes(Haashim)">
       <created>1547416917891</created>
@@ -475,11 +297,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547470320673</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Default Changelist">
+      <created>1547497640700</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1547497640700</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14817000" />
+    <option name="totallyTimeSpent" value="15218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -519,7 +348,8 @@
     <MESSAGE value="Changes &#10;- testing push confirmed" />
     <MESSAGE value="Changes&#10;- prediction updated &#10;- gas consumption data retrieved&#10;- gas prediction made" />
     <MESSAGE value="Changes&#10;- prediction updated &#10;- gas consumption data retrieved&#10;- gas prediction made&#10;- precision updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes&#10;- prediction updated &#10;- gas consumption data retrieved&#10;- gas prediction made&#10;- precision updated" />
+    <MESSAGE value="Default Changelist" />
+    <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -613,14 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/chart.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="724">
@@ -657,8 +479,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/template/footer.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
+        <state relative-caret-position="660">
           <caret line="44" column="16" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Budget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/template/header.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/chart.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/budget.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="72" lean-forward="true" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
           <folding />
         </state>
       </provider>
