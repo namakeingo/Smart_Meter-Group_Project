@@ -1161,3 +1161,23 @@ a:hover{
 .color-red{
     color:red
 }
+
+/**Media Quries for navbar **/
+#sidebar-wrapper {
+  width: 5% !important;
+
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px !important;
+  
+}
+
+.sidebar-nav li {
+  text-indent: 5px;
+}
+
+.test-h3{
+  color: white;
+  font-size: 10px;
+}
