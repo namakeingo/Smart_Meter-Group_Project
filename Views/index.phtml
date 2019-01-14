@@ -13,7 +13,7 @@
         </li>
     </ul>
 </div>
-<a href="test.php" >Set budget</a>
+<a href="/test.php" >Set budget</a>
 <div class="tab-content ">
     <div class="tab-pane active" id="1">
         <article id="page-iconcolumn" class="page-section">
@@ -27,59 +27,21 @@
                 <div class="row text-center">
 
                     <section class="col-md-6 my-3">
-                              <span id="energySym" class="fa-stack fa-2x color-red">
+                              <span id="energy1" class="fa-stack fa-2x color-red">
                                 <i class="fas fa-circle-notch fa-9x circle-size"></i>
                               </span>
-                        <h4 id="energyH4" class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
-                        <h3 id="energyH3" class="in-circle color-red">Elec</h3>
+                        <h4 id="energy1" class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
+                        <h3 id="energy1" class="in-circle color-red">Elec</h3>
                         <h3 class="under-circle">£<?php echo $view->totalElec; ?></h3>
-                        <script type="text/javascript">
-                        totalElectric = <?php echo $view->totalElec;?>;
-                        if (totalElectric < 15) {
-                          document.getElementById("energySym").className = "fa-stack fa-2x color-yellow";
-                          document.getElementById("energyH4").className = "overlay-to-circle color-yellow";
-                          document.getElementById("energyH3").className = "in-circle color-yellow";
-                        }
-                        else if (totalElectric < 20) {
-                          document.getElementById("energySym").className = "fa-stack fa-2x color-orange";
-                          document.getElementById("energyH4").className = "overlay-to-circle color-orange";
-                          document.getElementById("energyH3").className = "in-circle color-orange";
-                        }
-
-                        else if (totalElectric >= 20) {
-                          document.getElementById("energySym").className = "fa-stack fa-2x color-red";
-                          document.getElementById("energyH4").className = "overlay-to-circle color-red";
-                          document.getElementById("energyH3").className = "in-circle color-red";
-                        }
-
-                        </script>
                     </section>
 
                     <section class="col-md-6 my-3">
-                            <span id="gasSym" class="fa-stack fa-2x color-green">
+                            <span id="gas1" class="fa-stack fa-2x color-green">
                               <i class="fas fa-circle-notch fa-9x circle-size"></i>
                             </span>
-                        <h4 id="gasH4" class="overlay-to-circle color-green"><i class="fas fa-fire fa-7x"></i></h4>
-                        <h3 id="gasH3" class="in-circle color-green">Gas</h3>
+                        <h4 id="gas1" class="overlay-to-circle color-green"><i class="fas fa-fire fa-7x"></i></h4>
+                        <h3 id="gas1" class="in-circle color-green">Gas</h3>
                         <h3 class="under-circle">£<?php echo $view->totalGas; ?></h3>
-                        <script type="text/javascript">
-                        totalGas = <?php echo $view->totalGas;?>;
-                        if (totalGas < 15) {
-                          document.getElementById("gasSym").className = "fa-stack fa-2x color-yellow";
-                          document.getElementById("gasH4").className = "overlay-to-circle color-yellow";
-                          document.getElementById("gasH3").className = "in-circle color-yellow";
-                        }
-                        else if (totalGas < 20) {
-                          document.getElementById("gasSym").className = "fa-stack fa-2x color-orange";
-                          document.getElementById("gasH4").className = "overlay-to-circle color-orange";
-                          document.getElementById("gasH3").className = "in-circle color-orange";
-                        }
-                        else if (totalGas >= 20) {
-                          document.getElementById("gasSym").className = "fa-stack fa-2x color-red";
-                          document.getElementById("gasH4").className = "overlay-to-circle color-red";
-                          document.getElementById("gasH3").className = "in-circle color-red";
-                        }
-                        </script>
                     </section>
 
                 </div>
@@ -100,7 +62,7 @@
                 <div class="row text-center">
 
                     <section class="col-md-6 my-3">
-                              <span class="fa-stack fa-2x color-red">
+                              <span id="energy2" class="fa-stack fa-2x color-red">
                                 <i class="fas fa-circle-notch fa-9x circle-size"></i>
                               </span>
                         <h4 class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
@@ -109,7 +71,7 @@
                     </section>
 
                     <section class="col-md-6 my-3">
-                            <span class="fa-stack fa-2x color-orange">
+                            <span id="gas2" class="fa-stack fa-2x color-orange">
                               <i class="fas fa-circle-notch fa-9x circle-size"></i>
                             </span>
                         <h4 class="overlay-to-circle color-orange"><i class="fas fa-fire fa-7x"></i></h4>
@@ -128,18 +90,18 @@
     <script type="text/javascript">
         function invertColor() {
             // the css we are going to inject
-            let css = 'html {-webkit-filter: invert(100%);' +
+            var css = 'html {-webkit-filter: invert(100%);' +
                 '-moz-filter: invert(100%);' +
                 '-o-filter: invert(100%);' +
                 '-ms-filter: invert(100%); }';
 
-            let head = $('head')[0];
-            let invertStyle = $('#invert')[0];
+            var head = $('head')[0];
+            var invertStyle = $('#invert')[0];
 
             if (invertStyle) {
                 head.removeChild(invertStyle);
             } else {
-                let style = document.createElement('style');
+                var style = document.createElement('style');
 
                 style.type = 'text/css';
                 style.id = 'invert';
@@ -152,6 +114,31 @@
                 //injecting the css to the head
                 head.appendChild(style);
             }}
+
+    </script>
+    <script>
+        window.onload = function{setStyle('energy1',<?php echo $view->totalElec; ?> ,20)};
+        window.onload = function{setStyle('gas1',<?php echo $view->totalGas; ?> ,20)};
+        window.onload = function{setStyle('energy3',<?php echo $view->totalElec*2; ?> ,20)};
+        window.onload = function{setStyle('gas1',<?php echo $view->totalGas*2; ?> ,20)};
+
+        function setStyle(ID, value, budget){
+            var color;
+            var budgetMed= budget/4*3;
+            if (value < budgetMed) {
+                color = " color-yellow";
+            }
+            else if (value < budget) {
+                color = " color-orange";
+            }
+            else if (value >= budget) {
+                color = " color-red";
+            }
+            var elements = document.getElementsByClassName(ID);
+            elements[0].className = "fa-stack fa-2x "+color;
+            elements[1].className = "overlay-to-circle "+color;
+            elements[2].className = "in-circle "+color;
+        }
 
     </script>
     </section>
