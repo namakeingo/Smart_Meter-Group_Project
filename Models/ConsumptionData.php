@@ -49,10 +49,10 @@ class ConsumptionData
         if ($type == 'Elec') {
             $day = $this->getConsumption() * 0.6;
             $night = $this->getConsumption() * 0.4;
-            $totalCost = ($day * 17.3) + ($night * 11.51);
+            $totalCost = ($day * 0.173) + ($night * 0.1151);
         }
         elseif ($type == 'Gas') {
-            $totalCost = ($this->getConsumption() * 1);
+            $totalCost = ($this->getConsumption() * 0.0278);
         }
         return $totalCost;
     }
