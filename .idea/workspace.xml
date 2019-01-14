@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="76cf2366-889b-4578-9cfc-db4aeeaea878" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Views/budget.phtml" afterPath="$PROJECT_DIR$/Views/budget.phtml" />
+      <change beforePath="$PROJECT_DIR$/Budget.php" afterPath="$PROJECT_DIR$/Budget.php" />
       <change beforePath="$PROJECT_DIR$/Views/template/header.phtml" afterPath="$PROJECT_DIR$/Views/template/header.phtml" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -62,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="budget.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="budget.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/budget.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -72,11 +72,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Budget.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Budget.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reader.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Reader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="604">
+              <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/template/header.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="269">
+              <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -87,16 +107,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="724">
               <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chartgas.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/chartgas.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="29" lean-forward="false" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -138,8 +148,9 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Views/index.phtml" />
         <option value="$PROJECT_DIR$/Views/template/footer.phtml" />
-        <option value="$PROJECT_DIR$/Views/template/header.phtml" />
         <option value="$PROJECT_DIR$/Views/budget.phtml" />
+        <option value="$PROJECT_DIR$/Budget.php" />
+        <option value="$PROJECT_DIR$/Views/template/header.phtml" />
       </list>
     </option>
   </component>
@@ -260,7 +271,7 @@
       <workItem from="1547328750958" duration="5772000" />
       <workItem from="1547461822749" duration="1377000" />
       <workItem from="1547465108727" duration="6893000" />
-      <workItem from="1547494347072" duration="2275000" />
+      <workItem from="1547494347072" duration="2747000" />
     </task>
     <task id="LOCAL-00001" summary="Changes &#10;- added predicted usage for tomorrow to view &#10;- added color blind changes(Haashim)">
       <created>1547416917891</created>
@@ -304,11 +315,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547497640700</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Default Changelist">
+      <created>1547498014331</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1547498014331</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15218000" />
+    <option name="totallyTimeSpent" value="15690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -377,13 +395,6 @@
         <state relative-caret-position="630">
           <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Reader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -485,22 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Budget.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/template/header.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/chart.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -509,10 +504,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Reader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Budget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Views/budget.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="72" lean-forward="true" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/template/header.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
           <folding />
         </state>
       </provider>
