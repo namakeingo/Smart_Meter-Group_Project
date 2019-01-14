@@ -3,6 +3,7 @@ require_once('Models/ConnectionConsumption.php');
 require_once ('Models/Prediction.php');
 require_once('Models/ConnectionWeather.php');
 require_once ('Models/ConnectionLocation.php');
+session_start();
 $view = new stdClass();
 $view->pageTitle = 'Homepage';
 
@@ -30,10 +31,16 @@ $view->weatherNow = ($url->getData('weather'))->getWeatherArray()[0];
 // classifier initialised
 $prediction = new Prediction();
 // classifier trained on the training data set
-$prediction->train();
+$prediction->train('Elec');
 // predicted usage for the 5 days saved for the view
-$view->predictedUsage = [];
+$view->predictedUsageElec = [];
 foreach ($testWeatherArray as $value) {
-    $view->predictedUsage[] = $prediction->predict(array($value[0], $value[1], $value[2]));
+    $view->predictedUsageElec[] = $prediction->predict(array($value[0], $value[1], $value[2]));
+}
+$prediction->train('Gas');
+// predicted usage for the 5 days saved for the view
+$view->predictedUsageGas = [];
+foreach ($testWeatherArray as $value) {
+    $view->predictedUsageGas[] = $prediction->predict(array($value[0], $value[1], $value[2]));
 }
 require_once ('Views/index.phtml');
