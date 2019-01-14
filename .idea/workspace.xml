@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="76cf2366-889b-4578-9cfc-db4aeeaea878" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/ConsumptionData.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ConsumptionData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/index.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/php-ai/php-ml/" />
@@ -20,28 +22,28 @@
     <session id="-2046212924">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="15" />
-          <entry key="phtml" value="3" />
+          <entry key="php" value="19" />
+          <entry key="phtml" value="4" />
           <entry key="txt" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="16" />
+          <entry key="PHP" value="21" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="828" />
-          <entry key="phtml" value="138" />
-          <entry key="txt" value="196" />
+          <entry key="php" value="1295" />
+          <entry key="phtml" value="190" />
+          <entry key="txt" value="216" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="966" />
-          <entry key="PLAIN_TEXT" value="196" />
+          <entry key="PHP" value="1485" />
+          <entry key="PLAIN_TEXT" value="216" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -57,19 +59,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Views/index.phtml">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="116" column="96" selection-start-line="116" selection-start-column="96" selection-end-line="116" selection-end-column="96" />
+            <state relative-caret-position="500">
+              <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+        <entry file="file://$PROJECT_DIR$/Views/index.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            <state relative-caret-position="383">
+              <caret line="78" column="111" selection-start-line="78" selection-start-column="111" selection-end-line="78" selection-end-column="111" />
             </state>
           </provider>
         </entry>
@@ -89,9 +91,10 @@
       <list>
         <option value="$PROJECT_DIR$/consumptionElec.txt" />
         <option value="$PROJECT_DIR$/consumptionGas.txt" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Models/Prediction.php" />
+        <option value="$PROJECT_DIR$/Models/ConsumptionData.php" />
         <option value="$PROJECT_DIR$/Views/index.phtml" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -185,7 +188,7 @@
       <workItem from="1547295668580" duration="8963000" />
       <workItem from="1547328750958" duration="5772000" />
       <workItem from="1547461822749" duration="1377000" />
-      <workItem from="1547465108727" duration="5150000" />
+      <workItem from="1547465108727" duration="6893000" />
     </task>
     <task id="LOCAL-00001" summary="Changes &#10;- added predicted usage for tomorrow to view &#10;- added color blind changes(Haashim)">
       <created>1547416917891</created>
@@ -215,11 +218,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547470203531</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changes&#10;- prediction updated &#10;- gas consumption data retrieved&#10;- gas prediction made&#10;- precision updated">
+      <created>1547470320673</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1547470320673</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10767000" />
+    <option name="totallyTimeSpent" value="12510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -231,7 +241,7 @@
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.2852459" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.2852459" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -259,7 +269,8 @@
     <MESSAGE value="Changes &#10;- testing push" />
     <MESSAGE value="Changes &#10;- testing push confirmed" />
     <MESSAGE value="Changes&#10;- prediction updated &#10;- gas consumption data retrieved&#10;- gas prediction made" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes&#10;- prediction updated &#10;- gas consumption data retrieved&#10;- gas prediction made" />
+    <MESSAGE value="Changes&#10;- prediction updated &#10;- gas consumption data retrieved&#10;- gas prediction made&#10;- precision updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes&#10;- prediction updated &#10;- gas consumption data retrieved&#10;- gas prediction made&#10;- precision updated" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Models/Reader.php">
@@ -277,9 +288,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Budget.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/ConnectionConsumption.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/WeatherData.php">
@@ -321,17 +329,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/Models/ConnectionConsumption.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/ConsumptionData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        <state relative-caret-position="460">
+          <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/ConsumptionDataSet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="116" column="96" selection-start-line="116" selection-start-column="96" selection-end-line="116" selection-end-column="96" />
+        <state relative-caret-position="383">
+          <caret line="78" column="111" selection-start-line="78" selection-start-column="111" selection-end-line="78" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
         </state>
       </provider>
     </entry>

@@ -34,13 +34,18 @@ $prediction = new Prediction();
 $prediction->train('Elec');
 // predicted usage for the 5 days saved for the view
 $view->predictedUsageElec = [];
+$count = 0;
 foreach ($testWeatherArray as $value) {
-    $view->predictedUsageElec[] = $prediction->predict(array($value[0], $value[1], $value[2]));
+    $view->predictedUsageElec[] = new ConsumptionData($view->weatherPredictionSet[$count]->getTime()->getTimeStamp(),
+        floatval($prediction->predict(array($value[0], $value[1], $value[2]))));
 }
 $prediction->train('Gas');
 // predicted usage for the 5 days saved for the view
 $view->predictedUsageGas = [];
+$count = 0;
 foreach ($testWeatherArray as $value) {
-    $view->predictedUsageGas[] = $prediction->predict(array($value[0], $value[1], $value[2]));
+    $view->predictedUsageGas[] = new ConsumptionData($view->weatherPredictionSet[$count]->getTime()->getTimeStamp(),
+        floatval($prediction->predict(array($value[0], $value[1], $value[2]))));
+    $count++;
 }
 require_once ('Views/index.phtml');
