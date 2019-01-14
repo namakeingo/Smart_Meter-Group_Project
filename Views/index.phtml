@@ -1,12 +1,15 @@
 <?php require('template/header.phtml') ?>
-
+<div class="container" >
 <div class="tabs-align">
     <ul class="nav nav-tabs">
         <li class="active">
             <a  href="#1" data-toggle="tab">Current Month</a>
         </li>
         <li>
-            <a href="#2" data-toggle="tab">Predicted Cost</a>
+            <a id="costTabTop" href="#chart" data-toggle="tab">Predicted Cost</a>
+        </li>
+        <li>
+            <a id="kwhTabTop" href="#chart" data-toggle="tab">Predicted kWh Usage</a>
         </li>
         <li>
             <a href="#3" data-toggle="tab" id="doughnut">Cost based on Budget</a>
@@ -50,40 +53,13 @@
 
         </article>
     </div>
-    <div class="tab-pane " id="2">
-        <article id="page-iconcolumn" class="page-section">
-
-            <section class="container">
-                <p class="text-right">The current weather is: <span class=""></span></p>
-            </section>
-
-            <section class="layout-iconcolumns container py-4">
-
-                <div class="row text-center">
-
-                    <section class="col-md-6 my-3">
-                              <span id="energy2" class="fa-stack fa-2x color-red">
-                                <i class="fas fa-circle-notch fa-9x circle-size"></i>
-                              </span>
-                        <h4 class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
-                        <h3 class="in-circle color-red">Elec</h3>
-                        <h3 class="under-circle"><?php echo round($view->predictedUsageElec[0]->getConsumption(), 2); ?>kWh</h3>
-                    </section>
-
-                    <section class="col-md-6 my-3">
-                            <span id="gas2" class="fa-stack fa-2x color-orange">
-                              <i class="fas fa-circle-notch fa-9x circle-size"></i>
-                            </span>
-                        <h4 class="overlay-to-circle color-orange"><i class="fas fa-fire fa-7x"></i></h4>
-                        <h3 class="in-circle color-orange">Gas</h3>
-                        <h3 class="under-circle"><?php echo round($view->predictedUsageGas[0]->getConsumption(), 2); ?>kWh</h3>
-                    </section>
-
-                </div>
-
-            </section>
-
-        </article>
+    <div class="tab-pane " id="chart">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <div style="width: 100%; height: 100%" id="chart_divCost"></div>
+    </div>
+    <div class="tab-pane " id="chart">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <div style="width: 100%; height: 100%" id="chart_divKWH"></div>
     </div>
     <div class="tab-pane " id="3">
         <article id="page-iconcolumn" class="page-section">
@@ -103,8 +79,6 @@
                         <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
                         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                     </section>
-
-                </div>
 
                 </div>
 
@@ -170,5 +144,8 @@
     </script>
     </section>
 </div>
+</div>
+
+<?php require('template/chartPredictionScript.phtml') ?>
 
 <?php require('template/footer.phtml') ?>
