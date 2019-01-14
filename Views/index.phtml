@@ -9,7 +9,7 @@
             <a href="#2" data-toggle="tab">Predicted Cost</a>
         </li>
         <li>
-
+            <a href="#3" data-toggle="tab" id="doughnut">Cost based on Budget</a>
         </li>
     </ul>
 </div>
@@ -78,6 +78,33 @@
                         <h3 class="in-circle color-orange">Gas</h3>
                         <h3 class="under-circle"><?php echo round($view->predictedUsageGas[0]->getConsumption(), 2); ?>kWh</h3>
                     </section>
+
+                </div>
+
+            </section>
+
+        </article>
+    </div>
+    <div class="tab-pane " id="3">
+        <article id="page-iconcolumn" class="page-section">
+
+            <section class="layout-iconcolumns container py-4">
+
+                <div class="row text-center">
+
+                    <section class="col-md-6 my-3">
+                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                        <i class="fas fa-bolt fire-position"></i>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                    </section>
+
+                    <section class="col-md-6 my-3">
+                        <i class="fas fa-fire fire-position"></i>
+                        <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                    </section>
+
+                </div>
 
                 </div>
 
