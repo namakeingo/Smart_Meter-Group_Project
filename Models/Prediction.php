@@ -56,6 +56,7 @@ class Prediction
     }
 
     public function setSamples($dataSet, $type) {
+        $this->samples = [];
         foreach ($dataSet as $value) {
             if ($type == 'multiple') {
                 $this->samples[] = [$value[0], $value[1], $value[2]];
@@ -67,25 +68,28 @@ class Prediction
     }
 
     public function setLabels($dataSet) {
+        $this->labels = [];
         foreach ($dataSet as $value) {
             $this->labels[] = $value;
         }
     }
 
-    public function train() {
-        // check is done so that training is only done once
-        if(!isset($_SESSION['Trained'])) {
-            // reader handle reads the training data from both the file
-            $readerHandle = new Reader('weatherData.txt');
-            $readerHandle->readData('multiple');
-            $this->setSamples($readerHandle->getData(), 'multiple');
+    public function train($type) {
+        // reader handle reads the training data from both the file
+        $readerHandle = new Reader('weatherData.txt');
+        $readerHandle->readData('multiple');
+        $this->setSamples($readerHandle->getData(), 'multiple');
+        if($type == 'Elec') {
             // consumption data is only for electricity
-            $readerHandle->setLines('consumption.txt');
-            $readerHandle->readData('single');
-            $this->setLabels($readerHandle->getData());
-            self::$classifier->train($this->samples, $this->labels);
-            $_SESSION['Trained'] = 1;
+            $readerHandle->setLines('consumptionElec.txt');
         }
+        elseif ($type == 'Gas') {
+            // consumption data is only for gas
+            $readerHandle->setLines('consumptionGas.txt');
+        }
+        $readerHandle->readData('single');
+        $this->setLabels($readerHandle->getData());
+        self::$classifier->train($this->samples, $this->labels);
     }
 
     public function predict($testArray) {
