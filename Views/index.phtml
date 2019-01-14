@@ -105,7 +105,7 @@
                               </span>
                         <h4 class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
                         <h3 class="in-circle color-red">Elec</h3>
-                        <h3 class="under-circle"><?php echo $view->predictedUsageElec[0]; ?>kWh</h3>
+                        <h3 class="under-circle"><?php echo round($view->predictedUsageElec[0], 2); ?>kWh</h3>
                     </section>
 
                     <section class="col-md-6 my-3">
@@ -114,7 +114,7 @@
                             </span>
                         <h4 class="overlay-to-circle color-orange"><i class="fas fa-fire fa-7x"></i></h4>
                         <h3 class="in-circle color-orange">Gas</h3>
-                        <h3 class="under-circle"><?php echo $view->predictedUsageGas[0]; ?>kWh</h3>
+                        <h3 class="under-circle"><?php echo round($view->predictedUsageGas[0], 2); ?>kWh</h3>
                     </section>
 
                 </div>
