@@ -1,16 +1,13 @@
 <?php
 
-require_once("Models/Database.php");
-require_once("Models/BudgetDb.php");
 if(session_id() == null){
     session_start();
 }
+require_once('Models/BudgetDb.php');
 class Budget{
 
     public function __construct()
     {
-
-
         $this->setBudget();
     }
 
