@@ -45,7 +45,7 @@
 
     function drawChartKWH() {
         var data = google.visualization.arrayToDataTable([
-            ['Time', 'Electricity Consumption Prediction', 'Gas Usage Prediction'],
+            ['Time', 'Electricity Consumption Prediction', 'Gas Consumption Prediction'],
             <?php
             for ($i=0; $i<sizeof($view->predictedUsageElec); $i++){
                 echo '[\''.$view->weatherPredictionSet[$i]->getTime()->format('D d'). ' ('
@@ -59,7 +59,7 @@
         var periodName = 'Days';
         // set common style for chart
         var options = styleChart(data.getNumberOfRows(), periodName, 'kWh', 'Consumption');
-        var chart = new google.visualization.BarChart(document.getElementById('chart_divCost'));
+        var chart = new google.visualization.BarChart(document.getElementById('chart_divKWH'));
         chart.draw(data, options);
     }
 
