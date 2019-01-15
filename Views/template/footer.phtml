@@ -30,25 +30,6 @@
 <!--    }-->
 <!--    setTimeout(activeElement, 1000);-->
 <!--</script>-->
-<script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
-<div id="autoReloadElec" hidden>
-    <?php echo $elecInstant =  ((new ConnectionConsumption('ELEC','PT1M', 'now - 3 minutes', 'now - 2 minutes'))->getData()->getTotalConsumption())*100000
-    ?>
-</div>
-<div id="autoReloadGas" hidden>
-    <?php echo $gasInstant =  ((new ConnectionConsumption('GAS','PT1M', 'now - 3 minutes', 'now - 2 minutes'))->getData()->getTotalConsumption())*100000
-    ?>
-</div>
-<script>
-    function reload(){
-        var container = document.getElementById("autoReloadElec");
-        var content = container.innerHTML;
-        container.innerHTML = content;
-        container = document.getElementById("autoReloadGas");
-        content = container.innerHTML;
-        container.innerHTML = content;
-    }
-</script>
 <script>
     $( document ).ready(function() {
         $( "#doughnut" ).click(function() {
@@ -60,62 +41,6 @@
             setTimeout(
                 function() {
                         chartContainerGas('chartContainer2','Gas',<?php echo $view->totalGas ?>,40)
-                },
-                50);
-        });
-        function zeroPad(num, places) {
-            var zero = places - num.toString().length + 1;
-            return Array(+(zero > 0 && zero)).join("0") + num;
-        }
-        $( "#instant" ).click(function() {
-            setTimeout(
-                function() {
-                    var target1 = document.getElementById('speedElec'); // your canvas element
-                    var gauge1 = new Gauge(target1).setOptions(opts); // create sexy gauge!
-
-                    gauge1.maxValue = 28000; // set max gauge value
-                    gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
-                    gauge1.animationSpeed = 22; // set animation speed (32 is default value)
-                    gauge1.set(0);
-                    setInterval(function(){
-                        var value = document.getElementById("autoReloadElec").innerHTML;
-                        var x1 = parseInt(value);
-                        gauge1.set(x1+Math.floor(Math.random() * Math.floor(200))); // set actual value
-                        gauge1.setTextField(document.getElementById("preview-ElectricityHidden"));
-                        var str = document.getElementById("preview-ElectricityHidden").innerHTML;
-                        str = str.replace(",", "");
-                        var x = parseInt(str);
-                        document.getElementById("preview-Electricity").innerHTML = '0.'+zeroPad(x, 5)+' kWh';
-                        reload();
-                    }, Math.floor(Math.random() * Math.floor(3000)));
-                },
-                50);
-            setTimeout(
-                function() {
-                    var target2 = document.getElementById('speedGas'); // your canvas element
-                    var gauge2= new Gauge(target2).setOptions(opts); // create sexy gauge!
-
-                    gauge2.maxValue = 22000; // set max gauge value
-                    gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
-                    gauge2.animationSpeed = 22; // set animation speed (32 is default value)
-                    gauge2.set(0);
-                    setInterval(function(){
-                        var value = document.getElementById("autoReloadGas").innerHTML;
-                        var x1 = parseInt(value);
-                        if (x1===0){
-                            gauge2.set(x1);
-                        }
-                        else
-                        {
-                            gauge2.set(x1+Math.floor(Math.random() * Math.floor(200))); // set actual value
-                        }
-                        gauge2.setTextField(document.getElementById("preview-GasHidden"));
-                        var str = document.getElementById("preview-GasHidden").innerHTML;
-                        str = str.replace(",", "");
-                        var x = parseInt(str);
-                        document.getElementById("preview-Gas").innerHTML = '0.'+zeroPad(x, 5)+' kWh';
-                        reload();
-                    }, Math.floor(Math.random() * Math.floor(3000)));
                 },
                 50);
         });
@@ -210,8 +135,6 @@
 
     }
 </script>
-
-<!--speed-->
 <script>
     window.onload = function{setStyle('energy1',<?php echo $view->totalElec; ?> ,20)};
     window.onload = function{setStyle('gas1',<?php echo $view->totalGas; ?> ,20)};
@@ -233,6 +156,130 @@
         elements[1].className = "overlay-to-circle "+color;
         elements[2].className = "in-circle "+color;
     }
+</script>
+
+<!--speed-->
+<script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        function zeroPad(num, places) {
+            var zero = places - num.toString().length + 1;
+            return Array(+(zero > 0 && zero)).join("0") + num;
+        }
+        //test1
+        // function testingAPI(){
+        //     var key = "78c4da90ba4a93adc4f50e89427caef9";
+        //     var url = "https://adhocapi.energyhive.com/hive/ac89ccdce8e878e227a93f050413c7d8/type/ELEC/?units=kWh&from=2018-01-01T14:00:00&to=2018-01-01T14:03:00&offset=-0&period=PT1M";
+        //     console.log(httpGet(url,key));
+        // }
+        // function httpGet(url,key){
+        //     var xmlHttp = new XMLHttpRequest();
+        //     xmlHttp.open( "GET", url, false );
+        //     xmlHttp.setRequestHeader('Access-Control-Allow-Headers', '*');
+        //     xmlHttp.setRequestHeader('Access-Control-Allow-Credentials','true');
+        //     xmlHttp.setRequestHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+        //     xmlHttp.setRequestHeader("X-Auth-Token",key);
+        //     xmlHttp.send();
+        //     return xmlHttp.responseText;
+        // }
+        // testingAPI();
+        //test2
+        // $.ajax({
+        //     url: '/Models/Request.php',
+        //     type: "POST",
+        //     data: { getData: true },
+        //     dataType: 'json',                //data format
+        //     success: function(data)          //on recieve of reply
+        //     {
+        //         var name = data[0];
+        //         console.log(name);
+        //     }
+        // });
+        //test 3
+        // $.ajax({
+        //     type: 'GET',
+        //     url: '/Models/Request.php',
+        //     dataType: 'json',
+        //     success: function(json){
+        //         var b = jQuery.parseJSON(data)
+        //         console.log(b);
+        //     }
+        // });
+        //test4
+        function httpGet(url){
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", url, false );
+            xmlHttp.send();
+            return xmlHttp.responseText;
+        }
+        $( "#instant" ).click(function() {
+            setTimeout(
+                function() {
+                    var target1 = document.getElementById('speedElec'); // your canvas element
+                    var gauge1 = new Gauge(target1).setOptions(opts); // create sexy gauge!
+
+                    gauge1.maxValue = 28000; // set max gauge value
+                    gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+                    gauge1.animationSpeed = 22; // set animation speed (32 is default value)
+                    gauge1.set(0);
+                    function setElec(){
+                        //request updated value to API
+                        var value = httpGet('/Models/Request.php?type=ELEC')*100000;
+                        console.log(value);
+                        if (value!==0){
+                            gauge1.set(value+Math.floor(Math.random() * 100)-100); // set actual value
+                        }
+                        else
+                        {
+                            gauge1.set(value); // set actual value
+                        }
+                        gauge1.setTextField(document.getElementById("preview-ElectricityHidden"));
+                        var str = document.getElementById("preview-ElectricityHidden").innerHTML;
+                        str = str.replace(",", "");
+                        var x = parseInt(str);
+                        document.getElementById("preview-Electricity").innerHTML = '0.'+zeroPad(x, 5)+' kWh';
+                    }
+                    setElec();
+                    setInterval(function(){
+                        setElec();
+                    }, Math.floor(Math.random() * 2500)+500);
+                },
+                50);
+            setTimeout(
+                function() {
+                    var target2 = document.getElementById('speedGas'); // your canvas element
+                    var gauge2= new Gauge(target2).setOptions(opts); // create sexy gauge!
+
+                    gauge2.maxValue = 22000; // set max gauge value
+                    gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+                    gauge2.animationSpeed = 22; // set animation speed (32 is default value)
+                    gauge2.set(0);
+                    function setGas(){
+                        //request updated value to API
+                        var value = httpGet('/Models/Request.php?type=GAS')*100000;
+                        console.log(value);
+                        if (value!==0){
+                            gauge2.set(value+Math.floor(Math.random() * Math.floor(200))); // set actual value
+                        }
+                        else
+                        {
+                            gauge2.set(value); // set actual value
+                        }
+                        gauge2.setTextField(document.getElementById("preview-GasHidden"));
+                        var str = document.getElementById("preview-GasHidden").innerHTML;
+                        str = str.replace(",", "");
+                        var x = parseInt(str);
+                        document.getElementById("preview-Gas").innerHTML = '0.'+zeroPad(x, 5)+' kWh';
+                    }
+                    setGas();
+                    setInterval(function(){
+                        setGas();
+                    }, Math.floor(Math.random() * 2500)+500);
+                },
+                50);
+        });
+
+    });
 </script>
 <script>
     var opts = {
