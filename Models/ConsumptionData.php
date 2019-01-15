@@ -44,4 +44,17 @@ class ConsumptionData
         return $this->getDate()->format('Y-m-d H:i:s') . ' ' . $this->getConsumption();
     }
 
+    public function getInstantCost($type) {
+        $totalCost = 0;
+        if ($type == 'Elec') {
+            $day = $this->getConsumption() * 0.6;
+            $night = $this->getConsumption() * 0.4;
+            $totalCost = ($day * 0.173) + ($night * 0.1151);
+        }
+        elseif ($type == 'Gas') {
+            $totalCost = ($this->getConsumption() * 0.0278);
+        }
+        return $totalCost;
+    }
+
 }

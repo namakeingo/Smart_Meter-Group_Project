@@ -1,56 +1,29 @@
 
 <script>
     google.charts.load('current', {packages: ['corechart', 'bar']});
-    google.charts.setOnLoadCallback(drawChartDay);
-    function initializeDay () {
-        $('#dayTabTop').click(function() {
-            setTimeout(
-                function() {
-                    drawChartDay();
-                },
-                50)
-        });
-    }
-    function initializeWeek () {
-        $('#weekTabTop').click(function() {
-            setTimeout(
-                function() {
-                    drawChartWeek();
-                },
-                50)
-        });
-    }
-    function initializeMonth () {
-        $('#monthTabTop').click(function() {
-            setTimeout(
-                function() {
-                    drawChartMonth();
-                },
-                50)
-        });
-    }
-    function initializeYear () {
-        $('#yearTabTop').click(function() {
-            setTimeout(
-                function() {
-                    drawChartYear();
-                },
-                100)
-        });
-    }
-    google.charts.setOnLoadCallback(initializeDay);
-    google.charts.setOnLoadCallback(initializeWeek);
-    google.charts.setOnLoadCallback(initializeMonth);
-    google.charts.setOnLoadCallback(initializeYear);
+    google.charts.setOnLoadCallback(function(){drawChart('Day')});
+    google.charts.setOnLoadCallback(function(){drawChart('Week')});
+    google.charts.setOnLoadCallback(function(){drawChart('Month')});
+    google.charts.setOnLoadCallback(function(){drawChart('Year')});
 
-    function drawChartDay() {
+    function drawChart(tag) {
+        if {tag==='Day'}{
+            document.cookie = "period= 'PT1H', from='today 00:00:00', periodName='Hours', format='H:i'";
+        }
+    else if {tag==='Week'}{
+            document.cookie = "period= 'P1D', from='last monday 00:00:00', periodName='Days', format='D'";
+        }
+    else if {tag==='Month'}{
+            document.cookie = "period= 'P1W', from='first monday of this month 00:00:00 -7 days', periodName='Weeks', format='d-m'";
+        }
+    else if {tag==='Year'}{
+            document.cookie = "period= 'P1M', from= 'first day of January 00:00:00', periodName='Months', format='M'";
+        }
         var data = google.visualization.arrayToDataTable([
-            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
+            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
             <?php
             $view->period='PT1H';
             $view->from='today 00:00:00';
-//            $view->dateFrom = new DateTime($view->from, new DateTimeZone('Europe/London'));
-//            echo $view->dateFrom->format('Y-m-d H:i:s');
             $view->periodName='Hours';
             $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now');
             $consumDataSet = $Consum->getData();
@@ -66,13 +39,13 @@
         var periodName = '<?php echo $view->periodName ?>';
         // set common style for chart
         var options = styleChart(data.getNumberOfRows(), periodName);
-        var chart = new google.visualization.BarChart(document.getElementById('chart_divDay'));
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'+tag));
         chart.draw(data, options);
     }
 
     function drawChartWeek() {
         var data = google.visualization.arrayToDataTable([
-            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
+            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
 
             <?php
             $view->period='P1D';
@@ -99,7 +72,7 @@
 
     function drawChartMonth() {
         var data = google.visualization.arrayToDataTable([
-            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
+            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
 
             <?php
             $view->period='P1W';
@@ -127,7 +100,7 @@
 
     function drawChartYear() {
         var data = google.visualization.arrayToDataTable([
-            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
+            ['Hours', '<?php echo $view->pageTitle ?> Consumption'],
 
             <?php
             $view->period='P1M';

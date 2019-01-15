@@ -3,6 +3,7 @@ require_once('Models/ConnectionConsumption.php');
 require_once ('Models/Prediction.php');
 require_once('Models/ConnectionWeather.php');
 require_once ('Models/ConnectionLocation.php');
+session_start();
 $view = new stdClass();
 $view->pageTitle = 'Homepage';
 
@@ -28,12 +29,46 @@ $url = new ConnectionWeather('weather','London');
 $view->weatherNow = ($url->getData('weather'))->getWeatherArray()[0];
 
 // classifier initialised
-$prediction = new Prediction();
+$prediction = new Prediction(2);
 // classifier trained on the training data set
-$prediction->train();
+$prediction->train('Elec');
 // predicted usage for the 5 days saved for the view
-$view->predictedUsage = [];
+$view->predictedUsageElec = [];
+$count = 0;
 foreach ($testWeatherArray as $value) {
-    $view->predictedUsage[] = $prediction->predict(array($value[0], $value[1], $value[2]));
+    $view->predictedUsageElec[] = new ConsumptionData($view->weatherPredictionSet[$count]->getTime()->getTimeStamp(),
+        floatval($prediction->predict(array($value[0], $value[1], $value[2]))));
+}
+$prediction->train('Gas');
+// predicted usage for the 5 days saved for the view
+$view->predictedUsageGas = [];
+$count = 0;
+foreach ($testWeatherArray as $value) {
+    $view->predictedUsageGas[] = new ConsumptionData($view->weatherPredictionSet[$count]->getTime()->getTimeStamp(),
+        floatval($prediction->predict(array($value[0], $value[1], $value[2]))));
+    $count++;
+}
+
+
+// Doughnut Chart
+
+$colour= [];
+
+if($view->totalElec < 40/2) {
+    $colour[0] = 'green';
+}elseif($view->totalElec < (40*4)/5){
+    $colour[0] = 'gold';
+}else {
+    $colour[0] = 'red';
+}
+
+if($view->totalGas < 40/2) {
+    $colour[1]= 'green';
+
+}elseif($view->totalGas < (40*4)/5){
+    $colour[1]= 'gold';
+
+}else{
+    $colour[1]= 'red';
 }
 require_once ('Views/index.phtml');
