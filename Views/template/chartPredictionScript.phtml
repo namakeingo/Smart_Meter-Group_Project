@@ -59,7 +59,7 @@
         var periodName = 'Days';
         // set common style for chart
         var options = styleChart(data.getNumberOfRows(), periodName, 'kWh', 'Consumption');
-        var chart = new google.visualization.BarChart(document.getElementById('chart_divCost'));
+        var chart = new google.visualization.BarChart(document.getElementById('chart_divKWH'));
         chart.draw(data, options);
     }
 
