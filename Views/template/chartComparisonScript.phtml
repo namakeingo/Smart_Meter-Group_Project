@@ -1,0 +1,81 @@
+
+<script>
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Time', 'Electricity Consumption', 'Gas Consumption'],
+            <?php
+            echo '[\'Yesterday\','
+                    .$view->elecYesterday.','
+                    .$view->gasYesterday.'],
+            ';
+            echo '[\'Today\','
+                .$view->elecToday.','
+                .$view->gasToday.'],
+            ';
+            ?>
+        ]);
+        var periodName = 'Days';
+        // set common style for chart
+        var options = styleChart(data.getNumberOfRows(), periodName, 'kWh', 'Consumption');
+        var chart = new google.visualization.BarChart(document.getElementById('chart_divGasComp'));
+        chart.draw(data, options);
+    }
+
+    function styleChart(NumberOfRows, periodName, unit, title){
+        var chartAreaHeight;
+        if (NumberOfRows <= 5){
+            // set inner height to 70 pixels per row
+            chartAreaHeight = NumberOfRows * 70;
+        }
+        else if (NumberOfRows <= 12){
+            // set inner height to 50 pixels per row
+            chartAreaHeight = NumberOfRows * 50;
+        }
+        else if (NumberOfRows <= 18){
+            // set inner height to 50 pixels per row
+            chartAreaHeight = NumberOfRows * 30;
+        }
+        else{
+            // set inner height to 30 pixels per row
+            chartAreaHeight = NumberOfRows * 20;
+        }
+        // add padding to outer height to accomodate title, axis labels, etc
+        var chartHeight = chartAreaHeight + 150;
+        return options = {
+            title: title+' Based On Days',
+            titleTextStyle:{fontSize: 19},
+            chartArea: {
+                width: '60%',
+                height: chartAreaHeight
+            },
+            //isStacked: true,
+            colors: ['#efda00', '#8e48b0'],
+            height: chartHeight,
+            hAxis: {
+                title: unit,
+                minValue: 0,
+                maxValue: 0.1,
+                viewWindow: {
+                    min:0},
+                titleTextStyle:{fontSize: 17},
+                textStyle:{fontSize: 17}
+            },
+            vAxis: {
+                title: periodName,
+                titleTextStyle:{fontSize: 17},
+                textStyle:{fontSize: 17},
+                // textPosition: 'in'
+            },
+            legend: {textStyle:{fontSize: 17}},
+            tooltip: {textStyle:{fontSize: 17}},
+            animation: {
+                duration: 1000,
+                easing: 'out',
+                startup: true
+            }
+        };
+    }
+</script>
