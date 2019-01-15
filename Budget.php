@@ -52,11 +52,9 @@ class Budget{
                $this->redirect("Views/budget.phtml");
              }
          }
-   
 
-    public function checkIfBudgetIsSet($email){
 
-    }
+  
 
 
 
