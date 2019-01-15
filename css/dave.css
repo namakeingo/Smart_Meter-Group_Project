@@ -19,6 +19,13 @@
     z-index : 1;
     top: -200px;
 }
+.overlay-to-circle .on-speed {
+    position: relative;
+    margin: 0 auto;
+    font-size: 5em;
+    z-index : 1;
+    top: -60px;
+}
 .adjustPos .budget{
     display: inline-block;
     padding-top: 22px;
@@ -30,10 +37,18 @@
 }
 .under-circle{
     margin: 0 auto;
-    padding-top: 20%;
+    padding-top: 120px;
     font-size: 6rem;
     font-family: 'Sarabun', sans-serif;
     color: grey;
+}
+.under-speed{
+    margin: 0 auto;
+    font-size: 6rem;
+    font-family: 'Sarabun', sans-serif;
+    color: grey;
+    position: relative;
+    top: -70px;
 }
 
 .Clouds, .clouds {

@@ -30,6 +30,7 @@
 <!--    }-->
 <!--    setTimeout(activeElement, 1000);-->
 <!--</script>-->
+<script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
 <div id="autoReloadElec" hidden>
     <?php echo $elecInstant =  ((new ConnectionConsumption('ELEC','PT1M', 'now - 3 minutes', 'now - 2 minutes'))->getData()->getTotalConsumption())*100000
     ?>

@@ -106,26 +106,25 @@
                 </div>
                 <div class="row text-center">
                     <section class="col-md-6 my-3">
-                        <div class="gauge">
-                            <script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
-                            <div id="preview-ElectricityHidden" style="font-size: 3em; " hidden>0</div>
-                            <div id="preview-Electricity" style="font-size: 3em; ">0</div>
-                            <canvas id="speedElec" width="240" height="205" style=" width: 240px; height:205px;"></canvas>
-                        </div>
+                        <div id="preview-ElectricityHidden" style="font-size: 3em; " hidden>0</div>
+                        <div id="preview-Electricity" style="font-size: 3em; ">0</div>
+                        <canvas id="speedElec" width="240" height="205" style=" width: 240px; height:205px;"></canvas>
+                        <h4 class="overlay-to-circle"><i class="fas fa-bolt on-speed"></i></h4>
+                        <h3 class="under-speed">Electricity</h3>
                     </section>
                     <section class="col-md-6 my-3">
-                        <div class="gauge">
-                            <div id="preview-GasHidden" style="font-size: 3em; " hidden>0</div>
-                            <div id="preview-Gas" style="font-size: 3em;">0</div>
-                            <canvas id="speedGas" width="240" height="205" style=" width: 240px; height:205px;"></canvas>
-                        </div>
+                        <div id="preview-GasHidden" style="font-size: 3em; " hidden>0</div>
+                        <div id="preview-Gas" style="font-size: 3em;">0</div>
+                        <canvas id="speedGas" width="240" height="205" style=" width: 240px; height:205px;"></canvas>
+                        <h4 class="overlay-to-circle"><i class="fas fa-fire on-speed"></i></h4>
+                        <h3 class="under-speed">Gas</h3>
                     </section>
                 </div>
             </section>
         </article>
     </div>
     <section class="container adjustPos">
-        <div class="budget"><a href="/test.php" >Set budget</a></div>
+        <div class="budget"></div>
         <div class="invert">
             <p><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
         </div>
