@@ -1,7 +1,8 @@
 <?php require('template/header.phtml') ?>
 
-<?php if(isset($_SESSION['error']))echo $_SESSION["error"];?>
-<form method="POST" action="">
+<?php if( isset($error) ) { echo $error; }?>
+
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <div class="container">
       <div class="py-5 text-center">
         <h2>Set your budget</h2>
@@ -9,27 +10,26 @@
         <?php if(isset($_SESSION["electricityBudget"])) echo " <br> " . " Your current electricity budget is : " . $_SESSION["electricityBudget"] . "$"?>
       </div>
 
-
             <div class="mb-3">
               <label for="email">Email</label>
-              <input type="text" class="form-control" name="email" placeholder="you@example.com">
+              <input type="email" class="form-control" name="email" placeholder="you@example.com" required>
 
             </div>
 
             <div class="mb-3">
               <label for="address">Gas budget</label>
-              <input type="text" class="form-control" name="gasPrice"  placeholder="£0.00" required>
+              <input type="number" class="form-control" name="gasPrice"  placeholder="£0.00" required>
 
             </div>
 
             <div class="mb-3">
               <label for="address2">Electricity budget</label>
-              <input type="text" class="form-control" name="electricityPrice"  placeholder="£0.00">
+              <input type="number" class="form-control" name="electricityPrice"  placeholder="£0.00" required>
             </div>
 
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="country">Day</label>
+                <label for="country">Billing Date</label>
                 <select class="custom-select d-block w-100" name="day" required>
                   <option value="">Choose...</option>
                   <option>1</option>
@@ -55,12 +55,18 @@
                                                           <option>21</option>
                                                             <option>22</option>
                                                               <option>23</option>
-                                                                <option>24</option>  <option>25</option>  <option>26</option>  <option>27</option>  <option>28</option>  <option>29</option>  <option>30</option>
+                                                                <option>24</option>
+                                                                  <option>25</option>
+                                                                    <option>26</option>
+                                                                      <option>27</option>
+                                                                        <option>28</option>
+                                                                          <option>29</option>
+                                                                            <option>30</option>
                 </select>
 
               </div>
               <div class="col-md-4 mb-3">
-                <label for="state">Month</label>
+                <label for="state">Billing Month</label>
                 <select class="custom-select d-block w-100" name="month" required>
                   <option value="">Choose...</option>
                   <option>Jan</option>
@@ -79,13 +85,13 @@
 
               </div>
               <div class="col-md-3 mb-3">
-                <label for="zip">Year</label>
+                <label for="zip">Billing Year</label>
                 <input type="text" class="form-control"   name="year" placeholder="Year" required>
 
               </div>
             </div>
 
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm</button>
+            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit">Confirm</button>
 </form>
 <?php require('template/footer.phtml') ?>
