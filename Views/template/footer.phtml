@@ -87,7 +87,7 @@
                         var x = parseInt(str);
                         document.getElementById("preview-Electricity").innerHTML = '0.'+zeroPad(x, 5)+' kWh';
                         reload();
-                    }, 1000);
+                    }, Math.floor(Math.random() * Math.floor(3000)));
                 },
                 50);
             setTimeout(
@@ -102,14 +102,20 @@
                     setInterval(function(){
                         var value = document.getElementById("autoReloadGas").innerHTML;
                         var x1 = parseInt(value);
-                        gauge2.set(x1+Math.floor(Math.random() * Math.floor(200))); // set actual value
+                        if (x1===0){
+                            gauge2.set(x1);
+                        }
+                        else
+                        {
+                            gauge2.set(x1+Math.floor(Math.random() * Math.floor(200))); // set actual value
+                        }
                         gauge2.setTextField(document.getElementById("preview-GasHidden"));
                         var str = document.getElementById("preview-GasHidden").innerHTML;
                         str = str.replace(",", "");
                         var x = parseInt(str);
                         document.getElementById("preview-Gas").innerHTML = '0.'+zeroPad(x, 5)+' kWh';
                         reload();
-                    }, 500);
+                    }, Math.floor(Math.random() * Math.floor(3000)));
                 },
                 50);
         });
