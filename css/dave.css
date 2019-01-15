@@ -1,5 +1,5 @@
 .col-md-6 {
-    padding: 0 0 0 0 !important;
+    padding: 40px 0 0 0 !important;
     width:auto;
 }
 .col-md-6 .fa-stack{
@@ -19,7 +19,15 @@
     z-index : 1;
     top: -200px;
 }
-
+.adjustPos .budget{
+    display: inline-block;
+    padding-top: 22px;
+    color: rgba(0, 0, 0, 0.91);
+}
+.adjustPos .invert{
+    display: inline-block;
+    float: right;
+}
 .under-circle{
     margin: 0 auto;
     padding-top: 20%;
@@ -48,11 +56,16 @@
 .Atmosphere, .atmosphere {
     background-color: #aecbf9;
 }
-
+.my-legend{
+    position: absolute;
+    z-index: 1;
+    float: right;
+}
 .tab-content {
     background-color: white;
     min-width: 70%;
     margin-right: auto;
     margin-left: auto;
+    margin-top: -7px;
     width:auto
 }
