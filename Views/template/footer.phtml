@@ -30,7 +30,24 @@
 <!--    }-->
 <!--    setTimeout(activeElement, 1000);-->
 <!--</script>-->
-
+<div id="autoReloadElec" hidden>
+    <?php echo $elecInstant =  ((new ConnectionConsumption('ELEC','PT1M', 'now - 3 minutes', 'now - 2 minutes'))->getData()->getTotalConsumption())*100000
+    ?>
+</div>
+<div id="autoReloadGas" hidden>
+    <?php echo $gasInstant =  ((new ConnectionConsumption('GAS','PT1M', 'now - 3 minutes', 'now - 2 minutes'))->getData()->getTotalConsumption())*100000
+    ?>
+</div>
+<script>
+    function reload(){
+        var container = document.getElementById("autoReloadElec");
+        var content = container.innerHTML;
+        container.innerHTML = content;
+        container = document.getElementById("autoReloadGas");
+        content = container.innerHTML;
+        container.innerHTML = content;
+    }
+</script>
 <script>
     $( document ).ready(function() {
         $( "#doughnut" ).click(function() {
@@ -45,21 +62,31 @@
                 },
                 50);
         });
+        function zeroPad(num, places) {
+            var zero = places - num.toString().length + 1;
+            return Array(+(zero > 0 && zero)).join("0") + num;
+        }
         $( "#instant" ).click(function() {
             setTimeout(
                 function() {
                     var target1 = document.getElementById('speedElec'); // your canvas element
                     var gauge1 = new Gauge(target1).setOptions(opts); // create sexy gauge!
 
-                    gauge1.maxValue = 10; // set max gauge value
+                    gauge1.maxValue = 28000; // set max gauge value
                     gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
                     gauge1.animationSpeed = 22; // set animation speed (32 is default value)
                     gauge1.set(0);
                     setInterval(function(){
-                        gauge1.set(2+Math.random()); // set actual value
-                        gauge1.setTextField(document.getElementById("preview-Electricity"))
-
-                    }, 500);
+                        var value = document.getElementById("autoReloadElec").innerHTML;
+                        var x1 = parseInt(value);
+                        gauge1.set(x1+Math.floor(Math.random() * Math.floor(200))); // set actual value
+                        gauge1.setTextField(document.getElementById("preview-ElectricityHidden"));
+                        var str = document.getElementById("preview-ElectricityHidden").innerHTML;
+                        str = str.replace(",", "");
+                        var x = parseInt(str);
+                        document.getElementById("preview-Electricity").innerHTML = '0.'+zeroPad(x, 5)+' kWh';
+                        reload();
+                    }, 1000);
                 },
                 50);
             setTimeout(
@@ -67,13 +94,20 @@
                     var target2 = document.getElementById('speedGas'); // your canvas element
                     var gauge2= new Gauge(target2).setOptions(opts); // create sexy gauge!
 
-                    gauge2.maxValue = 10; // set max gauge value
+                    gauge2.maxValue = 22000; // set max gauge value
                     gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
                     gauge2.animationSpeed = 22; // set animation speed (32 is default value)
                     gauge2.set(0);
                     setInterval(function(){
-                        gauge2.set(4+Math.random()); // set actual value
-                        gauge2.setTextField(document.getElementById("preview-Gas"))
+                        var value = document.getElementById("autoReloadGas").innerHTML;
+                        var x1 = parseInt(value);
+                        gauge2.set(x1+Math.floor(Math.random() * Math.floor(200))); // set actual value
+                        gauge2.setTextField(document.getElementById("preview-GasHidden"));
+                        var str = document.getElementById("preview-GasHidden").innerHTML;
+                        str = str.replace(",", "");
+                        var x = parseInt(str);
+                        document.getElementById("preview-Gas").innerHTML = '0.'+zeroPad(x, 5)+' kWh';
+                        reload();
                     }, 500);
                 },
                 50);
@@ -142,7 +176,6 @@
                     verticalAlign: "bottom",  // "center" , "top"
                     fontSize: 17,
                 },
-
                 data: [{
                     type: "doughnut",
                     showInLegend: true,
