@@ -3,6 +3,8 @@ require_once('Models/ConnectionConsumption.php');
 require_once ('Models/Prediction.php');
 require_once('Models/ConnectionWeather.php');
 require_once ('Models/ConnectionLocation.php');
+require_once ('Models/BudgetDb.php');
+
 session_start();
 $view = new stdClass();
 $view->pageTitle = 'Homepage';
@@ -52,28 +54,44 @@ foreach ($testWeatherArray as $value) {
 
 // Doughnut Chart and colour classes
 
+
+
+$budgetConnection = new BudgetDb();
+//$view->setBudget;
+
+if ($budgetConnection->getBudget('group2@hotmail.com')['electricityPrice'] > 0){
+    $view->elecBudget = $budgetConnection->getBudget('group2@hotmail.com')['electricityPrice'];
+}
+if ($budgetConnection->getBudget('group2@hotmail.com')['gasPrice'] > 0) {
+    $view->gasBudget = $budgetConnection->getBudget('group2@hotmail.com')['gasPrice'];
+}
+
 $colour= [];
 
-if($view->totalElec < 40/2) {
-    $colour[0] = 'green';
-    $view->colourElectric = 'color-green';
-}elseif($view->totalElec < (40*4)/5){
-    $colour[0] = 'gold';
-    $view->colourElectric = 'color-gold';
-}else {
-    $colour[0] = 'red';
-    $view->colourElectric = 'color-red';
+if(isset($view->elecBudget)){
+    if($view->totalElec < $view->elecBudget/2) {
+        $colour[0] = 'green';
+        $view->colourElectric = 'color-green';
+    }elseif($view->totalElec < ($view->elecBudget*4)/5){
+        $colour[0] = 'gold';
+        $view->colourElectric = 'color-gold';
+    }else {
+        $colour[0] = 'red';
+        $view->colourElectric = 'color-red';
+    }
 }
-if($view->totalGas < 40/2) {
-    $colour[1]= 'green';
-    $view->colourGas = 'color-green';
+if(isset($view->elecBudget)) {
+    if ($view->totalGas < $view->gasBudget / 2) {
+        $colour[1] = 'green';
+        $view->colourGas = 'color-green';
 
-}elseif($view->totalGas < (40*4)/5){
-    $colour[1]= 'gold';
-    $view->colourGas = 'color-gold';
+    } elseif ($view->totalGas < ($view->gasBudget * 4) / 5) {
+        $colour[1] = 'gold';
+        $view->colourGas = 'color-gold';
 
-}else{
-    $colour[1]= 'red';
-    $view->colourGas = 'color-red';
+    } else {
+        $colour[1] = 'red';
+        $view->colourGas = 'color-red';
+    }
 }
 require_once ('Views/index.phtml');
