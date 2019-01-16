@@ -14,6 +14,8 @@
         <h2>Set your budget</h2>
         <?php if(isset($gasPrice)) echo " Your current gas budget is : " . $gasPrice . "$" ?>
         <?php if(isset($electricPrice)) echo " <br> " . " Your current electricity budget is : " . $electricPrice . "$"?>
+        <?php if(isset($date)) echo " <br> " . " You last updated your budget on : " . $date ?>
+
       </div>
 
             <div class="mb-3">
