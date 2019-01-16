@@ -28,6 +28,7 @@ if (isset($_POST['cancel']) || isset($_POST['return'])) {
 $budget2 = $budgetDatabase->getBudget("group2@hotmail.com");
 $electricPrice = $budget2["electricityPrice"];
 $gasPrice = $budget2["gasPrice"];
+$date = $budget2['date'];
 if ($success) {
     require_once("Views/seeBudget.phtml");
 } else {
