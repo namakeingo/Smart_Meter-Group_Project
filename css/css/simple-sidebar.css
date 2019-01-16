@@ -113,10 +113,18 @@ body {
   }
   #page-content-wrapper {
     padding: 20px;
+    /*position: relative;*/
+  }
+  #wrapper.toggled #page-content-wrapper {
+    /*position: relative;*/
+    margin-right: 0;
+  }
+}
+@media (min-width: 1445px) {
+  #page-content-wrapper{
     position: relative;
   }
   #wrapper.toggled #page-content-wrapper {
     position: relative;
-    margin-right: 0;
   }
 }
