@@ -15,7 +15,7 @@
             <a href="#3" data-toggle="tab" id="doughnut">Cost based on Budget</a>
         </li>
         <li>
-            <a href="#4" data-toggle="tab" id="instant">Speed</a>
+            <a href="#4" data-toggle="tab" id="instant">Instantaneous Consumption</a>
         </li>
     </ul>
 </div>
@@ -35,19 +35,21 @@
                 </div>
                 <div class="row text-center">
                     <section class="col-md-6 my-3">
-                              <span id="energy1" class="fa-stack fa-2x color-red">
+                              <span id="energy1" class="fa-stack fa-2x <?php echo $view->colourElectric; ?>">
                                 <i class="fas fa-circle-notch fa-9x circle-size"></i>
                               </span>
-                        <h4 id="energy1" class="overlay-to-circle color-red"><i class="fas fa-bolt fa-7x"></i></h4>
-                        <h3 id="energy1" class="in-circle color-red">Elec</h3>
+                        <h4 id="energy1" class="overlay-to-circle <?php echo $view->colourElectric; ?>">
+                            <i class="fas fa-bolt fa-7x"></i></h4>
+                        <h3 id="energy1" class="in-circle <?php echo $view->colourElectric; ?>">Elec</h3>
                         <h3 class="under-circle">£<?php echo $view->totalElec; ?></h3>
                     </section>
                     <section class="col-md-6 my-3">
-                            <span id="gas1" class="fa-stack fa-2x color-green">
+                            <span id="gas1" class="fa-stack fa-2x <?php echo $view->colourGas; ?>">
                               <i class="fas fa-circle-notch fa-9x circle-size"></i>
                             </span>
-                        <h4 id="gas1" class="overlay-to-circle color-green"><i class="fas fa-fire fa-7x"></i></h4>
-                        <h3 id="gas1" class="in-circle color-green">Gas</h3>
+                        <h4 id="gas1" class="overlay-to-circle <?php echo $view->colourGas; ?>">
+                            <i class="fas fa-fire fa-7x"></i></h4>
+                        <h3 id="gas1" class="in-circle <?php echo $view->colourGas; ?>">Gas</h3>
                         <h3 class="under-circle">£<?php echo $view->totalGas; ?></h3>
                     </section>
                 </div>
