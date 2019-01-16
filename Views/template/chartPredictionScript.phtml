@@ -29,7 +29,7 @@
                 for ($i=0; $i<sizeof($view->predictedUsageElec); $i++){
                     $view->weatherPredictionSet[$i]->convertToCelcius();
                     echo '[\''.$view->weatherPredictionSet[$i]->getTime()->format('D d'). ' ('
-                        .intval($view->weatherPredictionSet[$i]->getTemp()) . 'C)' .'\','
+                        .intval($view->weatherPredictionSet[$i]->getTemp()) .'℃)' .'\','
                         .$view->predictedUsageElec[$i]->getInstantCost('Elec').','
                         .$view->predictedUsageGas[$i]->getInstantCost('Gas').'],
             ';
@@ -49,7 +49,7 @@
             <?php
             for ($i=0; $i<sizeof($view->predictedUsageElec); $i++){
                 echo '[\''.$view->weatherPredictionSet[$i]->getTime()->format('D d'). ' ('
-                    .intval($view->weatherPredictionSet[$i]->getTemp()) . 'C)' .'\','
+                    .intval($view->weatherPredictionSet[$i]->getTemp()) . '℃)' .'\','
                     .$view->predictedUsageElec[$i]->getConsumption().','
                     .$view->predictedUsageGas[$i]->getConsumption().'],
             ';
