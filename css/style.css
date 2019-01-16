@@ -1199,3 +1199,40 @@ This is for the color legend
 /*
 End of color legend
  */
+
+
+
+  .speT {
+    position: absolute !important;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+      -ms-flex-flow: column nowrap !important;
+          flex-flow: column nowrap !important;
+      -webkit-box-align: start !important;
+          -ms-flex-align: start !important;
+              align-items: flex-start !important;
+    z-index: 1 !important;
+    margin-top: -30% !important;
+
+    }
+  .speT > li {
+      -webkit-writing-mode: vertical-lr !important;
+          -ms-writing-mode: tb-lr !important;
+              writing-mode: vertical-lr !important;
+      -webkit-transform: rotate(180deg) !important;
+              transform: rotate(180deg) !important;
+      -webkit-transform-origin: center center !important;
+              transform-origin: center center !important;
+      list-style-type: none !important;
+  }
+  .speT > li > a {
+    display: block !important;
+    padding: 0.6rem 1rem !important;
+    background-color: beige !important;
+
+  }
+
+  .elecG{
+    margin-right: 30% !important;
+  }
