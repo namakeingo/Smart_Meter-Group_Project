@@ -195,13 +195,14 @@
         //         console.log(name);
         //     }
         // });
-        //test4
+        // pure JS - Working but lag
         // function httpGet(url,type,multiply){
         //     var xmlHttp = new XMLHttpRequest();
         //     xmlHttp.open( "GET", url+'?type='+type, false );
         //     xmlHttp.send();
         //     return xmlHttp.responseText*multiply;
         // }
+        // pure jQuery - Working
         function httpGet(url, type, multiply){
             var response;
             $.ajax({
@@ -305,7 +306,7 @@
 </script>
 <script>
     var opts = {
-        angle: -0.3, // The span of the gauge arc
+        angle: -0.33, // The span of the gauge arc
         lineWidth: 0.3, // The line thickness
         radiusScale: 1, // Relative radius
         pointer: {
