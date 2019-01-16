@@ -1,40 +1,35 @@
 <?php
 
 require_once("Models/BudgetDb.php");
-session_start();
-
-if (isset($_SESSION['error'])) {
-    unset($_SESSION['error']);
-}
+$errors = array();
+$success = false;
+$budgetDatabase = new BudgetDb();
 
 if (isset($_POST["submit"])) {
     $emailValidation = $_POST['email'];
     $electrictyValidation = $_POST['electricityPrice'];
     $gasValidation = $_POST['gasPrice'];
-    if ($emailValidation == 'group2@hotmail.com') {
-        $data = array(
-            "electricityPrice" => $_POST["electricityPrice"],
+
+    if ($emailValidation != 'group2@hotmail.com') {
+        array_push($errors, "Email is incorrect.");
+    } else {
+        $data = array("electricityPrice" => $_POST["electricityPrice"],
             "gasPrice" => $_POST["gasPrice"],
             "email" => $_POST["email"],
-            "date" => $_POST["day"] . "-" . $_POST["month"] . "-" . $_POST["year"]
-        );
-        $budgetDatabase = new BudgetDb();
+            "date" => $_POST["day"] . "-" . $_POST["month"] . "-" . $_POST["year"]);
         $budgetDatabase->insert($data);
-        $budget = $budgetDatabase->getBudget("group2@hotmail.com");
-        $_SESSION["electricityBudget"] = $budget["electricityPrice"];
-        $_SESSION["gasBudget"] = $budget["gasPrice"];
-        require_once("Views/seeBudget.phtml");
-    } else {
-        $error = 'Email is incorrect';
-        require_once("Views/budget.phtml");
+        $success = true;
     }
-
-} else {
-    $budgetDatabase = new BudgetDb();
-    $budget2 = $budgetDatabase->getBudget("group2@hotmail.com");
-    $_SESSION["electricityBudget"] = $budget2["electricityPrice"];
-    $_SESSION["gasBudget"] = $budget2["gasPrice"];
-    require_once("Views/budget.phtml");
-    echo 'not working';
 }
-?>
+if (isset($_POST['cancel']) || isset($_POST['return'])) {
+    header("location: index.php");
+}
+
+$budget2 = $budgetDatabase->getBudget("group2@hotmail.com");
+$electricPrice = $budget2["electricityPrice"];
+$gasPrice = $budget2["gasPrice"];
+if ($success) {
+    require_once("Views/seeBudget.phtml");
+} else {
+    require_once("Views/budget.phtml");
+}
