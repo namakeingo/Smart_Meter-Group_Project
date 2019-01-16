@@ -37,7 +37,6 @@ $prediction->train('Elec');
 // predicted usage for the 5 days saved for the view
 $view->predictedUsageElec = [];
 $count = 0;
-var_dump($testWeatherArray);
 foreach ($testWeatherArray as $value) {
     $view->predictedUsageElec[] = new ConsumptionData($view->weatherPredictionSet[$count]->getTime()->getTimeStamp(),
         floatval($prediction->predict(array($value[0], $value[1], $value[2]))));
