@@ -29,11 +29,11 @@
                         <ul class='legend-labels'>
                             <?php if(!isset($view->elecBudget) && !isset($view->gasBudget)){ ?>
                             <li><span style='background:grey;'></span>No Budget limit</li>
-                            <?}else{?>
+                            <?php }else{ ?>
                                 <li><span style='background:green;'></span>Good</li>
                                 <li><span style='background:orange;'></span>Okay</li>
                                 <li><span style='background:red;'></span>Bad</li>
-                            <? }?>
+                            <?php }?>
                         </ul>
                     </div>
                 </div>
@@ -141,6 +141,6 @@
 
 </div>
 
-<?php require('template/chartPredictionScript.phtml') ?>
+<?php require('template/chartPredictionScript.phtml'); ?>
 
-<?php require('template/footer.phtml') ?>
+<?php require('template/footer.phtml'); ?>
