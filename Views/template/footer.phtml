@@ -195,22 +195,25 @@
         //         console.log(name);
         //     }
         // });
-        //test 3
-        // $.ajax({
-        //     type: 'GET',
-        //     url: '/Models/Request.php',
-        //     dataType: 'json',
-        //     success: function(json){
-        //         var b = jQuery.parseJSON(data)
-        //         console.log(b);
-        //     }
-        // });
         //test4
-        function httpGet(url){
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open( "GET", url, false );
-            xmlHttp.send();
-            return xmlHttp.responseText;
+        // function httpGet(url,type,multiply){
+        //     var xmlHttp = new XMLHttpRequest();
+        //     xmlHttp.open( "GET", url+'?type='+type, false );
+        //     xmlHttp.send();
+        //     return xmlHttp.responseText*multiply;
+        // }
+        function httpGet(url, type, multiply){
+            var response;
+            $.ajax({
+                async: false,
+                type: "GET",
+                url: url,
+                data: {type: type},
+                success: function(data){
+                    response=parseFloat(data)*multiply;
+                }
+            });
+            return response;
         }
         $( "#instant" ).click(function() {
             setTimeout(
@@ -222,12 +225,22 @@
                     gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
                     gauge1.animationSpeed = 22; // set animation speed (32 is default value)
                     gauge1.set(0);
+                    var exec=0;
+                    var value;
                     function setElec(){
-                        //request updated value to API
-                        var value = httpGet('/Models/Request.php?type=ELEC')*100000;
-                        console.log(value);
+                        //limit number of executions to avoid delays
+                        if (exec===0) {
+                            //request updated value to API
+                            //console.log(httpGet('/Models/Request.php', 'ELEC') * 100000;);
+                            value = httpGet('/Models/Request.php', 'ELEC',100000);
+                            //console.log(value);
+                        }
+                        exec++;
+                        if (exec > 20){
+                            exec=0;
+                        }
                         if (value!==0){
-                            gauge1.set(value+Math.floor(Math.random() * 15)-15); // set actual value
+                            gauge1.set(value+Math.floor(Math.random() * 10)-10); // set actual value
                         }
                         else
                         {
@@ -242,7 +255,7 @@
                     setElec();
                     setInterval(function(){
                         setElec();
-                    }, Math.floor(Math.random() * 2500)+500);
+                    }, Math.floor(Math.random() * 2000)+1000);
                 },
                 50);
             setTimeout(
@@ -254,12 +267,21 @@
                     gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
                     gauge2.animationSpeed = 22; // set animation speed (32 is default value)
                     gauge2.set(0);
+                    var exec=0;
+                    var value;
                     function setGas(){
-                        //request updated value to API
-                        var value = httpGet('/Models/Request.php?type=GAS')*100000;
-                        console.log(value);
+                        //limit number of executions to avoid delays
+                        if (exec===0) {
+                            //request updated value to API
+                            value = httpGet('/Models/Request.php', 'GAS',100000);
+                            //console.log(value);
+                        }
+                        exec++;
+                        if (exec > 20){
+                            exec=0;
+                        }
                         if (value!==0){
-                            gauge2.set(value+Math.floor(Math.random() * 15)-15); // set actual value
+                            gauge2.set(value+Math.floor(Math.random() * 10)-10); // set actual value
                         }
                         else
                         {
@@ -274,7 +296,7 @@
                     setGas();
                     setInterval(function(){
                         setGas();
-                    }, Math.floor(Math.random() * 2500)+500);
+                    }, Math.floor(Math.random() * 2000)+1000);
                 },
                 50);
         });
