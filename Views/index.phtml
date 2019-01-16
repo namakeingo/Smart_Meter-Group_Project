@@ -12,10 +12,10 @@
             <a id="kwhTabTop" href="#chartKWH" data-toggle="tab">Predicted kWh Usage</a>
         </li>
         <li>
-            <a href="#3" data-toggle="tab" id="doughnut">Cost based on Budget</a>
+            <a href="#3" data-toggle="tab" id="doughnut" <?php if(!isset($view->elecBudget) && !isset($view->gasBudget)){ echo  'hidden';} ?>>Cost based on Budget</a>
         </li>
         <li>
-            <a href="#4" data-toggle="tab" id="instant">Instant Consumption</a>
+            <a href="#4" data-toggle="tab" id="instant" >Instant Consumption</a>
         </li>
     </ul>
 </div>
@@ -27,9 +27,13 @@
                     <div class='legend-title'>Colour meanings:</div>
                     <div class='legend-scale'>
                         <ul class='legend-labels'>
-                            <li><span style='background:green;'></span>Good</li>
-                            <li><span style='background:orange;'></span>Okay</li>
-                            <li><span style='background:red;'></span>Bad</li>
+                            <?php if(!isset($view->elecBudget) && !isset($view->gasBudget)){ ?>
+                            <li><span style='background:grey;'></span>No Budget limit</li>
+                            <?}else{?>
+                                <li><span style='background:green;'></span>Good</li>
+                                <li><span style='background:orange;'></span>Okay</li>
+                                <li><span style='background:red;'></span>Bad</li>
+                            <? }?>
                         </ul>
                     </div>
                 </div>

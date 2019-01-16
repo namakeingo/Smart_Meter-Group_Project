@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76cf2366-889b-4578-9cfc-db4aeeaea878" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Budget.php" beforeDir="false" afterPath="$PROJECT_DIR$/Budget.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budget.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ux.iml" afterPath="$PROJECT_DIR$/.idea/ux.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Views/index.phtml" afterPath="$PROJECT_DIR$/Views/index.phtml" />
+      <change beforePath="$PROJECT_DIR$/Views/template/footer.phtml" afterPath="$PROJECT_DIR$/Views/template/footer.phtml" />
+      <change beforePath="$PROJECT_DIR$/css/custom.css" afterPath="$PROJECT_DIR$/css/custom.css" />
+      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,12 +60,61 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/budget.php">
+    <leaf>
+      <file leaf-file-name="footer.phtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/template/footer.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            <state relative-caret-position="231">
+              <caret line="126" column="85" lean-forward="false" selection-start-line="126" selection-start-column="85" selection-end-line="126" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="seeBudget.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/seeBudget.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="61" column="76" lean-forward="false" selection-start-line="61" selection-start-column="76" selection-end-line="61" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/index.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1351">
+              <caret line="28" column="50" lean-forward="false" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#section#0;n#article#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#section#0;n#article#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BudgetDb.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/BudgetDb.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="47" column="119" lean-forward="false" selection-start-line="47" selection-start-column="119" selection-end-line="47" selection-end-column="119" />
+              <folding>
+                <marker date="1547658771842" expanded="true" signature="284:356" ph="INSERT INTO budget... " />
+                <marker date="1547658771842" expanded="true" signature="684:720" ph="SELECT * FRO... budget" />
+                <marker date="1547658771842" expanded="true" signature="925:961" ph="SELECT * FRO... budget" />
+                <marker date="1547658771842" expanded="true" signature="1202:1282" ph="UPDATE budget... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,15 +161,16 @@
         <option value="$PROJECT_DIR$/Models/Database.php" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/Views/template/header.phtml" />
-        <option value="$PROJECT_DIR$/Views/template/footer.phtml" />
         <option value="$PROJECT_DIR$/Budget.php" />
-        <option value="$PROJECT_DIR$/Views/index.phtml" />
         <option value="$PROJECT_DIR$/Views/template/chartPredictionScript.phtml" />
         <option value="$PROJECT_DIR$/Models/BudgetDb.php" />
         <option value="$PROJECT_DIR$/Views/budget.phtml" />
         <option value="$PROJECT_DIR$/budget.php" />
         <option value="$PROJECT_DIR$/Views/seeBudget.phtml" />
         <option value="$PROJECT_DIR$/budget1.php" />
+        <option value="$PROJECT_DIR$/Views/index.phtml" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Views/template/footer.phtml" />
       </list>
     </option>
   </component>
@@ -126,7 +180,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7.1">
     <include_path>
       <path value="C:/../../../sohai/Desktop/ux" />
       <path value="$PROJECT_DIR$/../../../../../sohai/Desktop/ux" />
@@ -135,51 +189,51 @@
       <path value="$PROJECT_DIR$/vendor/php-ai/php-ml" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-16" />
-    <option name="y" value="-12" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="24" />
+    <option name="width" value="1440" />
+    <option name="height" value="821" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="MVCtemplate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MASTER" type="462c0819:PsiDirectoryNode" />
+              <item name="MASTER Adeel" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="MVCtemplate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MASTER" type="462c0819:PsiDirectoryNode" />
-              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="MASTER Adeel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Models" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="MVCtemplate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MASTER" type="462c0819:PsiDirectoryNode" />
-              <item name="Views" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="MASTER Adeel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="MVCtemplate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="MVCtemplate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-            </path>
-            <path>
-              <item name="MVCtemplate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-              <item name="MASTER" type="462c0819:PsiDirectoryNode" />
+              <item name="MASTER Adeel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -209,92 +263,51 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8000">
-      <method v="2" />
-    </configuration>
+    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8001" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="76cf2366-889b-4578-9cfc-db4aeeaea878" name="Default Changelist" comment="Changes &#10;- added predicted usage for tomorrow to view &#10;- added color blind changes(Haashim)" />
-      <created>1547218601583</created>
+      <changelist id="823ff4f6-f6f6-420b-afd8-3564cd72901a" name="Default" comment="" />
+      <created>1547658732134</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1547218601583</updated>
-      <workItem from="1547218602728" duration="3525000" />
-      <workItem from="1547289272170" duration="580000" />
-      <workItem from="1547295668580" duration="8963000" />
-      <workItem from="1547328750958" duration="5772000" />
-      <workItem from="1547461822749" duration="1377000" />
-      <workItem from="1547465108727" duration="6893000" />
-      <workItem from="1547634059407" duration="9458000" />
+      <updated>1547658732134</updated>
+      <workItem from="1547658733300" duration="3019000" />
     </task>
-    <task id="LOCAL-00001" summary="Changes&#10;- made the budget more simple and worked on validation&#10;- got rid of test.php and made the link budget.php">
-      <created>1547558090034</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1547558090034</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Changes&#10;- made the budget more simple and worked on validation&#10;- got rid of test.php and made the link budget.php">
-      <created>1547643912679</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1547643912679</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Changes&#10;- made the budget more simple and worked on validation&#10;- got rid of test.php and made the link budget.php">
-      <created>1547643928624</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1547643928624</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Changes&#10;- prediction updated &#10;- gas consumption data retrieved&#10;- gas prediction made">
-      <created>1547470203531</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1547470203531</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Changes&#10;- prediction updated &#10;- gas consumption data retrieved&#10;- gas prediction made&#10;- precision updated">
-      <created>1547470320673</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1547470320673</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19566000" />
+    <option name="totallyTimeSpent" value="22546000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30484116" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.28477904" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28731343" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,28 +354,29 @@
     <MESSAGE value="Changes&#10;- made the budget more simple and worked on validation&#10;- got rid of test.php and made the link budget.php" />
     <option name="LAST_COMMIT_MESSAGE" value="Changes&#10;- made the budget more simple and worked on validation&#10;- got rid of test.php and made the link budget.php" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/comparison.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/chartgas.phtml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/comparison.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20111">
-          <caret line="1183" column="22" selection-start-line="1183" selection-start-column="22" selection-end-line="1183" selection-end-column="22" />
+          <caret line="1183" column="22" lean-forward="false" selection-start-line="1183" selection-start-column="22" selection-end-line="1183" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -371,45 +385,15 @@
     <entry file="file://$PROJECT_DIR$/Views/template/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
-          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+          <caret line="44" column="30" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/template/footer.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/template/chartComparsion.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="125" column="41" selection-start-line="125" selection-start-column="41" selection-end-line="125" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/seeBudget.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/template/chartComparsion.phtml" />
     <entry file="file://$PROJECT_DIR$/Views/budget.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -420,24 +404,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/BudgetDb.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
-          <caret line="47" column="119" selection-start-line="47" selection-start-column="119" selection-end-line="47" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/budget.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="12" lean-forward="true" selection-end-line="35" />
+          <caret line="14" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/BudgetDb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="119" lean-forward="false" selection-start-line="47" selection-start-column="119" selection-end-line="47" selection-end-column="119" />
+          <folding>
+            <marker date="1547658771842" expanded="true" signature="284:356" ph="INSERT INTO budget... " />
+            <marker date="1547658771842" expanded="true" signature="684:720" ph="SELECT * FRO... budget" />
+            <marker date="1547658771842" expanded="true" signature="925:961" ph="SELECT * FRO... budget" />
+            <marker date="1547658771842" expanded="true" signature="1202:1282" ph="UPDATE budget... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/budget.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="396">
           <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/instantCons.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/seeBudget.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="61" column="76" lean-forward="false" selection-start-line="61" selection-start-column="76" selection-end-line="61" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1351">
+          <caret line="28" column="50" lean-forward="false" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#section#0;n#article#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#section#0;n#article#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/template/footer.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="126" column="85" lean-forward="false" selection-start-line="126" selection-start-column="85" selection-end-line="126" selection-end-column="85" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -59,13 +59,6 @@ ul ul a {
     background: #6d7fcc;
 }
 
-.fire-position{
-    top: 158px;
-    z-index: 9999;
-    font-size: 5em;
-    left: 258px;
-    position: absolute;
-}
 
 .canvasjs-chart-toolbar{
     display: none; !important;
