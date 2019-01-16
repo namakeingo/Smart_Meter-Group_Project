@@ -50,25 +50,30 @@ foreach ($testWeatherArray as $value) {
 }
 
 
-// Doughnut Chart
+// Doughnut Chart and colour classes
 
 $colour= [];
 
 if($view->totalElec < 40/2) {
     $colour[0] = 'green';
+    $view->colourElectric = 'color-green';
 }elseif($view->totalElec < (40*4)/5){
     $colour[0] = 'gold';
+    $view->colourElectric = 'color-gold';
 }else {
     $colour[0] = 'red';
+    $view->colourElectric = 'color-red';
 }
-
 if($view->totalGas < 40/2) {
     $colour[1]= 'green';
+    $view->colourGas = 'color-green';
 
 }elseif($view->totalGas < (40*4)/5){
     $colour[1]= 'gold';
+    $view->colourGas = 'color-gold';
 
 }else{
     $colour[1]= 'red';
+    $view->colourGas = 'color-red';
 }
 require_once ('Views/index.phtml');
