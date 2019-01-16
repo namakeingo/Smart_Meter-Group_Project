@@ -21,22 +21,23 @@ $view->totalGas = $gasDataSet->getGasCost();
 $url = new ConnectionLocation();
 $location = $url->getData();
 //changes the url for the weather api
-$url = new ConnectionWeather('forecast', 'London');
+$url = new ConnectionWeather('forecast', 'Salford');
 // weather for 5 days in the future
 $view->weatherPredictionSet = ($url->getData('forecast'))->getPredictedWeather();
 // predicted weather converted to a usable array for k nn
 $testWeatherArray = ($url->getData('forecast'))->createTestWeatherArray();
-$url = new ConnectionWeather('weather','London');
+$url = new ConnectionWeather('weather','Salford');
 // weather for the current time of access to the app
 $view->weatherNow = ($url->getData('weather'))->getWeatherArray()[0];
 
 // classifier initialised
-$prediction = new Prediction(2);
+$prediction = new Prediction(7);
 // classifier trained on the training data set
 $prediction->train('Elec');
 // predicted usage for the 5 days saved for the view
 $view->predictedUsageElec = [];
 $count = 0;
+var_dump($testWeatherArray);
 foreach ($testWeatherArray as $value) {
     $view->predictedUsageElec[] = new ConsumptionData($view->weatherPredictionSet[$count]->getTime()->getTimeStamp(),
         floatval($prediction->predict(array($value[0], $value[1], $value[2]))));
