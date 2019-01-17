@@ -2,7 +2,7 @@
 
 require_once('Models/ConnectionConsumption.php');
 $view = new stdClass();
-$view->pageTitle = 'Consumption Comparison';
+$view->pageTitle = 'Comparison';
 
 function getConsumption($type,$time, $to){
     //This gets the total consumption of a type (GAS or ELEC) of one day
@@ -30,5 +30,7 @@ if ($view->consumptionDifference > 0) {
 } else {
     $view->todayIsBetter = false;
 }
+
+$view->type='BOTH';
 require_once ('Views/comparison.phtml');
 ?>

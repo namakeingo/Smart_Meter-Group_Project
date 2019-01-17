@@ -1,156 +1,131 @@
-
 <script>
     google.charts.load('current', {packages: ['corechart', 'bar']});
-    google.charts.setOnLoadCallback(drawChartDay);
-    function initializeDay () {
-        $('#dayTabTop').click(function() {
-            setTimeout(
-                function() {
-                    drawChartDay();
-                },
-                50)
-        });
-    }
-    function initializeWeek () {
-        $('#weekTabTop').click(function() {
-            setTimeout(
-                function() {
-                    drawChartWeek();
-                },
-                50)
-        });
-    }
-    function initializeMonth () {
-        $('#monthTabTop').click(function() {
-            setTimeout(
-                function() {
-                    drawChartMonth();
-                },
-                50)
-        });
-    }
-    function initializeYear () {
-        $('#yearTabTop').click(function() {
-            setTimeout(
-                function() {
-                    drawChartYear();
-                },
-                100)
-        });
-    }
-    google.charts.setOnLoadCallback(initializeDay);
-    google.charts.setOnLoadCallback(initializeWeek);
-    google.charts.setOnLoadCallback(initializeMonth);
-    google.charts.setOnLoadCallback(initializeYear);
 
-    function drawChartDay() {
-        var data = google.visualization.arrayToDataTable([
-            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
-            <?php
-            $view->period='PT1H';
-            $view->from='today 00:00:00';
-//            $view->dateFrom = new DateTime($view->from, new DateTimeZone('Europe/London'));
-//            echo $view->dateFrom->format('Y-m-d H:i:s');
-            $view->periodName='Hours';
-            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now');
-            $consumDataSet = $Consum->getData();
-            $view->kwhConsum = $consumDataSet->getConsumptionArray();
-            foreach ($view->kwhConsum as $value) {
-                echo '[\''.$value->getDate()->modify('-1 hour')->format('H:i').' - '
-                    .$value->getDate()->modify('+1 hour')->format('H:i')
-                    .'\','.$value->getConsumption().'],
-            ';
-            }
-            ?>
-        ]);
-        var periodName = '<?php echo $view->periodName ?>';
+    //Comparison Chart
+    if(document.title==='Comparison') {
+        google.charts.setOnLoadCallback(function () {
+            drawChart('<?php echo $view->type ?>', 'CompDay', 'Days', 'Compare',
+                httpGet('<?php echo $view->type ?>', 1, 'P1D', 'today 00:00:00', 'now', 'D d', null, 'yesterday 00:00:00', 'yesterday 23:59:59'), true)
+        });
+        function initializeDay() {
+            $('#dayTabTop').click(function () {
+                setTimeout(
+                    function () {
+                        drawChart('<?php echo $view->type ?>', 'CompDay', 'Days', 'Compare',
+                            httpGet('<?php echo $view->type ?>', 1, 'P1D', 'today 00:00:00', 'now', 'D d', null, 'yesterday 00:00:00', 'yesterday 23:59:59'), true)
+                    },
+                    1)
+            });
+        }
+        google.charts.setOnLoadCallback(initializeDay);
+        function initializeWeek() {
+            $('#weekTabTop').click(function () {
+                setTimeout(
+                    function () {
+                        drawChart('<?php echo $view->type ?>', 'CompWeek', 'Weeks', 'Compare',
+                            httpGet('<?php echo $view->type ?>', 1, 'P1W', 'last monday 00:00:00', 'last monday +6days 23:59:59', 'd-m','+6days', 'last monday 00:00:00 -7days', 'last monday 00:00:00 -1seconds'), true)
+                    },
+                    1)
+            });
+        }
+        google.charts.setOnLoadCallback(initializeWeek);
+        function initializeMonth() {
+            $('#monthTabTop').click(function () {
+                setTimeout(
+                    function () {
+                        drawChart('<?php echo $view->type ?>', 'CompMonth', 'Months', 'Compare',
+                            httpGet('<?php echo $view->type ?>', 1, 'P1M', 'first day of this month 00:00:00', 'now', 'M', null,'first day of last month 00:00:00','first day of this month 00:00:00 -1seconds'),true);
+                    },
+                    1)
+            });
+        }
+        google.charts.setOnLoadCallback(initializeMonth);
+        function initializeYear() {
+            $('#yearTabTop').click(function () {
+                setTimeout(
+                    function () {
+                        drawChart('<?php echo $view->type ?>', 'CompYear', 'Years', 'Compare',
+                            httpGet('<?php echo $view->type ?>', 1, 'P1Y', 'first day of January 00:00:00', 'now', 'Y', null,'first day of January 00:00:00 -1year','first day of January 00:00:00 -1seconds'),true);
+                    },
+                    1)
+            });
+        }
+        google.charts.setOnLoadCallback(initializeYear);
+    }
+
+    //chart Elec and Gas for Normal Charts
+    if(document.title==='Electricity' || document.title==='Gas') {
+        google.charts.setOnLoadCallback(function () {
+            drawChart('<?php echo $view->type ?>', 'Day', 'Hours', '<?php echo $view->pageTitle ?>',
+                httpGet('<?php echo $view->type ?>', 1, 'PT1H', 'now 00:00:00', 'now', 'H:i', '+1hours'))
+        });
+        function initializeDay() {
+            $('#dayTabTop').click(function () {
+                setTimeout(
+                    function () {
+                        drawChart('<?php echo $view->type ?>', 'Day', 'Hours', '<?php echo $view->pageTitle ?>',
+                            httpGet('<?php echo $view->type ?>', 1, 'PT1H', 'now 00:00:00', 'now', 'H:i', '+1hours'));
+                    },
+                    1)
+            });
+        }
+        google.charts.setOnLoadCallback(initializeDay);
+        function initializeWeek() {
+            $('#weekTabTop').click(function () {
+                setTimeout(
+                    function () {
+                        drawChart('<?php echo $view->type ?>', 'Week', 'Days', '<?php echo $view->pageTitle ?>',
+                            httpGet('<?php echo $view->type ?>', 1, 'P1D', 'last monday 00:00:00', 'now', 'D'));
+                    },
+                    1)
+            });
+        }
+        google.charts.setOnLoadCallback(initializeWeek);
+        function initializeMonth() {
+            $('#monthTabTop').click(function () {
+                setTimeout(
+                    function () {
+                        drawChart('<?php echo $view->type ?>', 'Month', 'Weeks', '<?php echo $view->pageTitle ?>',
+                            httpGet('<?php echo $view->type ?>', 1, 'P1W', 'first monday of this month 00:00:00 -7 days', 'now', 'd-m', '+6days'));
+                    },
+                    1)
+            });
+        }
+        google.charts.setOnLoadCallback(initializeMonth);
+        function initializeYear() {
+            $('#yearTabTop').click(function () {
+                setTimeout(
+                    function () {
+                        drawChart('<?php echo $view->type ?>', 'Year', 'Months', '<?php echo $view->pageTitle ?>',
+                            httpGet('<?php echo $view->type ?>', 1, 'P1M', 'first day of January 00:00:00', 'now', 'M'));
+                    },
+                    1)
+            });
+        }
+        google.charts.setOnLoadCallback(initializeYear);
+    }
+
+    function drawChart(type, ID, timeName, title, arrayConsumption, isBoth) {
+        var array;
+        //console.log(isBoth);
+        if (isBoth){
+            array=[[timeName,'Electricity Consumption','Gas Consumption']];
+            $.merge(array,arrayConsumption);
+        }
+        else{
+            array=[[timeName,title+' Consumption']];
+            $.merge(array,arrayConsumption);
+        }
+        console.log(array);
+        var data = google.visualization.arrayToDataTable(array
+        );
         // set common style for chart
-        var options = styleChart(data.getNumberOfRows(), periodName);
-        var chart = new google.visualization.BarChart(document.getElementById('chart_divDay'));
+        var options = styleChart(type, title, data.getNumberOfRows(), timeName);
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'+ID));
         chart.draw(data, options);
     }
 
-    function drawChartWeek() {
-        var data = google.visualization.arrayToDataTable([
-            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
-
-            <?php
-            $view->period='P1D';
-            $view->from='last monday 00:00:00';
-            $view->periodName='Days';
-            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now');
-            $consumDataSet = $Consum->getData();
-            $view->kwhConsum = $consumDataSet->getConsumptionArray();
-            foreach ($view->kwhConsum as $value) {
-                echo '[\''.$value->getDate()->format('D')
-                    .'\','.$value->getConsumption().'],
-            ';
-            }
-            ?>
-        ]);
-        var periodName = '<?php echo $view->periodName ?>';
-        // set common style for chart
-        var options = styleChart(data.getNumberOfRows(), periodName);
-        var chart = new google.visualization.BarChart(document.getElementById('chart_divWeek'));
-        chart.draw(data, options);
-    }
-
-
-
-    function drawChartMonth() {
-        var data = google.visualization.arrayToDataTable([
-            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
-
-            <?php
-            $view->period='P1W';
-            $view->from='first monday of this month 00:00:00 -7 days';
-            $view->periodName='Weeks';
-            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now');
-            $consumDataSet = $Consum->getData();
-            $view->kwhConsum = $consumDataSet->getConsumptionArray();
-            foreach ($view->kwhConsum as $value) {
-                echo '[\''.$value->getDate()->format('d-m').' - '
-                    .$value->getDate()->modify('+6 days')->format('d-m')
-                    .'\','.$value->getConsumption().'],
-            ';
-            }
-            ?>
-        ]);
-        var periodName = '<?php echo $view->periodName ?>';
-        // set common style for chart
-        var options = styleChart(data.getNumberOfRows(), periodName);
-        var chart = new google.visualization.BarChart(document.getElementById('chart_divMonth'));
-        chart.draw(data, options);
-    }
-
-
-
-    function drawChartYear() {
-        var data = google.visualization.arrayToDataTable([
-            ['Time', '<?php echo $view->pageTitle ?> Consumption'],
-
-            <?php
-            $view->period='P1M';
-            $view->from='first day of January 00:00:00';
-            $view->periodName='Months';
-            $Consum = new ConnectionConsumption($view->type,$view->period, $view->from, 'now');
-            $consumDataSet = $Consum->getData();
-            $view->kwhConsum = $consumDataSet->getConsumptionArray();
-            foreach ($view->kwhConsum as $value) {
-                echo '[\''.$value->getDate()->format('M')
-                    .'\','.$value->getConsumption().'],
-            ';
-            }
-            ?>
-        ]);
-        var periodName = '<?php echo $view->periodName ?>';
-        // set common style for chart
-        var options = styleChart(data.getNumberOfRows(), periodName);
-        var chart = new google.visualization.BarChart(document.getElementById('chart_divYear'));
-        chart.draw(data, options);
-    }
-
-    function styleChart(NumberOfRows, periodName){
+    function styleChart(type ,title, NumberOfRows, periodName){
         var chartAreaHeight;
         if (NumberOfRows <= 5){
             // set inner height to 70 pixels per row
@@ -172,21 +147,24 @@
         var chartHeight = chartAreaHeight + 150;
         //set color based on ELEC or GAS $view->type
         var colorSet;
-        if ('<?php echo $view->type ?>'==='ELEC'){
-            colorSet= '#efda00';
+        if (type==='ELEC'){
+            colorSet= ['#efda00'];
         }
-        else if ('<?php echo $view->type ?>'==='GAS'){
-            colorSet= '#8e48b0';
+        else if (type==='GAS'){
+            colorSet= ['#8e48b0'];
+        }
+        else if (type==='BOTH'){
+            colorSet= ['#efda00', '#8e48b0'];
         }
         return options = {
-            title: '<?php echo $view->pageTitle ?> Consumption Based On '+periodName,
+            title: title+' Consumption Based On '+periodName,
             titleTextStyle:{fontSize: 19},
             chartArea: {
                 width: '60%',
                 height: chartAreaHeight
             },
-            isStacked: true,
-            colors: [colorSet],
+            //isStacked: true,
+            colors: colorSet,
             height: chartHeight,
             hAxis: {
                 title: 'kWh',

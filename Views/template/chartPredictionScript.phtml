@@ -30,8 +30,8 @@
                     $view->weatherPredictionSet[$i]->convertToCelcius();
                     echo '[\''.$view->weatherPredictionSet[$i]->getTime()->format('D d'). ' ('
                         .intval($view->weatherPredictionSet[$i]->getTemp()) .'℃)' .'\','
-                        .$view->predictedUsageElec[$i]->getInstantCost('Elec').','
-                        .$view->predictedUsageGas[$i]->getInstantCost('Gas').'],
+                        .$view->predictedUsageElec[$i]->getPredictedCost('Elec').','
+                        .$view->predictedUsageGas[$i]->getPredictedCost('Gas').'],
             ';
                 }
             ?>
