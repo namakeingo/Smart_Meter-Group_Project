@@ -168,94 +168,64 @@
 <!--speed-->
 <script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
 <script>
-    function httpGet(type, multiplyInstant, period, dateFrom, dateTo, timeFormat, dateToJoinModifier, compareFrom, compareTo){
+    //// start of http Getters
+    // pure jQuery - http GET request to let JS talk to php Models
+    // (used in InstantConsumption, ChartElectricity, ChartGas, ChartComparison
+    // httpGetInstant is specific to InstantConsumption
+    function httpGetInstant(type, multiplyInstant, delay){
+        var data= {type: type, delay:delay};
+        return parseFloat(httpGet(data)) * multiplyInstant;
+    }
+    // httpGetChart is used by ChartGas, ChartElectricity, ChartComparison
+    function httpGetChart(type, period, dateFrom, dateTo, timeFormat, dateToJoinModifier, compareFrom, compareTo){
+        var data= {
+            type: type,
+            period: period,
+            dateFrom: dateFrom,
+            dateTo: dateTo,
+            timeFormat: timeFormat,
+            dateToJoinModifier: dateToJoinModifier,
+            compareFrom: compareFrom,
+            compareTo: compareTo
+        };
+        return httpGet(data, true);
+    }
+    // httpGetPrediction is used in the index by PredictionCharts
+    function httpGetPrediction(unit) {
+        var data= {unit:unit};
+        return httpGet(data, true, true);
+    }
+    // httpGet speaks to /Models/Request.php to get the required data from php Models
+    function httpGet(data, isJson, toCache){
         var response;
         var url='/Models/Request.php';
-        if (multiplyInstant!==1){
-            $.ajax({
-                async: false,
-                type: "GET",
-                url: url,
-                data: {type: type},
-                success: function(data){
-                    //console.log(data);
-                    response = parseFloat(data) * multiplyInstant;
-                }
-            });
+        var dataType='';
+        if (isJson){
+            dataType= 'json';
         }
-        else {
-            $.ajax({
-                async: false,
-                type: "GET",
-                url: url,
-                data: {
-                    type: type,
-                    period: period,
-                    dateFrom: dateFrom,
-                    dateTo: dateTo,
-                    timeFormat: timeFormat,
-                    dateToJoinModifier: dateToJoinModifier,
-                    compareFrom: compareFrom,
-                    compareTo: compareTo
-                },
-                dataType: 'json',
-                cache: false,
-                success: function (data) {
-                    //console.log(data);
-                    response = data;
-                    console.log(response);
-                }
-            });
+        var cache=false;
+        if (toCache){
+            cache=true;
         }
+        $.ajax({
+            async: false,
+            type: "GET",
+            url: url,
+            data: data,
+            dataType,
+            cache,
+            success: function (data) {
+                //console.log(data);
+                response = data;
+                //console.log(response);
+            }
+        });
         return response;
     }
+    //// end of httpGetters
+
+    //Instantaneous consumption Gas and Electricity with continuous update
     $( document ).ready(function() {
-        // function zeroPad(num, places) {
-        //     if (num.toString().length<=places){
-        //         var zero = places - num.toString().length + 1;
-        //         return '0.'+Array(+(zero > 0 && zero)).join("0") + num;
-        //     }
-        //     else{
-        //
-        //     }
-        // }
-        //test1
-        // function testingAPI(){
-        //     var key = "78c4da90ba4a93adc4f50e89427caef9";
-        //     var url = "https://adhocapi.energyhive.com/hive/ac89ccdce8e878e227a93f050413c7d8/type/ELEC/?units=kWh&from=2018-01-01T14:00:00&to=2018-01-01T14:03:00&offset=-0&period=PT1M";
-        //     console.log(httpGet(url,key));
-        // }
-        // function httpGet(url,key){
-        //     var xmlHttp = new XMLHttpRequest();
-        //     xmlHttp.open( "GET", url, false );
-        //     xmlHttp.setRequestHeader('Access-Control-Allow-Headers', '*');
-        //     xmlHttp.setRequestHeader('Access-Control-Allow-Credentials','true');
-        //     xmlHttp.setRequestHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-        //     xmlHttp.setRequestHeader("X-Auth-Token",key);
-        //     xmlHttp.send();
-        //     return xmlHttp.responseText;
-        // }
-        // testingAPI();
-        //test2
-        // $.ajax({
-        //     url: '/Models/Request.php',
-        //     type: "POST",
-        //     data: { getData: true },
-        //     dataType: 'json',                //data format
-        //     success: function(data)          //on recieve of reply
-        //     {
-        //         var name = data[0];
-        //         console.log(name);
-        //     }
-        // });
-        // pure JS - Working but lag
-        // function httpGet(url,type,multiply){
-        //     var xmlHttp = new XMLHttpRequest();
-        //     xmlHttp.open( "GET", url+'?type='+type, false );
-        //     xmlHttp.send();
-        //     return xmlHttp.responseText*multiply;
-        // }
-        // pure jQuery - Working
         $( "#instant" ).click(function() {
             setTimeout(
                 function() {
@@ -273,7 +243,7 @@
                         if (execElec===0) {
                             //request updated value to API
                             //console.log(httpGet('/Models/Request.php', 'ELEC') * 100000;);
-                            valueElec = httpGet('ELEC',100000);
+                            valueElec = httpGetInstant('ELEC',100000,'-2minutes -30seconds');
                             //console.log(valueElec);
                         }
                         execElec++;
@@ -308,7 +278,7 @@
                         //limit number of executions to avoid delays
                         if (execGas===0) {
                             //request updated value to API
-                            valueGas = httpGet('GAS',100000);
+                            valueGas = httpGetInstant('GAS',100000,'-5minutes');
                             //console.log(valueGas);
                         }
                         execGas++;
@@ -336,6 +306,7 @@
     });
 </script>
 <script>
+    // var for styling Instantaneous Consumption
     var opts = {
         angle: -0.33, // The span of the gauge arc
         lineWidth: 0.3, // The line thickness
@@ -356,6 +327,7 @@
 
 <!--Inverted -->
 <script type="text/javascript">
+    //method to invert colors for color blind accessibility
     function invertColor() {
         // the css we are going to inject
         var css = 'html {-webkit-filter: invert(100%);' +

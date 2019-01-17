@@ -1,18 +1,42 @@
 <script>
     google.charts.load('current', {packages: ['corechart', 'bar']});
-
-    //Comparison Chart
+    //Prediction Charts
+    if(document.title==='Homepage') {
+        google.charts.setOnLoadCallback(initializePound);
+        function initializePound () {
+            $('#costTabTop').click(function() {
+                setTimeout(
+                    function () {
+                        drawChart('BOTH', 'Cost', 'Days', 'Predicted',
+                            httpGetPrediction('Pounds'),true,true)
+                    },
+                    1)
+            });
+        }
+        google.charts.setOnLoadCallback(initializeKWH);
+        function initializeKWH () {
+            $('#kwhTabTop').click(function() {
+                setTimeout(
+                    function () {
+                        drawChart('BOTH', 'KWH', 'Days', 'Predicted',
+                            httpGetPrediction('kWh'),true)
+                    },
+                    1)
+            });
+        }
+    }
+    //Comparison Charts
     if(document.title==='Comparison') {
         google.charts.setOnLoadCallback(function () {
             drawChart('<?php echo $view->type ?>', 'CompDay', 'Days', 'Compare',
-                httpGet('<?php echo $view->type ?>', 1, 'P1D', 'today 00:00:00', 'now', 'D d', null, 'yesterday 00:00:00', 'yesterday 23:59:59'), true)
+                httpGetChart('<?php echo $view->type ?>', 'P1D', 'today 00:00:00', 'now', 'D d', null, 'yesterday 00:00:00', 'yesterday 23:59:59'), true)
         });
         function initializeDay() {
             $('#dayTabTop').click(function () {
                 setTimeout(
                     function () {
                         drawChart('<?php echo $view->type ?>', 'CompDay', 'Days', 'Compare',
-                            httpGet('<?php echo $view->type ?>', 1, 'P1D', 'today 00:00:00', 'now', 'D d', null, 'yesterday 00:00:00', 'yesterday 23:59:59'), true)
+                            httpGetChart('<?php echo $view->type ?>', 'P1D', 'today 00:00:00', 'now', 'D d', null, 'yesterday 00:00:00', 'yesterday 23:59:59'), true)
                     },
                     1)
             });
@@ -23,7 +47,7 @@
                 setTimeout(
                     function () {
                         drawChart('<?php echo $view->type ?>', 'CompWeek', 'Weeks', 'Compare',
-                            httpGet('<?php echo $view->type ?>', 1, 'P1W', 'last monday 00:00:00', 'last monday +6days 23:59:59', 'd-m','+6days', 'last monday 00:00:00 -7days', 'last monday 00:00:00 -1seconds'), true)
+                            httpGetChart('<?php echo $view->type ?>', 'P1W', 'last monday 00:00:00', 'last monday +6days 23:59:59', 'd-m','+6days', 'last monday 00:00:00 -7days', 'last monday 00:00:00 -1seconds'), true)
                     },
                     1)
             });
@@ -34,7 +58,7 @@
                 setTimeout(
                     function () {
                         drawChart('<?php echo $view->type ?>', 'CompMonth', 'Months', 'Compare',
-                            httpGet('<?php echo $view->type ?>', 1, 'P1M', 'first day of this month 00:00:00', 'now', 'M', null,'first day of last month 00:00:00','first day of this month 00:00:00 -1seconds'),true);
+                            httpGetChart('<?php echo $view->type ?>', 'P1M', 'first day of this month 00:00:00', 'now', 'M', null,'first day of last month 00:00:00','first day of this month 00:00:00 -1seconds'),true);
                     },
                     1)
             });
@@ -45,7 +69,7 @@
                 setTimeout(
                     function () {
                         drawChart('<?php echo $view->type ?>', 'CompYear', 'Years', 'Compare',
-                            httpGet('<?php echo $view->type ?>', 1, 'P1Y', 'first day of January 00:00:00', 'now', 'Y', null,'first day of January 00:00:00 -1year','first day of January 00:00:00 -1seconds'),true);
+                            httpGetChart('<?php echo $view->type ?>', 'P1Y', 'first day of January 00:00:00', 'now', 'Y', null,'first day of January 00:00:00 -1year','first day of January 00:00:00 -1seconds'),true);
                     },
                     1)
             });
@@ -53,18 +77,18 @@
         google.charts.setOnLoadCallback(initializeYear);
     }
 
-    //chart Elec and Gas for Normal Charts
+    //Elec and Gas for Normal Charts
     if(document.title==='Electricity' || document.title==='Gas') {
         google.charts.setOnLoadCallback(function () {
             drawChart('<?php echo $view->type ?>', 'Day', 'Hours', '<?php echo $view->pageTitle ?>',
-                httpGet('<?php echo $view->type ?>', 1, 'PT1H', 'now 00:00:00', 'now', 'H:i', '+1hours'))
+                httpGetChart('<?php echo $view->type ?>', 'PT1H', 'now 00:00:00', 'now', 'H:i', '+1hours'))
         });
         function initializeDay() {
             $('#dayTabTop').click(function () {
                 setTimeout(
                     function () {
                         drawChart('<?php echo $view->type ?>', 'Day', 'Hours', '<?php echo $view->pageTitle ?>',
-                            httpGet('<?php echo $view->type ?>', 1, 'PT1H', 'now 00:00:00', 'now', 'H:i', '+1hours'));
+                            httpGetChart('<?php echo $view->type ?>', 'PT1H', 'now 00:00:00', 'now', 'H:i', '+1hours'));
                     },
                     1)
             });
@@ -75,7 +99,7 @@
                 setTimeout(
                     function () {
                         drawChart('<?php echo $view->type ?>', 'Week', 'Days', '<?php echo $view->pageTitle ?>',
-                            httpGet('<?php echo $view->type ?>', 1, 'P1D', 'last monday 00:00:00', 'now', 'D'));
+                            httpGetChart('<?php echo $view->type ?>', 'P1D', 'last monday 00:00:00', 'now', 'D'));
                     },
                     1)
             });
@@ -86,7 +110,7 @@
                 setTimeout(
                     function () {
                         drawChart('<?php echo $view->type ?>', 'Month', 'Weeks', '<?php echo $view->pageTitle ?>',
-                            httpGet('<?php echo $view->type ?>', 1, 'P1W', 'first monday of this month 00:00:00 -7 days', 'now', 'd-m', '+6days'));
+                            httpGetChart('<?php echo $view->type ?>', 'P1W', 'first monday of this month 00:00:00 -7 days', 'now', 'd-m', '+6days'));
                     },
                     1)
             });
@@ -97,7 +121,7 @@
                 setTimeout(
                     function () {
                         drawChart('<?php echo $view->type ?>', 'Year', 'Months', '<?php echo $view->pageTitle ?>',
-                            httpGet('<?php echo $view->type ?>', 1, 'P1M', 'first day of January 00:00:00', 'now', 'M'));
+                            httpGetChart('<?php echo $view->type ?>', 'P1M', 'first day of January 00:00:00', 'now', 'M'));
                     },
                     1)
             });
@@ -105,7 +129,7 @@
         google.charts.setOnLoadCallback(initializeYear);
     }
 
-    function drawChart(type, ID, timeName, title, arrayConsumption, isBoth) {
+    function drawChart(type, ID, timeName, title, arrayConsumption, isBoth,isPounds) {
         var array;
         //console.log(isBoth);
         if (isBoth){
@@ -116,16 +140,20 @@
             array=[[timeName,title+' Consumption']];
             $.merge(array,arrayConsumption);
         }
-        console.log(array);
+        //console.log(array);
         var data = google.visualization.arrayToDataTable(array
         );
         // set common style for chart
-        var options = styleChart(type, title, data.getNumberOfRows(), timeName);
+        var options = styleChart(type, title, data.getNumberOfRows(), timeName, isPounds);
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'+ID));
         chart.draw(data, options);
     }
 
-    function styleChart(type ,title, NumberOfRows, periodName){
+    function styleChart(type ,title, NumberOfRows, periodName, isPounds){
+        var unit='kWh';
+        if(isPounds){
+            unit='£ Pounds'
+        }
         var chartAreaHeight;
         if (NumberOfRows <= 5){
             // set inner height to 70 pixels per row
@@ -167,7 +195,7 @@
             colors: colorSet,
             height: chartHeight,
             hAxis: {
-                title: 'kWh',
+                title: unit,
                 minValue: 0,
                 maxValue: 0.1,
                 viewWindow: {
