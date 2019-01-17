@@ -67,7 +67,6 @@ if ($budgetConnection->getBudget('group2@hotmail.com')['electricityPrice'] > 0){
 if ($budgetConnection->getBudget('group2@hotmail.com')['gasPrice'] > 0) {
     $view->gasBudget = $budgetConnection->getBudget('group2@hotmail.com')['gasPrice'];
 }
-
 $colour= [];
 
 if(isset($view->elecBudget)){

@@ -100,3 +100,10 @@
 .btn{
     font-size: 1.5rem !important;
 }
+.alert-budget{
+    text-align: center;
+    font-size: 1.3rem !important;
+}
+.budget{
+    padding-top: 25px;
+}
