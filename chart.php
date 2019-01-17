@@ -5,7 +5,7 @@ $view = new stdClass();
 $view->pageTitle = 'Electricity';
 
 
-$view->type='ELEC';
+$view->type='BOTH';
 
 //var_dump($view->kwhElec);
 //var_dump($view->kwhGas);

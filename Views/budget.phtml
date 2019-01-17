@@ -8,100 +8,101 @@
     </div>
 <?php endif ?>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <div class="container">
-      <div class="py-5 text-center">
-        <h2>Set your budget</h2>
-        <?php if(isset($gasPrice)) echo " Your current gas budget is : " . $gasPrice . "$" ?>
-        <?php if(isset($electricPrice)) echo " <br> " . " Your current electricity budget is : " . $electricPrice . "$"?>
-        <?php if(isset($date)) echo " <br> " . " You last updated your budget on : " . $date ?>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <div class="py-5 text-center">
+            <h2>Set your budget</h2>
+            <?php if(isset($gasPrice)) echo " Your current gas budget is : " . $gasPrice . "$" ?>
+            <?php if(isset($electricPrice)) echo " <br> " . " Your current electricity budget is : " . $electricPrice . "$"?>
+            <?php if(isset($date)) echo " <br> " . " You last updated your budget on : " . $date ?>
 
-      </div>
+        </div>
 
-            <div class="mb-3">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" name="email" placeholder="you@example.com" required>
-            </div>
+        <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="you@example.com" required>
+        </div>
 
-            <div class="mb-3">
-              <label for="address">Gas budget</label>
-              <input type="number" class="form-control" name="gasPrice"  placeholder="£0.00" required>
-            </div>
+        <div class="mb-3">
+            <label for="address">Gas budget</label>
+            <input type="number" class="form-control" name="gasPrice"  placeholder="£0.00" required>
+        </div>
 
-            <div class="mb-3">
-              <label for="address2">Electricity budget</label>
-              <input type="number" class="form-control" name="electricityPrice"  placeholder="£0.00" required>
-            </div>
+        <div class="mb-3">
+            <label for="address2">Electricity budget</label>
+            <input type="number" class="form-control" name="electricityPrice"  placeholder="£0.00" required>
+        </div>
 
-            <div class="row">
-              <div class="col-md-5 mb-3">
+        <div class="row">
+            <div class="col-md-5 mb-3">
                 <label for="country">Billing Date</label>
                 <select class="custom-select d-block w-100" name="day" required>
-                  <option value="">Choose...</option>
-                  <option>1</option>
+                    <option value="">Choose...</option>
+                    <option>1</option>
                     <option>2</option>
-                      <option>3</option>
-                        <option>4</option>
-                          <option>5</option>
-                            <option>6</option>
-                              <option>7</option>
-                                <option>8</option>
-                                  <option>9</option>
-                                    <option>10</option>
-                                      <option>11</option>
-                                        <option>12</option>
-                                          <option>13</option>
-                                            <option>14</option>
-                                              <option>15</option>
-                                                <option>16</option>
-                                                  <option>17</option>
-                                                    <option>18</option>
-                                                      <option>19</option>
-                                                        <option>20</option>
-                                                          <option>21</option>
-                                                            <option>22</option>
-                                                              <option>23</option>
-                                                                <option>24</option>
-                                                                  <option>25</option>
-                                                                    <option>26</option>
-                                                                      <option>27</option>
-                                                                        <option>28</option>
-                                                                          <option>29</option>
-                                                                            <option>30</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
                 </select>
 
-              </div>
-              <div class="col-md-4 mb-3">
+            </div>
+            <div class="col-md-4 mb-3">
                 <label for="state">Billing Month</label>
                 <select class="custom-select d-block w-100" name="month" required>
-                  <option value="">Choose...</option>
-                  <option>Jan</option>
+                    <option value="">Choose...</option>
+                    <option>Jan</option>
                     <option>Feb</option>
-                      <option>Mar</option>
-                        <option>Apr</option>
-                          <option>May</option>
-                            <option>Jun</option>
-                              <option>Jul</option>
-                                <option>Aug</option>
-                                  <option>Sep</option>
-                                    <option>Oct</option>
-                                      <option>Nov</option>
-                                        <option>Dec</option>
+                    <option>Mar</option>
+                    <option>Apr</option>
+                    <option>May</option>
+                    <option>Jun</option>
+                    <option>Jul</option>
+                    <option>Aug</option>
+                    <option>Sep</option>
+                    <option>Oct</option>
+                    <option>Nov</option>
+                    <option>Dec</option>
                 </select>
 
-              </div>
-              <div class="col-md-3 mb-3">
+            </div>
+            <div class="col-md-3 mb-3">
                 <label for="zip">Billing Year</label>
                 <input type="text" class="form-control"   name="year" placeholder="Year" required>
 
-              </div>
             </div>
+        </div>
 
-            <hr class="mb-4">
+        <hr class="mb-4">
         <button class="btn btn-primary btn-lg col-sm-6" type="submit" name="submit">Confirm</button>
 
-</form>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <button class="btn btn-danger btn-lg col-sm-6" type="submit" name="cancel">Cancel</button>
-</form>
+    </form>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <button class="btn btn-danger btn-lg col-sm-6" type="submit" name="cancel">Cancel</button>
+    </form>
+</div>
 <?php require('template/footer.phtml') ?>

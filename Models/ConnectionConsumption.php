@@ -28,20 +28,19 @@ class ConnectionConsumption extends Connection
         $this->setType($type);
         $this->setPeriod($period);
         // sets the values of the URL base with the appropriate parameters
-        parent::__construct('https://adhocapi.energyhive.com/hive/ac89ccdce8e878e227a93f050413c7d8/type/'. $this->type .
-            '/?units=kWh&from='.
-            $this->dateFrom->format('Y-m-d').'T'. $this->dateFrom->format('H:i:s').
-            '&to=' . $this->dateTo->format('Y-m-d') .
-            'T' . $this->dateTo->format('H:i:s').'&offset=-0&period='.
-            $this->period .'&function=sum');
+        parent::__construct('https://adhocapi.energyhive.com/hive/ac89ccdce8e878e227a93f050413c7d8/type/'.$this->type
+            .'/?units=kWh&from='
+            .$this->dateFrom->format('Y-m-d\TH:i:s')
+            .'&to='.$this->dateTo->format('Y-m-d\TH:i:s').'&offset=-0&period='
+            .$this->period);
 
         // sets the operations of the curl client
         // RETURN TRANSFER is used to store the output instead of directly displaying it
         // URL is for setting the url of the curl client to the base url
         // HEADER is for adding headers to the url of the client, it can only accept the data as an array
         // HTTP HEADERS is for removing headers from the display output
-            parent::setOptCurl(
-                array(CURLOPT_RETURNTRANSFER => 1, CURLOPT_HTTPHEADER => $this->setAuthentication(), CURLOPT_HEADER => 0));
+        parent::setOptCurl(
+            array(CURLOPT_RETURNTRANSFER => 1, CURLOPT_HTTPHEADER => $this->setAuthentication(), CURLOPT_HEADER => 0));
     }
 
     // sets the api key and value

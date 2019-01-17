@@ -40,7 +40,7 @@
                 50);
             setTimeout(
                 function() {
-                        chartContainerGas('chartContainer2','Gas',<?php echo $view->totalGas ?>,<?php echo $view->gasBudget ?>)
+                    chartContainerGas('chartContainer2','Gas',<?php echo $view->totalGas ?>,<?php echo $view->gasBudget ?>)
                 },
                 50);
         });
@@ -81,7 +81,7 @@
                     indexLabel: "{name} - £{y}",
                     dataPoints: [
                         { y: Cost, name: "Current " +type +" Cost", exploded: true },
-                        { y: remainingBudget, name: remainingBudgetText +" Budget" },
+                        { y: remainingBudget, name: remainingBudgetText},
 
                     ]
                 }]
@@ -124,7 +124,7 @@
                     indexLabel: "{name} - £{y}",
                     dataPoints: [
                         { y: Cost, name: "Current " +type +" Cost", exploded: true },
-                        { y: remainingBudget, name: remainingBudgetText +" Budget" },
+                        { y: remainingBudget, name: remainingBudgetText},
                     ]
                 }]
             });
@@ -142,8 +142,8 @@
 
     }
 </script>
-<script>
-    window.onload = function{setStyle('energy1',<?php echo $view->totalElec; ?> ,20)};
+<!--<script>
+    window.onload = function{setStyle('energy1',<?php echo $view->totalElec; ?>// ,20)};
     window.onload = function{setStyle('gas1',<?php echo $view->totalGas; ?> ,20)};
 
     function setStyle(ID, value, budget){
@@ -163,16 +163,62 @@
         elements[1].className = "overlay-to-circle "+color;
         elements[2].className = "in-circle "+color;
     }
-</script>
+</script>-->
 
 <!--speed-->
 <script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
 <script>
-    $( document ).ready(function() {
-        function zeroPad(num, places) {
-            var zero = places - num.toString().length + 1;
-            return Array(+(zero > 0 && zero)).join("0") + num;
+    function httpGet(type, multiplyInstant, period, dateFrom, dateTo, timeFormat, dateToJoinModifier, compareFrom, compareTo){
+        var response;
+        var url='/Models/Request.php';
+        if (multiplyInstant!==1){
+            $.ajax({
+                async: false,
+                type: "GET",
+                url: url,
+                data: {type: type},
+                success: function(data){
+                    //console.log(data);
+                    response = parseFloat(data) * multiplyInstant;
+                }
+            });
         }
+        else {
+            $.ajax({
+                async: false,
+                type: "GET",
+                url: url,
+                data: {
+                    type: type,
+                    period: period,
+                    dateFrom: dateFrom,
+                    dateTo: dateTo,
+                    timeFormat: timeFormat,
+                    dateToJoinModifier: dateToJoinModifier,
+                    compareFrom: compareFrom,
+                    compareTo: compareTo
+                },
+                dataType: 'json',
+                cache: false,
+                success: function (data) {
+                    //console.log(data);
+                    response = data;
+                    console.log(response);
+                }
+            });
+        }
+        return response;
+    }
+    $( document ).ready(function() {
+        // function zeroPad(num, places) {
+        //     if (num.toString().length<=places){
+        //         var zero = places - num.toString().length + 1;
+        //         return '0.'+Array(+(zero > 0 && zero)).join("0") + num;
+        //     }
+        //     else{
+        //
+        //     }
+        // }
         //test1
         // function testingAPI(){
         //     var key = "78c4da90ba4a93adc4f50e89427caef9";
@@ -202,103 +248,82 @@
         //         console.log(name);
         //     }
         // });
-        //test4
+        // pure JS - Working but lag
         // function httpGet(url,type,multiply){
         //     var xmlHttp = new XMLHttpRequest();
         //     xmlHttp.open( "GET", url+'?type='+type, false );
         //     xmlHttp.send();
         //     return xmlHttp.responseText*multiply;
         // }
-        function httpGet(url, type, multiply){
-            var response;
-            $.ajax({
-                async: false,
-                type: "GET",
-                url: url,
-                data: {type: type},
-                success: function(data){
-                    response=parseFloat(data)*multiply;
-                }
-            });
-            return response;
-        }
+        // pure jQuery - Working
         $( "#instant" ).click(function() {
             setTimeout(
                 function() {
+                    //ELEC
                     var target1 = document.getElementById('speedElec'); // your canvas element
                     var gauge1 = new Gauge(target1).setOptions(opts); // create sexy gauge!
-
                     gauge1.maxValue = 2780; // set max gauge value
                     gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
                     gauge1.animationSpeed = 22; // set animation speed (32 is default value)
                     gauge1.set(0);
-                    var exec=0;
-                    var value;
+                    var execElec=0;
+                    var valueElec;
                     function setElec(){
                         //limit number of executions to avoid delays
-                        if (exec===0) {
+                        if (execElec===0) {
                             //request updated value to API
                             //console.log(httpGet('/Models/Request.php', 'ELEC') * 100000;);
-                            value = httpGet('/Models/Request.php', 'ELEC',100000);
-                            //console.log(value);
+                            valueElec = httpGet('ELEC',100000);
+                            //console.log(valueElec);
                         }
-                        exec++;
-                        if (exec > 20){
-                            exec=0;
+                        execElec++;
+                        if (execElec > 20){
+                            execElec=0;
                         }
-                        if (value!==0){
-                            gauge1.set(value+Math.floor(Math.random() * 10)-10); // set actual value
+                        if (valueElec!==0){
+                            var value=valueElec+Math.floor(Math.random() * 10)-10;
                         }
-                        else
-                        {
-                            gauge1.set(value); // set actual value
+                        else {
+                            var value = valueElec;
                         }
-                        gauge1.setTextField(document.getElementById("preview-ElectricityHidden"));
-                        var str = document.getElementById("preview-ElectricityHidden").innerHTML;
-                        str = str.replace(",", "");
-                        var x = parseInt(str);
-                        document.getElementById("preview-Electricity").innerHTML = '0.'+zeroPad(x, 5)+' kWh';
+                        $('#preview-Electricity').html((parseFloat(value)/100000).toFixed(5)+' kWh');
+                        gauge1.set(value); // set actual value
+                        $('#elecIconSpeed').css('color',gauge1.getColorForValue(value, true));
                     }
                     setElec();
                     setInterval(function(){
                         setElec();
                     }, Math.floor(Math.random() * 2000)+1000);
-                },
-                50);
-            setTimeout(
-                function() {
+
+                    //GAS
                     var target2 = document.getElementById('speedGas'); // your canvas element
                     var gauge2= new Gauge(target2).setOptions(opts); // create sexy gauge!
-
                     gauge2.maxValue = 2240; // set max gauge value
                     gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
                     gauge2.animationSpeed = 22; // set animation speed (32 is default value)
                     gauge2.set(0);
-                    var exec=0;
-                    var value;
+                    var execGas=0;
+                    var valueGas;
                     function setGas(){
                         //limit number of executions to avoid delays
-                        if (exec===0) {
+                        if (execGas===0) {
                             //request updated value to API
-                            value = httpGet('/Models/Request.php', 'GAS',100000);
-                            //console.log(value);
+                            valueGas = httpGet('GAS',100000);
+                            //console.log(valueGas);
                         }
-                        exec++;
-                        if (exec > 20){
-                            exec=0;
+                        execGas++;
+                        if (execGas > 20){
+                            execGas=0;
                         }
-                        if (value!==0){
-                            gauge2.set(value+Math.floor(Math.random() * 10)-10); // set actual value
+                        if (valueGas!==0){
+                            var value=valueGas+Math.floor(Math.random() * 10)-10; // set actual value
                         }
-                        else
-                        {
-                            gauge2.set(value); // set actual value
+                        else{
+                            var value=valueGas;
                         }
-                        gauge2.setTextField(document.getElementById("preview-GasHidden"));
-                        var str = document.getElementById("preview-GasHidden").innerHTML;
-                        str = str.replace(",", "");
-                        var x = parseInt(str);
-                        document.getElementById("preview-Gas").innerHTML = '0.'+zeroPad(x, 5)+' kWh';
+                        $('#preview-Gas').html((parseFloat(value)/100000).toFixed(5)+' kWh');;
+                        gauge2.set(value); // set actual value
+                        $('#gasIconSpeed').css('color',gauge2.getColorForValue(value, true));
                     }
                     setGas();
                     setInterval(function(){
@@ -312,7 +337,7 @@
 </script>
 <script>
     var opts = {
-        angle: -0.3, // The span of the gauge arc
+        angle: -0.33, // The span of the gauge arc
         lineWidth: 0.3, // The line thickness
         radiusScale: 1, // Relative radius
         pointer: {
@@ -322,13 +347,10 @@
         },
         limitMax: false,     // If false, max value increases automatically if value > maxValue
         limitMin: true,     // If true, the min value of the gauge will be fixed
-        // colorStart: '#6FADCF',   // Colors
-        // colorStop: '#8FC0DA',    // just experiment with them
-        percentColors: [[0.0, "#177e11" ], [0.60, "#f9c802"], [1.0, "#ff0000"]],
-        strokeColor: '#E0E0E0',  // to see which ones work best for you
+        percentColors: [[0.0, "#808080" ],[0.0001, "#177e11" ], [0.60, "#f9c802"], [1.0, "#ff0000"]],
+        strokeColor: '#E0E0E0',
         generateGradient: true,
         highDpiSupport: true,     // High resolution support
-
     };
 </script>
 
@@ -359,8 +381,8 @@
 
             //injecting the css to the head
             head.appendChild(style);
-        }}
-
+        }
+    }
 </script>
 
 </body>

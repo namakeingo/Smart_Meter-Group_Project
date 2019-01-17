@@ -19,7 +19,7 @@ class ConsumptionData
     }
 
     private function convertUnixToDate($timeStamp) {
-        $date = new DateTime();
+        $date = new DateTime('now', new DateTimeZone('Europe/London'));
         $this->date = $date->setTimestamp($timeStamp);
     }
 
@@ -44,7 +44,7 @@ class ConsumptionData
         return $this->getDate()->format('Y-m-d H:i:s') . ' ' . $this->getConsumption();
     }
 
-    public function getInstantCost($type) {
+    public function getPredictedCost($type) {
         $totalCost = 0;
         if ($type == 'Elec') {
             $day = $this->getConsumption() * 0.6;

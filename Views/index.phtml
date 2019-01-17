@@ -1,144 +1,138 @@
 <?php require('template/header.phtml') ?>
 <div class="container" >
-<div class="tabs-align">
-    <ul class="nav nav-tabs">
-        <li class="active">
-            <a  href="#1" data-toggle="tab">Current Month</a>
-        </li>
-        <li>
-            <a id="costTabTop" href="#chartCost" data-toggle="tab">Predicted Cost</a>
-        </li>
-        <li>
-            <a id="kwhTabTop" href="#chartKWH" data-toggle="tab">Predicted kWh Usage</a>
-        </li>
-        <li>
-            <a href="#3" data-toggle="tab" id="doughnut" <?php if(!isset($view->elecBudget) && !isset($view->gasBudget)){ echo  'hidden';} ?>>Cost based on Budget</a>
-        </li>
-        <li>
-            <a href="#4" data-toggle="tab" id="instant" >Instant Consumption</a>
-        </li>
-    </ul>
-</div>
-<div class="tab-content ">
-    <div class="tab-pane active" id="1">
-        <article id="page-iconcolumn" class="page-section">
-            <section class="layout-iconcolumns container py-4">
-                <div class='my-legend'>
-                    <div class='legend-title'>Colour meanings:</div>
-                    <div class='legend-scale'>
-                        <ul class='legend-labels'>
-                            <?php if(!isset($view->elecBudget) && !isset($view->gasBudget)){ ?>
-                            <li><span style='background:grey;'></span>No Budget limit</li>
-                            <?php }else{ ?>
-                                <li><span style='background:green;'></span>Good</li>
-                                <li><span style='background:orange;'></span>Okay</li>
-                                <li><span style='background:red;'></span>Bad</li>
-                            <?php }?>
-                        </ul>
+    <div class="tabs-align">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a  href="#1" data-toggle="tab">Current Month</a>
+            </li>
+            <li>
+                <a id="costTabTop" href="#chartCost" data-toggle="tab">Predicted Cost</a>
+            </li>
+            <li>
+                <a id="kwhTabTop" href="#chartKWH" data-toggle="tab">Predicted kWh Usage</a>
+            </li>
+            <li>
+                <a href="#3" data-toggle="tab" id="doughnut" <?php if(!isset($view->elecBudget) && !isset($view->gasBudget)){ echo  'hidden';} ?>>Cost based on Budget</a>
+            </li>
+            <li>
+                <a href="#4" data-toggle="tab" id="instant" >Instant Consumption</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content ">
+        <div class="tab-pane active" id="1">
+            <article id="page-iconcolumn" class="page-section">
+                <section class="layout-iconcolumns container py-4">
+                    <div class='my-legend'>
+                        <div class='legend-title'>Colour meanings:</div>
+                        <div class='legend-scale'>
+                            <ul class='legend-labels'>
+                                <?php if(!isset($view->elecBudget) && !isset($view->gasBudget)){ ?>
+                                    <li><span style='background:grey;'></span>No Budget limit</li>
+                                <?php }else{ ?>
+                                    <li><span style='background:green;'></span>Good</li>
+                                    <li><span style='background:orange;'></span>Okay</li>
+                                    <li><span style='background:red;'></span>Bad</li>
+                                <?php }?>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="row text-center">
-                    <section class="col-md-6 my-3">
+                    <div class="row text-center">
+                        <section class="col-md-6 my-3">
                               <span id="energy1" class="fa-stack fa-2x <?php echo $view->colourElectric; ?>">
                                 <i class="fas fa-circle-notch fa-9x circle-size"></i>
                               </span>
-                        <h4 id="energy1" class="overlay-to-circle <?php echo $view->colourElectric; ?>">
-                            <i class="fas fa-bolt fa-7x"></i></h4>
-                        <h3 id="energy1" class="in-circle <?php echo $view->colourElectric; ?>">Elec</h3>
-                        <h3 class="under-circle">£<?php echo $view->totalElec; ?></h3>
-                    </section>
-                    <section class="col-md-6 my-3">
+                            <h4 id="energy1" class="overlay-to-circle <?php echo $view->colourElectric; ?>">
+                                <i class="fas fa-bolt fa-7x"></i></h4>
+                            <h3 id="energy1" class="in-circle <?php echo $view->colourElectric; ?>">Elec</h3>
+                            <h3 class="under-circle">£<?php echo $view->totalElec; ?></h3>
+                        </section>
+                        <section class="col-md-6 my-3">
                             <span id="gas1" class="fa-stack fa-2x <?php echo $view->colourGas; ?>">
                               <i class="fas fa-circle-notch fa-9x circle-size"></i>
                             </span>
-                        <h4 id="gas1" class="overlay-to-circle <?php echo $view->colourGas; ?>">
-                            <i class="fas fa-fire fa-7x"></i></h4>
-                        <h3 id="gas1" class="in-circle <?php echo $view->colourGas; ?>">Gas</h3>
-                        <h3 class="under-circle">£<?php echo $view->totalGas; ?></h3>
-                    </section>
-                </div>
-            </section>
-
-        </article>
-    </div>
-    <div class="tab-pane " id="chartCost">
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <div style="width: 100%; height: 100%" id="chart_divCost"></div>
-    </div>
-    <div class="tab-pane " id="chartKWH">
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <div style="width: 100%; height: 100%" id="chart_divKWH"></div>
-    </div>
-    <div class="tab-pane " id="3">
-        <article id="page-iconcolumn" class="page-section">
-            <section class="layout-iconcolumns container py-4">
-                <div class='my-legend'>
-                    <div class='legend-title'>Colour meanings:</div>
-                    <div class='legend-scale'>
-                        <ul class='legend-labels'>
-                            <li><span style='background:green;'></span>Good</li>
-                            <li><span style='background:orange;'></span>Okay</li>
-                            <li><span style='background:red;'></span>Bad</li>
-                        </ul>
+                            <h4 id="gas1" class="overlay-to-circle <?php echo $view->colourGas; ?>">
+                                <i class="fas fa-fire fa-7x"></i></h4>
+                            <h3 id="gas1" class="in-circle <?php echo $view->colourGas; ?>">Gas</h3>
+                            <h3 class="under-circle">£<?php echo $view->totalGas; ?></h3>
+                        </section>
                     </div>
-                </div>
-                <div class="row text-center">
-                    <section class="col-md-6 my-3">
-                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-                        <h4 class="overlay-to-circle"><i class="fas fa-bolt on-chart"></i></h4>
-                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-                    </section>
-                    <section class="col-md-6 my-3">
-                        <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
-                        <h4 class="overlay-to-circle"><i class="fas fa-fire on-chart"></i></h4>
-                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-                    </section>
-                </div>
-            </section>
-        </article>
-    </div>
-    <div class="tab-pane" id="4">
-        <article id="page-iconcolumn" class="page-section">
-            <section class="layout-iconcolumns container py-4">
-                <div class='my-legend'>
-                    <div class='legend-title'>Colour meanings:</div>
-                    <div class='legend-scale'>
-                        <ul class='legend-labels'>
-                            <li><span style='background:green;'></span>Good</li>
-                            <li><span style='background:orange;'></span>Okay</li>
-                            <li><span style='background:red;'></span>Bad</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row text-center">
-                    <section class="col-md-6 my-3">
-                        <div id="preview-ElectricityHidden" style="font-size: 3em; " hidden>0</div>
-                        <div id="preview-Electricity" style="font-size: 3em; ">0.00000 kWh</div>
-                        <canvas id="speedElec" width="240" height="205" style=" width: 240px; height:205px;"></canvas>
-                        <h4 class="overlay-to-circle"><i class="fas fa-bolt on-speed"></i></h4>
-                        <h3 class="under-speed">Electricity</h3>
-                    </section>
-                    <section class="col-md-6 my-3">
-                        <div id="preview-GasHidden" style="font-size: 3em; " hidden>0</div>
-                        <div id="preview-Gas" style="font-size: 3em;">0.00000 kWh</div>
-                        <canvas id="speedGas" width="240" height="205" style=" width: 240px; height:205px;"></canvas>
-                        <h4 class="overlay-to-circle"><i class="fas fa-fire on-speed"></i></h4>
-                        <h3 class="under-speed">Gas</h3>
-                    </section>
-                </div>
-            </section>
-        </article>
-    </div>
-    <section class="container adjustPos">
-        <div class="budget"></div>
-        <div class="invert">
-            <p><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
+                </section>
+            </article>
         </div>
-
-    </section>
-</div>
-
-
+        <div class="tab-pane " id="chartCost">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <div style="width: 100%; height: 100%" id="chart_divCost"></div>
+        </div>
+        <div class="tab-pane " id="chartKWH">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <div style="width: 100%; height: 100%" id="chart_divKWH"></div>
+        </div>
+        <div class="tab-pane " id="3">
+            <article id="page-iconcolumn" class="page-section">
+                <section class="layout-iconcolumns container py-4">
+                    <div class='my-legend'>
+                        <div class='legend-title'>Colour meanings:</div>
+                        <div class='legend-scale'>
+                            <ul class='legend-labels'>
+                                <li><span style='background:green;'></span>Good</li>
+                                <li><span style='background:orange;'></span>Okay</li>
+                                <li><span style='background:red;'></span>Bad</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <section class="col-md-6 my-3">
+                            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                            <h4 class="overlay-to-circle"><i class="fas fa-bolt on-chart"></i></h4>
+                            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                        </section>
+                        <section class="col-md-6 my-3">
+                            <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+                            <h4 class="overlay-to-circle"><i class="fas fa-fire on-chart"></i></h4>
+                            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                        </section>
+                    </div>
+                </section>
+            </article>
+        </div>
+        <div class="tab-pane" id="4">
+            <article id="page-iconcolumn" class="page-section">
+                <section class="layout-iconcolumns container py-4">
+                    <div class='my-legend'>
+                        <div class='legend-title'>Colour meanings:</div>
+                        <div class='legend-scale'>
+                            <ul class='legend-labels'>
+                                <li><span style='background:green;'></span>Good</li>
+                                <li><span style='background:orange;'></span>Okay</li>
+                                <li><span style='background:red;'></span>Bad</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <section class="col-md-6 my-3">
+                            <div id="preview-Electricity" style="font-size: 3em; ">0.00000 kWh</div>
+                            <canvas id="speedElec" width="240" height="205" style=" width: 240px; height:205px;"></canvas>
+                            <h4 id="elecIconSpeed" class="overlay-to-circle"><i class="fas fa-bolt on-speed"></i></h4>
+                            <h3 class="under-speed">Electricity</h3>
+                        </section>
+                        <section class="col-md-6 my-3">
+                            <div id="preview-Gas" style="font-size: 3em;">0.00000 kWh</div>
+                            <canvas id="speedGas" width="240" height="205" style=" width: 240px; height:205px;"></canvas>
+                            <h4 id="gasIconSpeed" class="overlay-to-circle"><i class="fas fa-fire on-speed"></i></h4>
+                            <h3 class="under-speed">Gas</h3>
+                        </section>
+                    </div>
+                </section>
+            </article>
+        </div>
+        <section class="container adjustPos">
+            <div class="budget"></div>
+            <div class="invert">
+                <p><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
+            </div>
+        </section>
+    </div>
 </div>
 
 <?php require('template/chartPredictionScript.phtml'); ?>
