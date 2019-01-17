@@ -1,6 +1,8 @@
 <?php
 
 require_once("Models/BudgetDb.php");
+$view = new stdClass();
+$view->pageTitle='Budget';
 $errors = array();
 $success = false;
 $budgetDatabase = new BudgetDb();
