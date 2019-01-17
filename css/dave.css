@@ -90,3 +90,13 @@
     /*position: absolute;*/
     /*z-index: 1;*/
 /*}*/
+.w-100{
+    height: 40px;
+}
+.form-control{
+    height:40px;
+    font-size: 1.5rem !important;
+}
+.btn{
+    font-size: 1.5rem !important;
+}
