@@ -110,7 +110,7 @@
                 setTimeout(
                     function () {
                         drawChart('<?php echo $view->type ?>', 'Month', 'Weeks', '<?php echo $view->pageTitle ?>',
-                            httpGetChart('<?php echo $view->type ?>', 'P1W', 'first monday of this month 00:00:00 -7 days', 'now', 'd-m', '+6days'));
+                            httpGetChart('<?php echo $view->type ?>', 'P1W', 'first monday of this month 00:00:00 -7 days', 'now', 'd/m', '+6days'));
                     },
                     1)
             });
