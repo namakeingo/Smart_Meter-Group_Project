@@ -232,7 +232,7 @@
                     //ELEC
                     var target1 = document.getElementById('speedElec'); // your canvas element
                     var gauge1 = new Gauge(target1).setOptions(opts); // create sexy gauge!
-                    gauge1.maxValue = 2780; // set max gauge value
+                    gauge1.maxValue = 5000; // set max gauge value
                     gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
                     gauge1.animationSpeed = 22; // set animation speed (32 is default value)
                     gauge1.set(0);
@@ -278,7 +278,7 @@
                         //limit number of executions to avoid delays
                         if (execGas===0) {
                             //request updated value to API
-                            valueGas = httpGetInstant('GAS',100000,'-5minutes');
+                            valueGas = httpGetInstant('GAS',100000,'-2hours');
                             //console.log(valueGas);
                         }
                         execGas++;
