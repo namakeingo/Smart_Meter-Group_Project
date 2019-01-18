@@ -12,7 +12,7 @@
                 <a id="kwhTabTop" href="#chartKWH" data-toggle="tab">Predicted kWh Usage</a>
             </li>
             <li>
-                <a href="#3" data-toggle="tab" id="doughnut" <?php if(!isset($view->elecBudget) && !isset($view->gasBudget)){ echo  'hidden';} ?>>Cost based on Budget</a>
+                <a href="#3" data-toggle="tab" id="doughnut" <?php if(!isset($view->elecBudget) && !isset($view->gasBudget)){ echo  'hidden';} ?>>Cost Based on Budget</a>
             </li>
             <li>
                 <a href="#4" data-toggle="tab" id="instant" >Instant Consumption</a>
@@ -22,6 +22,14 @@
     <div class="tab-content ">
         <div class="tab-pane active" id="1">
             <article id="page-iconcolumn" class="page-section">
+                <div class="alert-budget alert alert-warning" <?php if(isset($view->elecBudget) && isset($view->gasBudget)){
+                    if ($view->totalElec < $view->elecBudget/5*4 && $view->totalGas < $view->gasBudget/5*4 || $view->totalElec > $view->elecBudget || $view->totalGas > $view->gasBudget){
+                        echo  'hidden';}} ?>>
+                    <p>You are close to your set Budget. Checkout the tab "Cost Based On Budget" to see more</p></div>
+                <div class="alert-budget alert alert-danger" <?php if(isset($view->elecBudget) && isset($view->gasBudget)){
+                    if ($view->totalElec < $view->elecBudget && $view->totalGas < $view->gasBudget){
+                            echo  'hidden';}} ?>>
+                    <p>You are over your set Budget. Checkout the tab "Cost Based On Budget" to see more</p></div>
                 <section class="layout-iconcolumns container py-4">
                     <div class='my-legend'>
                         <div class='legend-title'>Colour meanings:</div>
@@ -59,14 +67,36 @@
                     </div>
                 </section>
             </article>
+            <section class="container adjustPos">
+                <div class="budget"></div>
+                <div class="invert">
+                    <p><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
+                </div>
+            </section>
         </div>
         <div class="tab-pane " id="chartCost">
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <div style="width: 100%; height: 100%" id="chart_divCost">Doing Some Machine Learning To Predict Your Future Consumption...</div>
+            <div style="width: 100%; height: 100%" id="chart_divCost">
+                <div class="alert-budget alert alert-light"><p>Doing Some Machine Learning To Predict Your Future Consumption...</p></div>
+            </div>
+            <section class="container adjustPos">
+                <div class="budget"></div>
+                <div class="invert">
+                    <p><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
+                </div>
+            </section>
         </div>
         <div class="tab-pane " id="chartKWH">
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <div style="width: 100%; height: 100%" id="chart_divKWH">Doing Some Machine Learning To Predict Your Future Consumption...</div>
+            <div style="width: 100%; height: 100%" id="chart_divKWH">
+                <div class="alert-budget alert alert-light"><p>Doing Some Machine Learning To Predict Your Future Consumption...</p></div>
+            </div>
+            <section class="container adjustPos">
+                <div class="budget"></div>
+                <div class="invert">
+                    <p><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
+                </div>
+            </section>
         </div>
         <div class="tab-pane " id="3">
             <article id="page-iconcolumn" class="page-section">
@@ -95,6 +125,14 @@
                     </div>
                 </section>
             </article>
+            <section class="container adjustPos">
+                <div class="budget"><button class="btn btn-secondary" href="budget.php"<?php if(isset($view->elecBudget) && isset($view->gasBudget)){
+                        if ($view->totalElec < $view->elecBudget/5*4 && $view->totalGas < $view->gasBudget/5*4){
+                            echo  'hidden';}} ?>>Change Budget</button></div>
+                <div class="invert">
+                    <p><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
+                </div>
+            </section>
         </div>
         <div class="tab-pane" id="4">
             <article id="page-iconcolumn" class="page-section">
@@ -125,13 +163,14 @@
                     </div>
                 </section>
             </article>
+            <section class="container adjustPos">
+                <div class="budget"></div>
+                <div class="invert">
+                    <p><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
+                </div>
+            </section>
         </div>
-        <section class="container adjustPos">
-            <div class="budget"></div>
-            <div class="invert">
-                <p><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
-            </div>
-        </section>
+
     </div>
 </div>
 

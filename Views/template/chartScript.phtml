@@ -130,29 +130,35 @@
     }
 
     function drawChart(type, ID, timeName, title, arrayConsumption, isBoth,isPounds) {
+        var text='Consumption';
+        if(isPounds){
+            text='Cost';
+        }
         var array;
         //console.log(isBoth);
         if (isBoth){
-            array=[[timeName,'Electricity Consumption','Gas Consumption']];
+            array=[[timeName,'Electricity '+text,'Gas '+text]];
             $.merge(array,arrayConsumption);
         }
         else{
-            array=[[timeName,title+' Consumption']];
+            array=[[timeName,title+' '+text]];
             $.merge(array,arrayConsumption);
         }
         //console.log(array);
         var data = google.visualization.arrayToDataTable(array
         );
         // set common style for chart
-        var options = styleChart(type, title, data.getNumberOfRows(), timeName, isPounds);
+        var options = styleChart(type, title, data.getNumberOfRows(), timeName, isPounds, text);
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'+ID));
         chart.draw(data, options);
     }
 
-    function styleChart(type ,title, NumberOfRows, periodName, isPounds){
+    function styleChart(type ,title, NumberOfRows, periodName, isPounds,text){
         var unit='kWh';
+        var text='Consumption';
         if(isPounds){
-            unit='£ Pounds'
+            unit='£ Pounds';
+            text='Cost';
         }
         var chartAreaHeight;
         if (NumberOfRows <= 5){
@@ -185,7 +191,7 @@
             colorSet= ['#efda00', '#8e48b0'];
         }
         return options = {
-            title: title+' Consumption Based On '+periodName,
+            title: title+' '+text+' Based On '+periodName,
             titleTextStyle:{fontSize: 19},
             chartArea: {
                 width: '60%',
