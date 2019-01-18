@@ -78,6 +78,7 @@
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <div style="width: 100%; height: 100%" id="chart_divCost">
                 <div class="alert-budget alert alert-light"><p>Doing Some Machine Learning To Predict Your Future Consumption...</p></div>
+                <div class="loading-ico"><i class="fa fa-spinner fa-spin"></i></div>
             </div>
             <section class="container adjustPos">
                 <div class="budget"></div>
@@ -90,6 +91,7 @@
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <div style="width: 100%; height: 100%" id="chart_divKWH">
                 <div class="alert-budget alert alert-light"><p>Doing Some Machine Learning To Predict Your Future Consumption...</p></div>
+                <div class="loading-ico"><i class="fa fa-spinner fa-spin" ></i></div>
             </div>
             <section class="container adjustPos">
                 <div class="budget"></div>
@@ -126,9 +128,9 @@
                 </section>
             </article>
             <section class="container adjustPos">
-                <div class="budget"><button class="btn btn-secondary" href="budget.php"<?php if(isset($view->elecBudget) && isset($view->gasBudget)){
+                <div class="budget"><a class="btn btn-secondary" href="budget.php" <?php if(isset($view->elecBudget) && isset($view->gasBudget)){
                         if ($view->totalElec < $view->elecBudget/5*4 && $view->totalGas < $view->gasBudget/5*4){
-                            echo  'hidden';}} ?>>Change Budget</button></div>
+                            echo  'hidden';}} ?>>Change Budget</a></div>
                 <div class="invert">
                     <p><button onclick="invertColor()" class="btn"><i id="adjustBtn" class="fas fa-adjust fa-4x"></i></button></p>
                 </div>

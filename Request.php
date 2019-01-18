@@ -72,7 +72,7 @@ if (isset ($type)&&$type!=''){
             for ($i=0; $i < sizeof($data); $i++){
                 // (if $dateToJoinModifier isset then set date ad concat time/time)
                 if(isset($dateToJoinModifier)&&$dateToJoinModifier!=''){
-                    $output[$i][0] = $data[$i]->getDate()->format($timeFormat).'/'
+                    $output[$i][0] = $data[$i]->getDate()->format($timeFormat).' - '
                         .$data[$i]->getDate()->modify($dateToJoinModifier)->format($timeFormat);
                 }
                 else {
