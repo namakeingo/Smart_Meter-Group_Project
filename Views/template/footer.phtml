@@ -143,8 +143,8 @@
     }
 </script>
 <!--<script>
-    window.onload = function{setStyle('energy1',<?php echo $view->totalElec; ?>// ,20)};
-    window.onload = function{setStyle('gas1',<?php echo $view->totalGas; ?> ,20)};
+    window.onload = function{setStyle('energy1',<?php //echo $view->totalElec; ?>// ,20)};
+    window.onload = function{setStyle('gas1',<?php //echo $view->totalGas; ?> ,20)};
 
     function setStyle(ID, value, budget){
         var color;
@@ -165,18 +165,35 @@
     }
 </script>-->
 
-<!--speed-->
+<!--speed gauge and http Getters-->
 <script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
 <script>
     //// start of http Getters
     // pure jQuery - http GET request to let JS talk to php Models
-    // (used in InstantConsumption, ChartElectricity, ChartGas, ChartComparison
-    // httpGetInstant is specific to InstantConsumption
+    // (used in InstantConsumption, ChartElectricity, ChartGas, ChartComparison, ChartPrediction
+    /**
+     * httpGetInstant is specific to InstantConsumption
+     * @param type
+     * @param multiplyInstant
+     * @param delay
+     * @returns {number}
+     */
     function httpGetInstant(type, multiplyInstant, delay){
         var data= {type: type, delay:delay};
         return parseFloat(httpGet(data)) * multiplyInstant;
     }
-    // httpGetChart is used by ChartGas, ChartElectricity, ChartComparison
+    /**
+     * httpGetChart is used by ChartGas, ChartElectricity, ChartComparison
+     * @param type
+     * @param period
+     * @param dateFrom
+     * @param dateTo
+     * @param timeFormat
+     * @param dateToJoinModifier
+     * @param compareFrom
+     * @param compareTo
+     * @returns {[*]}
+     */
     function httpGetChart(type, period, dateFrom, dateTo, timeFormat, dateToJoinModifier, compareFrom, compareTo){
         var data= {
             type: type,
@@ -190,12 +207,24 @@
         };
         return httpGet(data, true);
     }
-    // httpGetPrediction is used in the index by PredictionCharts
+    /**
+     * httpGetPrediction is used in the index by PredictionCharts
+     * @param unit
+     * @returns {[*]}
+     */
     function httpGetPrediction(unit) {
         var data= {unit:unit};
         return httpGet(data, true, true);
     }
-    // httpGet speaks to /Models/Request.php to get the required data from php Models
+    /**
+     * httpGet speaks to /Request.php to get the required data from php Models
+     * It is used by httpGetInstant, httpGetChart and httpGetPrediction
+     * It execute the http request
+     * @param data
+     * @param isJson
+     * @param toCache
+     * @returns {[*]}
+     */
     function httpGet(data, isJson, toCache){
         var response;
         var url='Request.php';
@@ -235,7 +264,8 @@
                     gauge1.maxValue = 5000; // set max gauge value
                     gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
                     gauge1.animationSpeed = 22; // set animation speed (32 is default value)
-                    gauge1.set(0);
+                    gauge1.set(0); // set default value
+                    // execution counter to limit number of http GET requests
                     var execElec=0;
                     var valueElec;
                     function setElec(){
@@ -257,28 +287,29 @@
                             var value = valueElec;
                         }
                         $('#preview-Electricity').html((parseFloat(value)/100000).toFixed(5)+' kWh');
-                        gauge1.set(value); // set actual value
+                        gauge1.set(value); // update actual value
+                        // update actual icon color
                         $('#elecIconSpeed').css('color',gauge1.getColorForValue(value, true));
                     }
                     setElec();
                     setInterval(function(){
                         setElec();
                     }, Math.floor(Math.random() * 2000)+1000);
-
                     //GAS
                     var target2 = document.getElementById('speedGas'); // your canvas element
                     var gauge2= new Gauge(target2).setOptions(opts); // create sexy gauge!
                     gauge2.maxValue = 2240; // set max gauge value
                     gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
                     gauge2.animationSpeed = 22; // set animation speed (32 is default value)
-                    gauge2.set(0);
+                    gauge2.set(0); // set default value
+                    // execution counter to limit number of http GET requests
                     var execGas=0;
                     var valueGas;
                     function setGas(){
                         //limit number of executions to avoid delays
                         if (execGas===0) {
                             //request updated value to API
-                            valueGas = httpGetInstant('GAS',100000,'-2hours');
+                            valueGas = httpGetInstant('GAS',100000,'-2minutes -30seconds');
                             //console.log(valueGas);
                         }
                         execGas++;
@@ -292,7 +323,8 @@
                             var value=valueGas;
                         }
                         $('#preview-Gas').html((parseFloat(value)/100000).toFixed(5)+' kWh');;
-                        gauge2.set(value); // set actual value
+                        gauge2.set(value); // update actual value
+                        // update actual icon color
                         $('#gasIconSpeed').css('color',gauge2.getColorForValue(value, true));
                     }
                     setGas();
@@ -302,7 +334,6 @@
                 },
                 50);
         });
-
     });
 </script>
 <script>
@@ -318,13 +349,13 @@
         },
         limitMax: false,     // If false, max value increases automatically if value > maxValue
         limitMin: true,     // If true, the min value of the gauge will be fixed
-        percentColors: [[0.0, "#808080" ],[0.0001, "#177e11" ], [0.60, "#f9c802"], [1.0, "#ff0000"]],
-        strokeColor: '#E0E0E0',
-        generateGradient: true,
+        percentColors: [[0.0, "#808080" ],[0.0001, "#177e11" ], [0.60, "#f9c802"], [1.0, "#ff0000"]], // define colors related to percentage
+        strokeColor: '#E0E0E0', // color of the empty gauge
+        generateGradient: true, // If true the colour will be a gradient based on percentage
         highDpiSupport: true,     // High resolution support
     };
 </script>
-
+<!--end of speed gauge and http Getters-->
 <!--Inverted -->
 <script type="text/javascript">
     //method to invert colors for color blind accessibility

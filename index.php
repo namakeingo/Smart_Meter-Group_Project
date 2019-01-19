@@ -19,7 +19,7 @@ $gasDataSet = $gasConsum->getData();
 $view->totalElec = $elecDataSet->getElecCost();
 $view->totalGas = $gasDataSet->getGasCost();
 
-////!!!! WEATHER MOVED TO   /Models/Request.php
+////!!!! WEATHER DATA AND PREDICTION DATA MOVED TO   /Request.php
 //$url = new ConnectionLocation();
 //$location = $url->getData();
 ////changes the url for the weather api
