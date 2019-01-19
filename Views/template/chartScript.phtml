@@ -1,4 +1,5 @@
 <script>
+    //Google charts libraries load
     google.charts.load('current', {packages: ['corechart', 'bar']});
     //Prediction Charts
     if(document.title==='Homepage') {
@@ -76,7 +77,6 @@
         }
         google.charts.setOnLoadCallback(initializeYear);
     }
-
     //Elec and Gas for Normal Charts
     if(document.title==='Electricity' || document.title==='Gas') {
         google.charts.setOnLoadCallback(function () {
@@ -129,37 +129,63 @@
         google.charts.setOnLoadCallback(initializeYear);
     }
 
-    function drawChart(type, ID, timeName, title, arrayConsumption, isBoth,isPounds) {
-        var text='Consumption';
+    /**
+     * Generalized drawChart method used by all google charts to draw the charts once they get the data needed
+     * the data is retrieved by http GET request
+     * @param type
+     * @param ID
+     * @param timeName
+     * @param title
+     * @param arrayConsumption
+     * @param isBoth
+     * @param isPounds
+     */
+    function drawChart(type, ID, timeName, title, arrayConsumption, isBoth, isPounds) {
+        //default suTitle
+        var subTitle='Consumption';
         if(isPounds){
-            text='Cost';
+            //change subTitle if isPounds
+            subTitle='Cost';
         }
         var array;
         //console.log(isBoth);
+        // Add title row to data array and merge it to the one obtained by http GET (passed as variable arrayConsumption)
         if (isBoth){
-            array=[[timeName,'Electricity '+text,'Gas '+text]];
+            array=[[timeName,'Electricity '+subTitle,'Gas '+subTitle]];
             $.merge(array,arrayConsumption);
         }
         else{
-            array=[[timeName,title+' '+text]];
+            array=[[timeName,title+' '+subTitle]];
             $.merge(array,arrayConsumption);
         }
         //console.log(array);
         var data = google.visualization.arrayToDataTable(array
         );
         // set common style for chart
-        var options = styleChart(type, title, data.getNumberOfRows(), timeName, isPounds, text);
+        var options = styleChart(type, title, data.getNumberOfRows(), timeName, isPounds, subTitle);
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'+ID));
         chart.draw(data, options);
     }
 
-    function styleChart(type ,title, NumberOfRows, periodName, isPounds,text){
+    /**
+     * Generalized method to define the style of the google chart
+     * used every time a chart is drawn by drawChart
+     * @param type
+     * @param title
+     * @param NumberOfRows
+     * @param periodName
+     * @param isPounds
+     * @param subTitle
+     * @returns {{hAxis: {minValue: number, maxValue: number, textStyle: {fontSize: number}, title: string, viewWindow: {min: number}, titleTextStyle: {fontSize: number}}, legend: {textStyle: {fontSize: number}}, tooltip: {textStyle: {fontSize: number}}, vAxis: {textStyle: {fontSize: number}, title: *, titleTextStyle: {fontSize: number}}, title: string, chartArea: {width: string, height: number}, titleTextStyle: {fontSize: number}, colors: (string[]|string[]|string[]), height: number, animation: {duration: number, startup: boolean, easing: string}}}
+     */
+    function styleChart(type ,title, NumberOfRows, periodName, isPounds, subTitle){
+        // default unit
         var unit='kWh';
-        var text='Consumption';
         if(isPounds){
+            // change unit if isPounds
             unit='£ Pounds';
-            text='Cost';
         }
+        // flexible chart height depending on number of rows of data
         var chartAreaHeight;
         if (NumberOfRows <= 5){
             // set inner height to 70 pixels per row
@@ -191,7 +217,7 @@
             colorSet= ['#efda00', '#8e48b0'];
         }
         return options = {
-            title: title+' '+text+' Based On '+periodName,
+            title: title+' '+subTitle+' Based On '+periodName,
             titleTextStyle:{fontSize: 19},
             chartArea: {
                 width: '60%',
