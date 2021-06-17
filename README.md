@@ -9,3 +9,5 @@ Credit obviusly goes also to my team:
 - Adil94
 
 Webside is hosted at http://smartmeter.altervista.org/
+
+You can read more about the project from the project report: [Group Project Report.docx](https://github.com/namakeingo/Smart_Meter-Group_Project/blob/master/Group%20Project%20Report.docx)
